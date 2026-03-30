@@ -1403,6 +1403,8 @@ var DATA_FILE = 'data.json';
 var state = {};
 var fileSha = null;
 var dirty = false;
+var autoSaveTimer = null;
+var AUTO_SAVE_DELAY = 3000; // 3 seconds
 var activeCat = 'all';
 var activeStatus = 'all';
 var searchTerm = '';
@@ -1519,11 +1521,21 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+
+function scheduleSave() {
+  if (autoSaveTimer) clearTimeout(autoSaveTimer);
+  setSync('Unsaved...', '');
+  autoSaveTimer = setTimeout(function() {
+    if (dirty && fileSha) saveToGitHub();
+  }, AUTO_SAVE_DELAY);
+}
+
 function markDirty(id, el) {
   el.classList.add('dirty');
   dirty = true;
   if (!state[id]) state[id] = {};
   state[id].answer = el.textContent;
+  scheduleSave();
 }
 
 function toggleStatus(id, btn) {
@@ -1533,6 +1545,7 @@ function toggleStatus(id, btn) {
   btn.className = 'status-btn ' + next;
   btn.textContent = next === 'verified' ? '✅ 已验证' : '🤖 AI生成';
   dirty = true;
+  scheduleSave();
   updateProgress();
   applyFilters();
 }
