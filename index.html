@@ -80,6 +80,21 @@ body{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;backgroun
 .save-btn:disabled{background:#334155;color:#64748b;cursor:default;}
 .save-note{font-size:12px;color:#94a3b8;}
 .logout-btn{margin-left:auto;font-size:12px;color:#64748b;cursor:pointer;background:none;border:none;text-decoration:underline;}
+
+/* Add Q modal */
+.add-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:500;display:flex;align-items:center;justify-content:center;}
+.add-modal{background:#fff;border-radius:12px;padding:28px;width:600px;max-width:95vw;max-height:90vh;overflow-y:auto;}
+.add-modal h2{font-size:17px;font-weight:700;margin-bottom:16px;}
+.add-modal label{display:block;font-size:12px;font-weight:600;color:#6b7280;margin-bottom:4px;margin-top:12px;}
+.add-modal input,.add-modal textarea,.add-modal select{width:100%;padding:9px 12px;border:1px solid #d1d5db;border-radius:8px;font-size:13px;font-family:inherit;outline:none;}
+.add-modal input:focus,.add-modal textarea:focus,.add-modal select:focus{border-color:#3b82f6;}
+.add-modal textarea{height:140px;resize:vertical;line-height:1.7;}
+.add-modal-actions{display:flex;gap:8px;margin-top:20px;justify-content:flex-end;}
+.add-modal-btn{padding:8px 20px;border-radius:6px;border:none;font-size:13px;font-weight:600;cursor:pointer;}
+.btn-confirm{background:#3b82f6;color:#fff;}
+.btn-confirm:hover{background:#2563eb;}
+.btn-cancel{background:#f1f5f9;color:#374151;}
+.btn-cancel:hover{background:#e2e8f0;}
 </style>
 </head>
 <body>
@@ -109,7 +124,7 @@ body{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;backgroun
 <button class="fbtn f-G" data-filter-cat="G" onclick="setCatFilter('G',this)">G Governance (29)</button>
 <div class="filter-divider"></div>
 <span class="filter-label">Status:</span>
-<button class="fbtn f-ai" onclick="toggleStatusFilter('ai',this)">🤖 AI生成</button>
+<button class="fbtn f-pending" onclick="toggleStatusFilter('pending',this)">⏳ 待验证</button>
 <button class="fbtn f-verified" onclick="toggleStatusFilter('verified',this)">✅ 已验证</button>
 <input class="search-input" oninput="doSearch(this.value)" placeholder="Search questions..." type="text"/>
 </div>
@@ -120,7 +135,7 @@ body{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;backgroun
 <span class="qa-rank">#1</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you have a forced labor / modern slavery policy?</span>
-<button class="status-btn ai" onclick="toggleStatus(0,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(0,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -134,7 +149,7 @@ Supporting documents: JA Solar Human Rights Policy | JA Solar GmbH UK Modern Sla
 <span class="qa-rank">#2</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Please provide / report your GHG emissions (Scope 1, 2, 3)</span>
-<button class="status-btn ai" onclick="toggleStatus(1,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(1,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -170,7 +185,7 @@ Supporting documents: 2024 JA Solar Sustainability and ESG Report | 2024 JA Sola
 <span class="qa-rank">#3</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Do you have an anti-corruption / anti-bribery policy?</span>
-<button class="status-btn ai" onclick="toggleStatus(2,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(2,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -184,7 +199,7 @@ Supporting documents: JA Solar Anti-Fraud Reporting Policy and Investigation Pro
 <span class="qa-rank">#4</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you have a non-discrimination / DEI policy?</span>
-<button class="status-btn ai" onclick="toggleStatus(3,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(3,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -198,7 +213,7 @@ Supporting document: JA Solar Diversity Equity &amp; Inclusion Policy</div>
 <span class="qa-rank">#5</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">What management system certifications does your company hold?</span>
-<button class="status-btn ai" onclick="toggleStatus(4,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(4,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -219,7 +234,7 @@ Supporting document: ISO 45001 9001 14001-2027.5.pdf (ISO 14001, ISO 45001, ISO 
 <span class="qa-rank">#6</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Do you have a product carbon footprint / EPD / LCA?</span>
-<button class="status-btn ai" onclick="toggleStatus(5,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(5,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -234,7 +249,7 @@ Supporting document: EPD documents folder</div>
 <span class="qa-rank">#7</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">What is your energy consumption and what proportion is renewable?</span>
-<button class="status-btn ai" onclick="toggleStatus(6,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(6,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -250,7 +265,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#8</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What are your wage and benefit policies?</span>
-<button class="status-btn ai" onclick="toggleStatus(7,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(7,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -267,7 +282,7 @@ Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct</d
 <span class="qa-rank">#9</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">How do you manage waste (hazardous and non-hazardous)?</span>
-<button class="status-btn ai" onclick="toggleStatus(9,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(9,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -286,7 +301,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#10</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Does your company have ISO 14001 certification?</span>
-<button class="status-btn ai" onclick="toggleStatus(10,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(10,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -300,7 +315,7 @@ Please refer to the Certificates folder for copies of individual certificates.</
 <span class="qa-rank">#11</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What is your occupational health and safety policy / management system?</span>
-<button class="status-btn ai" onclick="toggleStatus(11,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(11,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -321,7 +336,7 @@ Supporting documents: JA Solar Environment Health &amp; Safety Policy | JA Solar
 <span class="qa-rank">#12</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">How do you manage air emissions / pollution?</span>
-<button class="status-btn ai" onclick="toggleStatus(12,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(12,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -337,7 +352,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#13</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">How do you handle workplace accidents / incidents?</span>
-<button class="status-btn ai" onclick="toggleStatus(13,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(13,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -359,7 +374,7 @@ Supporting document: JA Solar HSSE Plan | 2024 JA Solar Sustainability and ESG R
 <span class="qa-rank">#14</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">How do you manage water consumption / water resources?</span>
-<button class="status-btn ai" onclick="toggleStatus(14,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(14,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -379,7 +394,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#15</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What is your grievance / whistleblowing mechanism?</span>
-<button class="status-btn ai" onclick="toggleStatus(15,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(15,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -399,7 +414,7 @@ Supporting document: JA Solar Whistleblower Protection and Integrity Reporting P
 <span class="qa-rank">#16</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What is your policy on child labor?</span>
-<button class="status-btn ai" onclick="toggleStatus(16,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(16,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -413,7 +428,7 @@ Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct | 
 <span class="qa-rank">#17</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">What is your approach to circular economy / product recycling / end-of-life?</span>
-<button class="status-btn ai" onclick="toggleStatus(17,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(17,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -432,7 +447,7 @@ Supporting documents: JA Solar Circular Economy Strategy | 2024 JA Solar Sustain
 <span class="qa-rank">#18</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">How do you manage contractor / subcontractor safety and compliance?</span>
-<button class="status-btn ai" onclick="toggleStatus(18,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(18,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -445,7 +460,7 @@ Supporting documents: JA Solar Supplier Code of Conduct Version 2.0 | JA Solar H
 <span class="qa-rank">#19</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What are your working hours and overtime policies?</span>
-<button class="status-btn ai" onclick="toggleStatus(19,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(19,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -465,7 +480,7 @@ Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct</d
 <span class="qa-rank">#20</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Does your company have an EMS (Environmental Management System)?</span>
-<button class="status-btn ai" onclick="toggleStatus(20,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(20,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -479,7 +494,7 @@ Supporting document: ISO 14001 certificates</div>
 <span class="qa-rank">#21</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Do you have a corporate Code of Conduct / Business Ethics policy?</span>
-<button class="status-btn ai" onclick="toggleStatus(21,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(21,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -503,7 +518,7 @@ Supporting document: JA Solar Code of Conduct</div>
 <span class="qa-rank">#22</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Has your company set GHG reduction targets? / Are your targets science-based (SBTi)?</span>
-<button class="status-btn ai" onclick="toggleStatus(22,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(22,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -526,7 +541,7 @@ Supporting documents: 2024 JA Solar Sustainability and ESG Report | SBTi target 
 <span class="qa-rank">#23</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Have you identified ESG risks in your operations / supply chain?</span>
-<button class="status-btn ai" onclick="toggleStatus(23,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(23,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -542,7 +557,7 @@ Supporting documents: 2024 JA Solar Sustainability and ESG Report | 2023 Climate
 <span class="qa-rank">#24</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What is your approach to community engagement / social contribution?</span>
-<button class="status-btn ai" onclick="toggleStatus(24,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(24,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -562,7 +577,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#25</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">How do you handle corrective actions from audit findings?</span>
-<button class="status-btn ai" onclick="toggleStatus(25,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(25,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -581,7 +596,7 @@ Supporting documents: JA Solar Responsible Sourcing Policy | 2024 JA Solar Susta
 <span class="qa-rank">#26</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What PPE / safety equipment do you provide?</span>
-<button class="status-btn ai" onclick="toggleStatus(26,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(26,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -595,7 +610,7 @@ Supporting documents: JA Solar Environment Health &amp; Safety Policy | JA Solar
 <span class="qa-rank">#27</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Where do you source polysilicon / raw materials? (Supply chain origin)</span>
-<button class="status-btn ai" onclick="toggleStatus(27,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(27,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -606,7 +621,7 @@ Supporting documents: JA Solar Environment Health &amp; Safety Policy | JA Solar
 <span class="qa-rank">#28</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Does your company publish an ESG / sustainability report?</span>
-<button class="status-btn ai" onclick="toggleStatus(28,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(28,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -626,7 +641,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#29</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">How do you verify worker identity documents and recruitment practices?</span>
-<button class="status-btn ai" onclick="toggleStatus(29,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(29,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -640,7 +655,7 @@ Supporting document: JA Solar Human Rights Policy | JA Solar Responsible Sourcin
 <span class="qa-rank">#30</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Has your company defined an environmental policy?</span>
-<button class="status-btn ai" onclick="toggleStatus(30,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(30,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -660,7 +675,7 @@ Supporting documents: JA Solar Environmental, Social, and Governance (ESG) Susta
 <span class="qa-rank">#31</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you have policies on working conditions (dormitory, sanitation, etc.)?</span>
-<button class="status-btn ai" onclick="toggleStatus(31,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(31,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -673,7 +688,7 @@ Supporting document: JA Solar Human Rights Policy</div>
 <span class="qa-rank">#32</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Does your company have a human rights policy?</span>
-<button class="status-btn ai" onclick="toggleStatus(32,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(32,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -689,7 +704,7 @@ Supporting document: JA Solar Human Rights Policy</div>
 <span class="qa-rank">#33</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">How do you manage hazardous chemicals / substances?</span>
-<button class="status-btn ai" onclick="toggleStatus(33,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(33,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -709,7 +724,7 @@ Supporting documents: JA Solar Environment Health &amp; Safety Policy | JA Solar
 <span class="qa-rank">#34</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">How do you ensure legal / regulatory compliance?</span>
-<button class="status-btn ai" onclick="toggleStatus(34,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(34,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -728,7 +743,7 @@ Supporting documents: JA Solar Code of Conduct | JA Solar Anti-Fraud Reporting P
 <span class="qa-rank">#35</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you have a policy against harassment / disciplinary procedures?</span>
-<button class="status-btn ai" onclick="toggleStatus(35,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(35,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -742,7 +757,7 @@ Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct | 
 <span class="qa-rank">#36</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Do you have a Supplier Code of Conduct?</span>
-<button class="status-btn ai" onclick="toggleStatus(36,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(36,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -755,7 +770,7 @@ Supporting document: JA Solar Supplier Code of Conduct Version 2.0</div>
 <span class="qa-rank">#37</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Can you provide your supply chain map / supplier list?</span>
-<button class="status-btn ai" onclick="toggleStatus(37,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(37,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -767,7 +782,7 @@ Supporting document: JA Solar Supplier Code of Conduct Version 2.0</div>
 <span class="qa-rank">#38</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you have a policy on freedom of association and collective bargaining?</span>
-<button class="status-btn ai" onclick="toggleStatus(38,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(38,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -781,7 +796,7 @@ Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct</d
 <span class="qa-rank">#39</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Does your company follow GRI / UNGC / other international frameworks?</span>
-<button class="status-btn ai" onclick="toggleStatus(39,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(39,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -800,7 +815,7 @@ Supporting documents: UNGC participant page | 2024 JA Solar Sustainability and E
 <span class="qa-rank">#40</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you provide employment contracts / appointment letters to all workers?</span>
-<button class="status-btn ai" onclick="toggleStatus(40,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(40,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -814,7 +829,7 @@ Supporting document: JA Solar Human Rights Policy | JA Solar Code of Conduct</di
 <span class="qa-rank">#41</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Does your company have ISO 45001 / OHSAS 18001 certification?</span>
-<button class="status-btn ai" onclick="toggleStatus(41,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(41,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -827,7 +842,7 @@ Please refer to the Certificates folder for copies of individual certificates.</
 <span class="qa-rank">#42</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Do you have a responsible sourcing / procurement policy?</span>
-<button class="status-btn ai" onclick="toggleStatus(42,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(42,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -841,7 +856,7 @@ Supporting document: JA Solar Responsible Sourcing Policy Version 3.0</div>
 <span class="qa-rank">#43</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Is decarbonization part of your company strategy?</span>
-<button class="status-btn ai" onclick="toggleStatus(43,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(43,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -859,7 +874,7 @@ Supporting documents: 2024 JA Solar Sustainability and ESG Report | 2023 Climate
 <span class="qa-rank">#44</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What is the composition of your workforce (headcount, gender, age)?</span>
-<button class="status-btn ai" onclick="toggleStatus(44,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(44,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -873,7 +888,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#45</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">How do you manage wastewater / water discharge?</span>
-<button class="status-btn ai" onclick="toggleStatus(45,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(45,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -886,7 +901,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#46</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Have your GHG emissions been verified by a third party?</span>
-<button class="status-btn ai" onclick="toggleStatus(46,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(46,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -899,7 +914,7 @@ Supporting documents: 2024 JA Solar Environmental Sustainability Report</div>
 <span class="qa-rank">#47</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">What is your approach to product packaging / transport sustainability?</span>
-<button class="status-btn ai" onclick="toggleStatus(47,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(47,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -918,7 +933,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#48</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">What ESG ratings / scores does your company have (EcoVadis, CDP, etc.)?</span>
-<button class="status-btn ai" onclick="toggleStatus(48,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(48,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -937,7 +952,7 @@ Supporting document: EcoVadis scorecard | CDP response | 2024 JA Solar Sustainab
 <span class="qa-rank">#49</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Do you conduct internal audits / self-assessments on ESG / compliance?</span>
-<button class="status-btn ai" onclick="toggleStatus(49,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(49,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -956,7 +971,7 @@ Results are reported to the Board-level Compliance Management Committee. Support
 <span class="qa-rank">#50</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">What actions reduce environmental impact from product use / end-of-life?</span>
-<button class="status-btn ai" onclick="toggleStatus(50,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(50,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -973,7 +988,7 @@ Supporting documents: JA Solar Circular Economy Strategy | 2024 JA Solar Sustain
 <span class="qa-rank">#51</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you have operations or suppliers in Xinjiang?</span>
-<button class="status-btn ai" onclick="toggleStatus(51,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(51,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -984,7 +999,7 @@ Supporting documents: JA Solar Circular Economy Strategy | 2024 JA Solar Sustain
 <span class="qa-rank">#52</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you have a conflict minerals / responsible minerals policy?</span>
-<button class="status-btn ai" onclick="toggleStatus(52,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(52,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -998,7 +1013,7 @@ Supporting document: JA Solar Conflict Minerals Management Policy Version 2.0</d
 <span class="qa-rank">#53</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">What is your data security / privacy policy?</span>
-<button class="status-btn ai" onclick="toggleStatus(53,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(53,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1011,7 +1026,7 @@ Supporting document: JA Solar Code of Conduct</div>
 <span class="qa-rank">#54</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Do you make external disclosure about your environmental / social performance?</span>
-<button class="status-btn ai" onclick="toggleStatus(54,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(54,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1029,7 +1044,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#55</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">What GHG reduction initiatives / measures do you have?</span>
-<button class="status-btn ai" onclick="toggleStatus(55,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(55,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1059,7 +1074,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#56</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you have emergency response / fire safety procedures?</span>
-<button class="status-btn ai" onclick="toggleStatus(56,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(56,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1077,7 +1092,7 @@ Supporting document: JA Solar HSSE Plan</div>
 <span class="qa-rank">#57</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do workers pay recruitment fees? How do you manage migrant workers?</span>
-<button class="status-btn ai" onclick="toggleStatus(57,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(57,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1091,7 +1106,7 @@ Supporting documents: JA Solar Human Rights Policy | JA Solar Supplier Code of C
 <span class="qa-rank">#58</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">What is your impact on / approach to biodiversity?</span>
-<button class="status-btn ai" onclick="toggleStatus(58,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(58,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1104,7 +1119,7 @@ Supporting documents: JA Solar Biodiversity Policy | 2024 JA Solar TNFD Report</
 <span class="qa-rank">#59</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Do you conduct environmental monitoring (air, water, noise, soil)?</span>
-<button class="status-btn ai" onclick="toggleStatus(59,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(59,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1123,7 +1138,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#60</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Have you assessed environmental risks / impacts of your operations?</span>
-<button class="status-btn ai" onclick="toggleStatus(60,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(60,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1143,7 +1158,7 @@ Supporting document: 2024 JA Solar Environmental Sustainability Report</div>
 <span class="qa-rank">#61</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Do you conduct internal ESG / social compliance reporting to management?</span>
-<button class="status-btn ai" onclick="toggleStatus(61,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(61,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1156,7 +1171,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#62</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Can your company accept third-party / on-site audits?</span>
-<button class="status-btn ai" onclick="toggleStatus(62,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(62,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1169,7 +1184,7 @@ Supporting document: SSI audit reports | EcoVadis scorecard</div>
 <span class="qa-rank">#63</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Does your company have ISO 9001 certification?</span>
-<button class="status-btn ai" onclick="toggleStatus(63,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(63,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1183,7 +1198,7 @@ Please refer to the Certificates folder for copies of individual certificates.</
 <span class="qa-rank">#64</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Does your company comply with applicable labor laws?</span>
-<button class="status-btn ai" onclick="toggleStatus(64,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(64,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1196,7 +1211,7 @@ Supporting documents: JA Solar Code of Conduct | JA Solar Human Rights Policy</d
 <span class="qa-rank">#65</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What safety training do you provide?</span>
-<button class="status-btn ai" onclick="toggleStatus(65,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(65,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1217,7 +1232,7 @@ Supporting document: JA Solar HSSE Plan | 2024 JA Solar Sustainability and ESG R
 <span class="qa-rank">#66</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">How do you monitor / calculate your GHG emissions?</span>
-<button class="status-btn ai" onclick="toggleStatus(66,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(66,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1236,7 +1251,7 @@ Supporting documents: 2024 JA Solar Environmental Sustainability Report</div>
 <span class="qa-rank">#67</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Does your company have written corporate sustainability principles / commitments?</span>
-<button class="status-btn ai" onclick="toggleStatus(67,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(67,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1249,7 +1264,7 @@ Supporting document: JA Solar Environmental, Social, and Governance (ESG) Sustai
 <span class="qa-rank">#68</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">What due diligence do you perform on human rights / ESG?</span>
-<button class="status-btn ai" onclick="toggleStatus(68,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(68,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1268,7 +1283,7 @@ Supporting documents: JA Solar Human Rights Policy | JA Solar Responsible Sourci
 <span class="qa-rank">#69</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Do you have green factory / green manufacturing certifications?</span>
-<button class="status-btn ai" onclick="toggleStatus(69,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(69,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1284,7 +1299,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#70</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">What compliance / ESG training do you provide to employees?</span>
-<button class="status-btn ai" onclick="toggleStatus(70,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(70,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1305,7 +1320,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#71</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Has your company joined international sustainability initiatives (RE100, EP100, etc.)?</span>
-<button class="status-btn ai" onclick="toggleStatus(71,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(71,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1326,7 +1341,7 @@ Supporting document: UNGC participant page | 2024 JA Solar Sustainability and ES
 <span class="qa-rank">#72</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What are your policies on leave (sick, maternity, annual)?</span>
-<button class="status-btn ai" onclick="toggleStatus(72,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(72,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1340,7 +1355,7 @@ Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct</d
 <span class="qa-rank">#73</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">What stakeholder engagement / materiality assessment do you conduct?</span>
-<button class="status-btn ai" onclick="toggleStatus(73,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(73,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1353,7 +1368,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 <span class="qa-rank">#74</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">How do you manage / audit your suppliers on ESG?</span>
-<button class="status-btn ai" onclick="toggleStatus(74,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(74,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1373,7 +1388,7 @@ Supporting documents: JA Solar Responsible Sourcing Policy | JA Solar Supplier C
 <span class="qa-rank">#75</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Do you assess sustainability performance of your supply chain partners?</span>
-<button class="status-btn ai" onclick="toggleStatus(75,this)">🤖 AI生成</button>
+<button class="status-btn ai" onclick="toggleStatus(75,this)">⏳ 待验证</button>
 </div>
 <div class="qa-body">
 <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
@@ -1447,7 +1462,7 @@ async function loadFromGitHub() {
     var rawR = await fetch('https://raw.githubusercontent.com/' + OWNER + '/' + REPO + '/main/' + DATA_FILE + '?t=' + Date.now());
     var content = await rawR.json();
     content.forEach(function(item) {
-      state[item.id] = {status: item.status || 'ai', answer: item.answer};
+      state[item.id] = {status: item.status || 'pending', answer: item.answer};
     });
     applyState();
     updateProgress();
@@ -1488,7 +1503,7 @@ async function saveToGitHub() {
     var entry = state[id] || {};
     out.push({
       id: parseInt(id),
-      status: entry.status || 'ai',
+      status: entry.status || 'pending',
       answer: item.querySelector('.qa-answer').textContent
     });
   });
@@ -1540,10 +1555,10 @@ function markDirty(id, el) {
 
 function toggleStatus(id, btn) {
   if (!state[id]) state[id] = {};
-  var next = (state[id].status || 'ai') === 'ai' ? 'verified' : 'ai';
+  var next = (state[id].status || 'pending') === 'pending' ? 'verified' : 'pending';
   state[id].status = next;
   btn.className = 'status-btn ' + next;
-  btn.textContent = next === 'verified' ? '✅ 已验证' : '🤖 AI生成';
+  btn.textContent = next === 'verified' ? '✅ 已验证' : '⏳ 待验证';
   dirty = true;
   scheduleSave();
   updateProgress();
@@ -1579,12 +1594,12 @@ function applyFilters() {
   document.querySelectorAll('.qa-item').forEach(function(item) {
     var id = item.getAttribute('data-id');
     var cat = item.getAttribute('data-cat');
-    var status = (state[id] || {}).status || 'ai';
+    var status = (state[id] || {}).status || 'pending';
     var q = item.querySelector('.qa-question').textContent.toLowerCase();
     var a = item.querySelector('.qa-answer').textContent.toLowerCase();
     var show = true;
     if (activeCat !== 'all' && cat !== activeCat) show = false;
-    if (activeStatus === 'ai' && status !== 'ai') show = false;
+    if (activeStatus === 'pending' && status !== 'pending') show = false;
     if (activeStatus === 'verified' && status !== 'verified') show = false;
     if (searchTerm && !q.includes(searchTerm) && !a.includes(searchTerm)) show = false;
     item.classList.toggle('hidden', !show);
@@ -1621,6 +1636,88 @@ if (!tok) {
 } else {
   loadFromGitHub();
 }
+
+function openAddModal() {
+  document.getElementById('addModal').style.display = 'flex';
+  setTimeout(function(){ document.getElementById('newQuestion').focus(); }, 50);
+}
+function closeAddModal() {
+  document.getElementById('addModal').style.display = 'none';
+  document.getElementById('newQuestion').value = '';
+  document.getElementById('newAnswer').value = '';
+}
+function confirmAddQuestion() {
+  var q = document.getElementById('newQuestion').value.trim();
+  var a = document.getElementById('newAnswer').value.trim();
+  var cat = document.getElementById('newCat').value;
+  if (!q) { alert('Please enter a question.'); return; }
+
+  var maxId = 0;
+  document.querySelectorAll('.qa-item').forEach(function(item) {
+    var id = parseInt(item.getAttribute('data-id'));
+    if (id > maxId) maxId = id;
+  });
+  var newId = maxId + 1;
+  var newRank = document.querySelectorAll('.qa-item:not(.hidden)').length + 1;
+  var totalRank = document.querySelectorAll('.qa-item').length + 1;
+
+  state[newId] = {status: 'pending', answer: a};
+
+  var card = document.createElement('div');
+  card.className = 'qa-item open';
+  card.setAttribute('data-id', newId);
+  card.setAttribute('data-cat', cat);
+
+  function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  card.innerHTML = [
+    '<div class="qa-header">',
+      '<span class="qa-rank">#' + totalRank + '</span>',
+      '<span class="cat-badge cat-' + cat + '">' + cat + '</span>',
+      '<span class="qa-question">' + esc(q) + '</span>',
+      '<button class="status-btn ai" onclick="toggleStatus(' + newId + ',this)">⏳ 待验证</button>',
+    '</div>',
+    '<div class="qa-body">',
+      '<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>',
+      '<div class="qa-answer dirty" contenteditable="true" data-id="' + newId + '" oninput="markDirty(' + newId + ',this)">' + esc(a) + '</div>',
+    '</div>'
+  ].join('');
+
+  card.querySelector('.qa-header').addEventListener('click', function(e) {
+    if (e.target.classList.contains('status-btn')) return;
+    card.classList.toggle('open');
+  });
+
+  var noResults = document.getElementById('noResults');
+  noResults.parentNode.insertBefore(card, noResults);
+
+  dirty = true;
+  scheduleSave();
+  closeAddModal();
+  updateProgress();
+}
+
 </script>
+
+<div class="add-modal-overlay" id="addModal" style="display:none">
+  <div class="add-modal">
+    <h2>Add New Question</h2>
+    <label>Category</label>
+    <select id="newCat">
+      <option value="E">E — Environmental</option>
+      <option value="S">S — Social</option>
+      <option value="G">G — Governance</option>
+    </select>
+    <label>Question</label>
+    <input type="text" id="newQuestion" placeholder="Enter question text...">
+    <label>Answer</label>
+    <textarea id="newAnswer" placeholder="Enter answer text..."></textarea>
+    <div class="add-modal-actions">
+      <button class="add-modal-btn btn-cancel" onclick="closeAddModal()">Cancel</button>
+      <button class="add-modal-btn btn-confirm" onclick="confirmAddQuestion()">Add Question</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
