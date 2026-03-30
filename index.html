@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JA Solar ESG — Q&A Editor</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JA Solar ESG — Q&amp;A Editor</title>
 <style>
 :root{--bg:#f5f6fa;--card:#fff;--border:#e0e4ea;--text:#1a1d23;--text2:#6b7280;--accent:#3b82f6;--radius:10px;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -82,67 +83,62 @@ body{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;backgroun
 </style>
 </head>
 <body>
-
 <!-- Token modal -->
 <div class="modal-overlay" id="tokenModal" style="display:none">
-  <div class="modal">
-    <h2>Enter GitHub Token</h2>
-    <p>首次使用需要输入 GitHub Token，保存后不需要再次输入。<br>如果你是 Ray 的同事，向 Ray 索取 token。</p>
-    <input type="password" id="tokenInput" placeholder="ghp_..." autocomplete="off">
-    <button class="modal-btn" onclick="submitToken()">确认</button>
-    <p class="modal-note">Token 仅保存在你自己的浏览器中</p>
-  </div>
+<div class="modal">
+<h2>Enter GitHub Token</h2>
+<p>首次使用需要输入 GitHub Token，保存后不需要再次输入。<br/>如果你是 Ray 的同事，向 Ray 索取 token。</p>
+<input autocomplete="off" id="tokenInput" placeholder="ghp_..." type="password"/>
+<button class="modal-btn" onclick="submitToken()">确认</button>
+<p class="modal-note">Token 仅保存在你自己的浏览器中</p>
 </div>
-
+</div>
 <div class="topbar">
-  <div class="topbar-title">JA Solar ESG — Q&amp;A Editor</div>
-  <span class="sync-status" id="syncStatus">Connecting...</span>
-  <div class="progress-wrap">
-    <div class="progress-bar-outer"><div class="progress-bar-inner" id="progressBar" style="width:0%"></div></div>
-    <span class="progress-label" id="progressLabel">0 / 76 verified</span>
-  </div>
+<div class="topbar-title">JA Solar ESG — Q&amp;A Editor</div>
+<span class="sync-status" id="syncStatus">Connecting...</span>
+<div class="progress-wrap">
+<div class="progress-bar-outer"><div class="progress-bar-inner" id="progressBar" style="width:0%"></div></div>
+<span class="progress-label" id="progressLabel">0 / 75 verified</span>
 </div>
-
+</div>
 <div class="filters">
-  <span class="filter-label">Category:</span>
-  <button class="fbtn active" data-filter-cat="all" onclick="setCatFilter('all',this)">All (76)</button>
-  <button class="fbtn f-E" data-filter-cat="E" onclick="setCatFilter('E',this)">E Environmental (22)</button>
-  <button class="fbtn f-S" data-filter-cat="S" onclick="setCatFilter('S',this)">S Social (25)</button>
-  <button class="fbtn f-G" data-filter-cat="G" onclick="setCatFilter('G',this)">G Governance (29)</button>
-  <div class="filter-divider"></div>
-  <span class="filter-label">Status:</span>
-  <button class="fbtn f-ai" onclick="toggleStatusFilter('ai',this)">🤖 AI生成</button>
-  <button class="fbtn f-verified" onclick="toggleStatusFilter('verified',this)">✅ 已验证</button>
-  <input class="search-input" type="text" placeholder="Search questions..." oninput="doSearch(this.value)">
+<span class="filter-label">Category:</span>
+<button class="fbtn active" data-filter-cat="all" onclick="setCatFilter('all',this)">All (75)</button>
+<button class="fbtn f-E" data-filter-cat="E" onclick="setCatFilter('E',this)">E Environmental (22)</button>
+<button class="fbtn f-S" data-filter-cat="S" onclick="setCatFilter('S',this)">S Social (25)</button>
+<button class="fbtn f-G" data-filter-cat="G" onclick="setCatFilter('G',this)">G Governance (29)</button>
+<div class="filter-divider"></div>
+<span class="filter-label">Status:</span>
+<button class="fbtn f-ai" onclick="toggleStatusFilter('ai',this)">🤖 AI生成</button>
+<button class="fbtn f-verified" onclick="toggleStatusFilter('verified',this)">✅ 已验证</button>
+<input class="search-input" oninput="doSearch(this.value)" placeholder="Search questions..." type="text"/>
 </div>
-
 <div class="main">
-<div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="0" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#1</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">Do you have a forced labor / modern slavery policy?</span>
-    <button class="status-btn ai" onclick="toggleStatus(0,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="0" oninput="markDirty(0,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar does not tolerate any form of modern slavery, including forced labour, prison labour, indentured labour and human trafficking. The JA Solar Human Rights Policy explicitly prohibits all forms of forced labor throughout operations and the supply chain. The policy is approved by the Board-level Compliance Management Committee and reviewed at least annually. JA Solar has also issued regional Modern Slavery Statements and signed the Solar Industry Forced Labor Prevention Pledge.
+<div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="0">
+<div class="qa-header">
+<span class="qa-rank">#1</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">Do you have a forced labor / modern slavery policy?</span>
+<button class="status-btn ai" onclick="toggleStatus(0,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="0" oninput="markDirty(0,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar does not tolerate any form of modern slavery, including forced labour, prison labour, indentured labour and human trafficking. The JA Solar Human Rights Policy explicitly prohibits all forms of forced labor throughout operations and the supply chain. The policy is approved by the Board-level Compliance Management Committee and reviewed at least annually. JA Solar has also issued regional Modern Slavery Statements and signed the Solar Industry Forced Labor Prevention Pledge.
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar GmbH UK Modern Slavery Statement 2024 | JA Solar USA Inc. Canada Annual S-211 Report 2025 | Solar Industry Forced Labor Prevention Pledge</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="1" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#2</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">Please provide / report your GHG emissions (Scope 1, 2, 3)</span>
-    <button class="status-btn ai" onclick="toggleStatus(1,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="1" oninput="markDirty(1,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar conducts GHG inventory at all production sites in accordance with ISO 14064-1:2018 and the GHG Protocol Corporate Accounting and Reporting Standard, covering Scope 1, 2, and 3 emissions. The 2024 GHG emissions have been independently verified by SGS in accordance with ISO 14064-3:2019 (verification statement issued April 2025, reasonable assurance).
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="1">
+<div class="qa-header">
+<span class="qa-rank">#2</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">Please provide / report your GHG emissions (Scope 1, 2, 3)</span>
+<button class="status-btn ai" onclick="toggleStatus(1,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="1" oninput="markDirty(1,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar conducts GHG inventory at all production sites in accordance with ISO 14064-1:2018 and the GHG Protocol Corporate Accounting and Reporting Standard, covering Scope 1, 2, and 3 emissions. The 2024 GHG emissions have been independently verified by SGS in accordance with ISO 14064-3:2019 (verification statement issued April 2025, reasonable assurance).
 
 2024 GHG Emissions (SGS third-party verified, report period 01 Jan. – 31 Dec. 2024):
 - Scope 1: 107,171 tCO2e (direct emissions from owned/controlled sources)
@@ -167,49 +163,46 @@ Scope 3 breakdown (tCO2e):
 15. Investments: 29,670
 
 Supporting documents: 2024 JA Solar Sustainability and ESG Report | 2024 JA Solar Environmental Sustainability Report | GHG verification statement.pdf (SGS)</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="2" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#3</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Do you have an anti-corruption / anti-bribery policy?</span>
-    <button class="status-btn ai" onclick="toggleStatus(2,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="2" oninput="markDirty(2,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a dedicated Anti-Fraud Reporting Policy and Investigation Procedures that prohibits bribery, corruption, fraud, and other unethical conduct. Anti-corruption and anti-bribery provisions are also embedded in the JA Solar Code of Conduct. JA Solar has additionally established an Antitrust and Competition Law Global Compliance Policy.
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="2">
+<div class="qa-header">
+<span class="qa-rank">#3</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Do you have an anti-corruption / anti-bribery policy?</span>
+<button class="status-btn ai" onclick="toggleStatus(2,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="2" oninput="markDirty(2,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a dedicated Anti-Fraud Reporting Policy and Investigation Procedures that prohibits bribery, corruption, fraud, and other unethical conduct. Anti-corruption and anti-bribery provisions are also embedded in the JA Solar Code of Conduct. JA Solar has additionally established an Antitrust and Competition Law Global Compliance Policy.
 
 Supporting documents: JA Solar Anti-Fraud Reporting Policy and Investigation Procedures | JA Solar Code of Conduct | JA Solar Antitrust and Competition Law Global Compliance Policy</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="3" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#4</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">Do you have a non-discrimination / DEI policy?</span>
-    <button class="status-btn ai" onclick="toggleStatus(3,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="3" oninput="markDirty(3,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a dedicated Diversity, Equity &amp; Inclusion (DEI) Policy. The policy commits to equal pay for equal work, prohibits discrimination based on gender, age, race, nationality, religion, disability, and other characteristics, and strictly prohibits harassment and bullying. DEI principles apply to recruitment, promotion, compensation, and all employment decisions.
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="3">
+<div class="qa-header">
+<span class="qa-rank">#4</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">Do you have a non-discrimination / DEI policy?</span>
+<button class="status-btn ai" onclick="toggleStatus(3,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="3" oninput="markDirty(3,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a dedicated Diversity, Equity &amp; Inclusion (DEI) Policy. The policy commits to equal pay for equal work, prohibits discrimination based on gender, age, race, nationality, religion, disability, and other characteristics, and strictly prohibits harassment and bullying. DEI principles apply to recruitment, promotion, compensation, and all employment decisions.
 
 Supporting document: JA Solar Diversity Equity &amp; Inclusion Policy</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="4" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#5</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">What management system certifications does your company hold?</span>
-    <button class="status-btn ai" onclick="toggleStatus(4,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="4" oninput="markDirty(4,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar holds the following management system certifications across its production sites:
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="4">
+<div class="qa-header">
+<span class="qa-rank">#5</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">What management system certifications does your company hold?</span>
+<button class="status-btn ai" onclick="toggleStatus(4,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="4" oninput="markDirty(4,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar holds the following management system certifications across its production sites:
 - ISO 14001:2015 — Environmental Management System (all production sites), valid until May 2027
 - ISO 45001:2018 — Occupational Health &amp; Safety Management System, valid until May 2027
 - ISO 9001:2015 — Quality Management System, valid until May 2027
@@ -219,88 +212,66 @@ Supporting document: JA Solar Diversity Equity &amp; Inclusion Policy</div>
 Please refer to the Certificates folder for copies of individual certificates.
 
 Supporting document: ISO 45001 9001 14001-2027.5.pdf (ISO 14001, ISO 45001, ISO 9001 certificates)</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="5" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#6</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">Do you have a product carbon footprint / EPD / LCA?</span>
-    <button class="status-btn ai" onclick="toggleStatus(5,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="5" oninput="markDirty(5,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has conducted a carbon life cycle assessment (LCA) of its solar modules and obtained Environmental Product Declarations (EPDs). JA Solar has also conducted an ECS (Environmental Carbon Score) simulation. All mainstream JA Solar products have achieved 100% carbon footprint certifications.
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="5">
+<div class="qa-header">
+<span class="qa-rank">#6</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">Do you have a product carbon footprint / EPD / LCA?</span>
+<button class="status-btn ai" onclick="toggleStatus(5,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="5" oninput="markDirty(5,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has conducted a carbon life cycle assessment (LCA) of its solar modules and obtained Environmental Product Declarations (EPDs). JA Solar has also conducted an ECS (Environmental Carbon Score) simulation. All mainstream JA Solar products have achieved 100% carbon footprint certifications.
 
 Please refer to the EPD documents folder or contact your sales representative for the relevant product EPD.
 
 Supporting document: EPD documents folder</div>
-    
-  </div>
-</div><div class="qa-item" data-id="6" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#7</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">What is your energy consumption and what proportion is renewable?</span>
-    <button class="status-btn ai" onclick="toggleStatus(6,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="6" oninput="markDirty(6,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">In 2024, JA Solar achieved a green electricity usage ratio of 34% across its manufacturing facilities (a 6% increase from 2023), through the construction of distributed photovoltaic power plants and procurement of green power. The installed capacity of self-consumption distributed PV plants reached 298 MW in 2024, an increase of 160 MW from 2023.
+</div>
+</div><div class="qa-item" data-cat="E" data-id="6">
+<div class="qa-header">
+<span class="qa-rank">#7</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">What is your energy consumption and what proportion is renewable?</span>
+<button class="status-btn ai" onclick="toggleStatus(6,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="6" oninput="markDirty(6,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">In 2024, JA Solar achieved a green electricity usage ratio of 34% across its manufacturing facilities (a 6% increase from 2023), through the construction of distributed photovoltaic power plants and procurement of green power. The installed capacity of self-consumption distributed PV plants reached 298 MW in 2024, an increase of 160 MW from 2023.
 
 A smart Energy Management System (EMS) is deployed to monitor and optimize energy use in real time. Detailed energy consumption data (total consumption, breakdown by energy type) is available in the 2024 JA Solar Sustainability and ESG Report (page 131).
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="7" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#8</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">What are your wage and benefit policies?</span>
-    <button class="status-btn ai" onclick="toggleStatus(7,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="7" oninput="markDirty(7,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar ensures all employees receive remuneration that: (1) meets at least the applicable legal minimum wage in each jurisdiction; (2) is sufficient to cover basic needs; (3) includes overtime pay in accordance with national law. Employees receive legally mandated benefits including social insurance contributions.
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="7">
+<div class="qa-header">
+<span class="qa-rank">#8</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">What are your wage and benefit policies?</span>
+<button class="status-btn ai" onclick="toggleStatus(7,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="7" oninput="markDirty(7,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar ensures all employees receive remuneration that: (1) meets at least the applicable legal minimum wage in each jurisdiction; (2) is sufficient to cover basic needs; (3) includes overtime pay in accordance with national law. Employees receive legally mandated benefits including social insurance contributions.
 
 Wages are paid on time and in full. Recruitment fees are never charged to workers. No deductions are made as disciplinary measures.
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="8" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#9</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Please provide your Bill of Materials / supply chain traceability</span>
-    <button class="status-btn ai" onclick="toggleStatus(8,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="8" oninput="markDirty(8,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Moderate: JA Solar has identified material Tier One suppliers and has partially or fully mapped the supply chains for key products and services.
-
-JA Solar is developing a detailed traceability mapping of its supply chain, tracing back to raw materials, and expects its direct suppliers to support and contribute to this end with respect to the complete supply chain. This mapping will significantly facilitate JA Solar's due diligence efforts as it will enable it to have a full picture of all companies and operators encompassing its supply chain.
-
-For specific due diligence requests (e.g., polysilicon supply chain map or BOM), please contact the relevant sales/pre-sales representative. A confidentiality agreement may be required.
-
-Supporting documents: JA Solar Responsible Sourcing Policy Version 3.0 | JA Solar Supplier Code of Conduct Version 2.0</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="9" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#10</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">How do you manage waste (hazardous and non-hazardous)?</span>
-    <button class="status-btn ai" onclick="toggleStatus(9,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="9" oninput="markDirty(9,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar strictly complies with waste management laws and regulations at all operating locations, following the principles of reduction, resource utilization, and harmlessness. Key measures include:
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="9">
+<div class="qa-header">
+<span class="qa-rank">#9</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">How do you manage waste (hazardous and non-hazardous)?</span>
+<button class="status-btn ai" onclick="toggleStatus(9,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="9" oninput="markDirty(9,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar strictly complies with waste management laws and regulations at all operating locations, following the principles of reduction, resource utilization, and harmlessness. Key measures include:
 - Waste Sorting: Strict waste classification to increase recycling rates
 - Material Recycling: Silicon scraps and other production materials are recycled
 - Packaging Recycling: Recyclable packaging promoted with recycling systems established
@@ -308,34 +279,32 @@ Supporting documents: JA Solar Responsible Sourcing Policy Version 3.0 | JA Sola
 - Solid Waste: Managed in accordance with national and local environmental laws
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="10" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#11</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Does your company have ISO 14001 certification?</span>
-    <button class="status-btn ai" onclick="toggleStatus(10,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="10" oninput="markDirty(10,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. All JA Solar production sites that have officially commenced operations hold ISO 14001:2015 Environmental Management System certification.
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="10">
+<div class="qa-header">
+<span class="qa-rank">#10</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Does your company have ISO 14001 certification?</span>
+<button class="status-btn ai" onclick="toggleStatus(10,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="10" oninput="markDirty(10,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. All JA Solar production sites that have officially commenced operations hold ISO 14001:2015 Environmental Management System certification.
 
 Please refer to the Certificates folder for copies of individual certificates.</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="11" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#12</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">What is your occupational health and safety policy / management system?</span>
-    <button class="status-btn ai" onclick="toggleStatus(11,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="11" oninput="markDirty(11,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has an ISO 45001-certified Occupational Health and Safety (OHS) Management System. JA Solar strictly abides by the Law of the People's Republic of China on Work Safety, the Law on the Prevention and Control of Occupational Diseases, and applicable laws at each operation location.
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="11">
+<div class="qa-header">
+<span class="qa-rank">#11</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">What is your occupational health and safety policy / management system?</span>
+<button class="status-btn ai" onclick="toggleStatus(11,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="11" oninput="markDirty(11,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has an ISO 45001-certified Occupational Health and Safety (OHS) Management System. JA Solar strictly abides by the Law of the People's Republic of China on Work Safety, the Law on the Prevention and Control of Occupational Diseases, and applicable laws at each operation location.
 
 Key elements:
 - EHS Management System Manual and EHS Accident Management Procedures are in place; a Safety Committee has been established
@@ -345,36 +314,34 @@ Key elements:
 - PPE is provided to all relevant employees; EHS training is mandatory for all employees
 
 Supporting documents: JA Solar Environment Health &amp; Safety Policy | JA Solar HSSE Plan</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="12" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#13</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">How do you manage air emissions / pollution?</span>
-    <button class="status-btn ai" onclick="toggleStatus(12,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="12" oninput="markDirty(12,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar applies a dual control mechanism of "self-inspection + external audit" for air emissions management. Each production site is equipped with waste gas treatment facilities. The concentration of purified gases is continuously monitored to ensure all air pollutants meet applicable emission standards.
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="12">
+<div class="qa-header">
+<span class="qa-rank">#12</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">How do you manage air emissions / pollution?</span>
+<button class="status-btn ai" onclick="toggleStatus(12,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="12" oninput="markDirty(12,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar applies a dual control mechanism of "self-inspection + external audit" for air emissions management. Each production site is equipped with waste gas treatment facilities. The concentration of purified gases is continuously monitored to ensure all air pollutants meet applicable emission standards.
 
 Key controlled air pollutants: nitrogen oxides (NOx), sulfur oxides (SOx), volatile organic compounds (VOCs), ammonia, and particulate matter (PM). Low-VOC materials are used in production to minimize emissions.
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="13" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#14</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">How do you handle workplace accidents / incidents?</span>
-    <button class="status-btn ai" onclick="toggleStatus(13,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="13" oninput="markDirty(13,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar records and investigates all workplace accidents and incidents. JA Solar has established formal Accident Reporting and Investigation Control Procedures (EHS Accident Management Procedures) as part of its ISO 45001-certified OHS Management System.
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="13">
+<div class="qa-header">
+<span class="qa-rank">#13</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">How do you handle workplace accidents / incidents?</span>
+<button class="status-btn ai" onclick="toggleStatus(13,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="13" oninput="markDirty(13,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar records and investigates all workplace accidents and incidents. JA Solar has established formal Accident Reporting and Investigation Control Procedures (EHS Accident Management Procedures) as part of its ISO 45001-certified OHS Management System.
 
 When a workplace accident or near-miss occurs:
 1. Immediate response: medical attention and site securing
@@ -385,19 +352,18 @@ When a workplace accident or near-miss occurs:
 6. Annual accident summary reports are compiled, including calculation of accident frequency rate, severity rate, and incident rate
 
 Supporting document: JA Solar HSSE Plan | 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="14" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#15</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">How do you manage water consumption / water resources?</span>
-    <button class="status-btn ai" onclick="toggleStatus(14,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="14" oninput="markDirty(14,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar has implemented the following water management measures at production sites:
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="14">
+<div class="qa-header">
+<span class="qa-rank">#14</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">How do you manage water consumption / water resources?</span>
+<button class="status-btn ai" onclick="toggleStatus(14,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="14" oninput="markDirty(14,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar has implemented the following water management measures at production sites:
 - Water-saving devices (sensor-based faucets and water-efficient equipment)
 - Wastewater recycling systems — treated wastewater is reused in production
 - Rainwater harvesting for landscaping and non-production uses
@@ -406,19 +372,18 @@ Supporting document: JA Solar HSSE Plan | 2024 JA Solar Sustainability and ESG R
 In 2024, 100% of wastewater was compliantly treated with no incidents of exceeding discharge standards or environmental pollution. Detailed water consumption data is in the 2024 JA Solar Sustainability and ESG Report.
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="15" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#16</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">What is your grievance / whistleblowing mechanism?</span>
-    <button class="status-btn ai" onclick="toggleStatus(15,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="15" oninput="markDirty(15,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar operates the SpeakUp whistleblower program — a multi-channel, confidential grievance mechanism:
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="15">
+<div class="qa-header">
+<span class="qa-rank">#15</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">What is your grievance / whistleblowing mechanism?</span>
+<button class="status-btn ai" onclick="toggleStatus(15,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="15" oninput="markDirty(15,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar operates the SpeakUp whistleblower program — a multi-channel, confidential grievance mechanism:
 - Hotline: +86-10-63611911
 - Email
 - Postal mail
@@ -428,33 +393,31 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 Reports can be made anonymously. A strict no-retaliation policy applies to all reporters. Cases are investigated by the Compliance function and results reported to the Board-level Compliance Management Committee.
 
 Supporting document: JA Solar Whistleblower Protection and Integrity Reporting Policy</div>
-    
-  </div>
-</div><div class="qa-item" data-id="16" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#17</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">What is your policy on child labor?</span>
-    <button class="status-btn ai" onclick="toggleStatus(16,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="16" oninput="markDirty(16,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">In line with the ILO Convention, JA Solar prohibits child labour. We do not employ anyone below the applicable legal minimum age in the relevant jurisdiction (typically under the age of 16). Young workers under 18 shall not perform high-risk work, including night shifts and overtime involving chemical hazards. These standards apply to direct employment and are extended to the supply chain via the Supplier Code of Conduct. No identity documents are retained and no recruitment fees are charged.
+</div>
+</div><div class="qa-item" data-cat="S" data-id="16">
+<div class="qa-header">
+<span class="qa-rank">#16</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">What is your policy on child labor?</span>
+<button class="status-btn ai" onclick="toggleStatus(16,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="16" oninput="markDirty(16,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">In line with the ILO Convention, JA Solar prohibits child labour. We do not employ anyone below the applicable legal minimum age in the relevant jurisdiction (typically under the age of 16). Young workers under 18 shall not perform high-risk work, including night shifts and overtime involving chemical hazards. These standards apply to direct employment and are extended to the supply chain via the Supplier Code of Conduct. No identity documents are retained and no recruitment fees are charged.
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct | JA Solar Supplier Code of Conduct</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="17" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#18</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">What is your approach to circular economy / product recycling / end-of-life?</span>
-    <button class="status-btn ai" onclick="toggleStatus(17,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="17" oninput="markDirty(17,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar promotes a circular economy approach throughout the product lifecycle:
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="17">
+<div class="qa-header">
+<span class="qa-rank">#17</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">What is your approach to circular economy / product recycling / end-of-life?</span>
+<button class="status-btn ai" onclick="toggleStatus(17,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="17" oninput="markDirty(17,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar promotes a circular economy approach throughout the product lifecycle:
 - Design: Easy-disassembly frameworks, polyurethane composite frames (100% recyclable), lead-free solder ribbons, fluorine-free backsheets
 - End-of-Life: Long-term strategic partnership with PV CYCLE for global module take-back and recycling
 - WEEE compliance: Registered in 17 European countries, covering &gt;7 GW and &gt;37,000 tonnes
@@ -462,33 +425,31 @@ Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct | 
 - National R&amp;D: Participates in the National Key R&amp;D Program for efficient wet-method PV module recycling
 
 Supporting documents: JA Solar Circular Economy Strategy | 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="18" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#19</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">How do you manage contractor / subcontractor safety and compliance?</span>
-    <button class="status-btn ai" onclick="toggleStatus(18,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="18" oninput="markDirty(18,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar requires all contractors and subcontractors to comply with relevant OHS, environmental, and labor standards before commencing work. Requirements are communicated through the Supplier Code of Conduct and contract terms. On-site contractors are subject to the same safety rules as JA Solar employees, including PPE requirements, hazard identification, and emergency procedures.
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="18">
+<div class="qa-header">
+<span class="qa-rank">#18</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">How do you manage contractor / subcontractor safety and compliance?</span>
+<button class="status-btn ai" onclick="toggleStatus(18,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="18" oninput="markDirty(18,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar requires all contractors and subcontractors to comply with relevant OHS, environmental, and labor standards before commencing work. Requirements are communicated through the Supplier Code of Conduct and contract terms. On-site contractors are subject to the same safety rules as JA Solar employees, including PPE requirements, hazard identification, and emergency procedures.
 
 Supporting documents: JA Solar Supplier Code of Conduct Version 2.0 | JA Solar HSSE Plan</div>
-    
-  </div>
-</div><div class="qa-item" data-id="19" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#20</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">What are your working hours and overtime policies?</span>
-    <button class="status-btn ai" onclick="toggleStatus(19,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="19" oninput="markDirty(19,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar complies with applicable national labor laws on working hours in every jurisdiction where it operates. Key commitments:
+</div>
+</div><div class="qa-item" data-cat="S" data-id="19">
+<div class="qa-header">
+<span class="qa-rank">#19</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">What are your working hours and overtime policies?</span>
+<button class="status-btn ai" onclick="toggleStatus(19,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="19" oninput="markDirty(19,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar complies with applicable national labor laws on working hours in every jurisdiction where it operates. Key commitments:
 - Total working hours (including overtime) do not exceed legal limits
 - Overtime is compensated at legally required premium rates
 - Employees are entitled to regular rest days and time off
@@ -497,34 +458,32 @@ Supporting documents: JA Solar Supplier Code of Conduct Version 2.0 | JA Solar H
 Working hours provisions are covered in the JA Solar Human Rights Policy and Code of Conduct.
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="20" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#21</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">Does your company have an EMS (Environmental Management System)?</span>
-    <button class="status-btn ai" onclick="toggleStatus(20,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="20" oninput="markDirty(20,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has implemented an ISO 14001:2015-certified Environmental Management System (EMS) at all production sites. The EMS covers: environmental policy, objectives, and targets; environmental risk identification and assessment; operational controls; monitoring and measurement; internal auditing; management review; and continuous improvement.
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="20">
+<div class="qa-header">
+<span class="qa-rank">#20</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">Does your company have an EMS (Environmental Management System)?</span>
+<button class="status-btn ai" onclick="toggleStatus(20,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="20" oninput="markDirty(20,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has implemented an ISO 14001:2015-certified Environmental Management System (EMS) at all production sites. The EMS covers: environmental policy, objectives, and targets; environmental risk identification and assessment; operational controls; monitoring and measurement; internal auditing; management review; and continuous improvement.
 
 Supporting document: ISO 14001 certificates</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="21" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#22</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Do you have a corporate Code of Conduct / Business Ethics policy?</span>
-    <button class="status-btn ai" onclick="toggleStatus(21,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="21" oninput="markDirty(21,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a Corporate Code of Conduct that covers:
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="21">
+<div class="qa-header">
+<span class="qa-rank">#21</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Do you have a corporate Code of Conduct / Business Ethics policy?</span>
+<button class="status-btn ai" onclick="toggleStatus(21,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="21" oninput="markDirty(21,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a Corporate Code of Conduct that covers:
 - Anti-corruption and anti-bribery
 - Non-discrimination and equal opportunity
 - Working hours and labor rights
@@ -537,19 +496,18 @@ Supporting document: ISO 14001 certificates</div>
 - Freedom of association and collective bargaining
 
 Supporting document: JA Solar Code of Conduct</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="22" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#23</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">Has your company set GHG reduction targets? / Are your targets science-based (SBTi)?</span>
-    <button class="status-btn ai" onclick="toggleStatus(22,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="22" oninput="markDirty(22,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar's GHG reduction targets have been officially validated by the Science Based Targets initiative (SBTi) in 2024, aligned with the 1.5°C pathway:
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="22">
+<div class="qa-header">
+<span class="qa-rank">#22</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">Has your company set GHG reduction targets? / Are your targets science-based (SBTi)?</span>
+<button class="status-btn ai" onclick="toggleStatus(22,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="22" oninput="markDirty(22,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar's GHG reduction targets have been officially validated by the Science Based Targets initiative (SBTi) in 2024, aligned with the 1.5°C pathway:
 
 Short-term (by 2034):
 - Reduce absolute Scope 1 and Scope 2 GHG emissions by 58.8% vs. 2023 base year
@@ -561,36 +519,34 @@ Long-term (by 2050):
 - Achieve net-zero GHG emissions across the value chain by 2050
 
 Supporting documents: 2024 JA Solar Sustainability and ESG Report | SBTi target page</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="23" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#24</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Have you identified ESG risks in your operations / supply chain?</span>
-    <button class="status-btn ai" onclick="toggleStatus(23,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="23" oninput="markDirty(23,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has conducted a structured assessment to identify ESG risks across its operations and supply chain. Key environmental risks: GHG emissions, energy use, water consumption, waste and pollution. Key social risks: labor rights, OHS, supply chain human rights. Key governance risks: compliance, data security, anti-corruption.
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="23">
+<div class="qa-header">
+<span class="qa-rank">#23</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Have you identified ESG risks in your operations / supply chain?</span>
+<button class="status-btn ai" onclick="toggleStatus(23,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="23" oninput="markDirty(23,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has conducted a structured assessment to identify ESG risks across its operations and supply chain. Key environmental risks: GHG emissions, energy use, water consumption, waste and pollution. Key social risks: labor rights, OHS, supply chain human rights. Key governance risks: compliance, data security, anti-corruption.
 
 Risk outcomes and mitigation measures are detailed in the 2024 JA Solar Sustainability and ESG Report, 2023 TCFD Report, and 2024 TNFD Report.
 
 Supporting documents: 2024 JA Solar Sustainability and ESG Report | 2023 Climate-Related Disclosure and TCFD Report | 2024 JA Solar TNFD Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="24" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#25</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">What is your approach to community engagement / social contribution?</span>
-    <button class="status-btn ai" onclick="toggleStatus(24,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="24" oninput="markDirty(24,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar engages with local communities through multiple channels:
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="24">
+<div class="qa-header">
+<span class="qa-rank">#24</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">What is your approach to community engagement / social contribution?</span>
+<button class="status-btn ai" onclick="toggleStatus(24,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="24" oninput="markDirty(24,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar engages with local communities through multiple channels:
 - Community consultation in decisions that may affect local populations
 - Educational support and charitable contributions
 - Rural revitalization: talent development, cultural programs, ecological restoration, and industrial support
@@ -599,19 +555,18 @@ Supporting documents: 2024 JA Solar Sustainability and ESG Report | 2023 Climate
 Details and performance data are available in the 2024 JA Solar Sustainability and ESG Report.
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="25" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#26</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">How do you handle corrective actions from audit findings?</span>
-    <button class="status-btn ai" onclick="toggleStatus(25,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="25" oninput="markDirty(25,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">When issues or non-compliance are identified through audits (internal or third-party), JA Solar follows a structured corrective action process:
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="25">
+<div class="qa-header">
+<span class="qa-rank">#25</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">How do you handle corrective actions from audit findings?</span>
+<button class="status-btn ai" onclick="toggleStatus(25,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="25" oninput="markDirty(25,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">When issues or non-compliance are identified through audits (internal or third-party), JA Solar follows a structured corrective action process:
 1. Notify the relevant entity of the specific non-compliance and required correction
 2. Develop a detailed corrective action plan (goals, measures, responsible parties, deadlines)
 3. Track progress through regular meetings and follow-up assessments
@@ -619,46 +574,43 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 5. For persistently non-compliant suppliers: activate exit mechanism and blacklist
 
 Supporting documents: JA Solar Responsible Sourcing Policy | 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="26" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#27</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">What PPE / safety equipment do you provide?</span>
-    <button class="status-btn ai" onclick="toggleStatus(26,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="26" oninput="markDirty(26,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar provides appropriate PPE to all employees engaged in operations that require personal protection, in compliance with ISO 45001 requirements and applicable OHS regulations. PPE types are determined based on risk assessments for each work environment and may include: safety helmets, protective footwear, eye protection, respiratory protection, gloves, and high-visibility clothing. PPE usage is monitored and enforced.
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="26">
+<div class="qa-header">
+<span class="qa-rank">#26</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">What PPE / safety equipment do you provide?</span>
+<button class="status-btn ai" onclick="toggleStatus(26,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="26" oninput="markDirty(26,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar provides appropriate PPE to all employees engaged in operations that require personal protection, in compliance with ISO 45001 requirements and applicable OHS regulations. PPE types are determined based on risk assessments for each work environment and may include: safety helmets, protective footwear, eye protection, respiratory protection, gloves, and high-visibility clothing. PPE usage is monitored and enforced.
 
 Supporting documents: JA Solar Environment Health &amp; Safety Policy | JA Solar HSSE Plan</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="27" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#28</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Where do you source polysilicon / raw materials? (Supply chain origin)</span>
-    <button class="status-btn ai" onclick="toggleStatus(27,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="27" oninput="markDirty(27,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Please contact the Compliance and Traceability department.</div>
-    
-  </div>
-</div><div class="qa-item" data-id="28" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#29</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Does your company publish an ESG / sustainability report?</span>
-    <button class="status-btn ai" onclick="toggleStatus(28,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="28" oninput="markDirty(28,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar publishes the following sustainability disclosures annually:
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="27">
+<div class="qa-header">
+<span class="qa-rank">#27</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Where do you source polysilicon / raw materials? (Supply chain origin)</span>
+<button class="status-btn ai" onclick="toggleStatus(27,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="27" oninput="markDirty(27,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Please contact the Compliance and Traceability department.</div>
+</div>
+</div><div class="qa-item" data-cat="G" data-id="28">
+<div class="qa-header">
+<span class="qa-rank">#28</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Does your company publish an ESG / sustainability report?</span>
+<button class="status-btn ai" onclick="toggleStatus(28,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="28" oninput="markDirty(28,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar publishes the following sustainability disclosures annually:
 - JA Solar Sustainability and ESG Report (Chinese and English)
 - JA Solar Environmental Sustainability Report
 
@@ -667,34 +619,32 @@ Previously published: Greenhouse Gas Emissions Report, Climate-Related Disclosur
 All reports are publicly available on the JA Solar official website (www.jasolar.com → Sustainability → Download Center).
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="29" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#30</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">How do you verify worker identity documents and recruitment practices?</span>
-    <button class="status-btn ai" onclick="toggleStatus(29,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="29" oninput="markDirty(29,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar does not retain worker identity documents. No recruitment fees are charged to workers at any stage of the hiring process. To verify compliance, JA Solar has developed a Human Rights Due Diligence (HRDD) questionnaire aligned with international human rights standards. HRDD assessments (including worker interviews and document reviews) have been conducted at the Shanghai Fengxian and Yangzhou manufacturing facilities, with no evidence of forced labor found.
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="29">
+<div class="qa-header">
+<span class="qa-rank">#29</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">How do you verify worker identity documents and recruitment practices?</span>
+<button class="status-btn ai" onclick="toggleStatus(29,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="29" oninput="markDirty(29,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar does not retain worker identity documents. No recruitment fees are charged to workers at any stage of the hiring process. To verify compliance, JA Solar has developed a Human Rights Due Diligence (HRDD) questionnaire aligned with international human rights standards. HRDD assessments (including worker interviews and document reviews) have been conducted at the Shanghai Fengxian and Yangzhou manufacturing facilities, with no evidence of forced labor found.
 
 Supporting document: JA Solar Human Rights Policy | JA Solar Responsible Sourcing Policy</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="30" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#31</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">Has your company defined an environmental policy?</span>
-    <button class="status-btn ai" onclick="toggleStatus(30,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="30" oninput="markDirty(30,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a comprehensive environmental policy embedded in the JA Solar Environmental, Social, and Governance (ESG) Sustainability Policy, governing global operations. Key commitments:
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="30">
+<div class="qa-header">
+<span class="qa-rank">#30</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">Has your company defined an environmental policy?</span>
+<button class="status-btn ai" onclick="toggleStatus(30,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="30" oninput="markDirty(30,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a comprehensive environmental policy embedded in the JA Solar Environmental, Social, and Governance (ESG) Sustainability Policy, governing global operations. Key commitments:
 - Carbon peak by 2030 and carbon neutrality by 2060 (aligned with China's Dual Carbon Goals)
 - SBTi-aligned GHG reduction targets
 - Green manufacturing and eco-design principles
@@ -703,50 +653,47 @@ Supporting document: JA Solar Human Rights Policy | JA Solar Responsible Sourcin
 - Continuous waste and emission reduction
 
 Supporting documents: JA Solar Environmental, Social, and Governance (ESG) Sustainability Policy | JA Solar Environment Health &amp; Safety Policy</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="31" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#32</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">Do you have policies on working conditions (dormitory, sanitation, etc.)?</span>
-    <button class="status-btn ai" onclick="toggleStatus(31,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="31" oninput="markDirty(31,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar provides living and working conditions that comply with applicable regulations. Where company-provided dormitories are offered, facilities include: proper sanitation, adequate living space, safety provisions, fire exits, and reasonable privacy. Conditions are verified through internal audits and third-party CSR audits. Workers also have access to grievance mechanisms to raise any concerns about living conditions.
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="31">
+<div class="qa-header">
+<span class="qa-rank">#31</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">Do you have policies on working conditions (dormitory, sanitation, etc.)?</span>
+<button class="status-btn ai" onclick="toggleStatus(31,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="31" oninput="markDirty(31,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar provides living and working conditions that comply with applicable regulations. Where company-provided dormitories are offered, facilities include: proper sanitation, adequate living space, safety provisions, fire exits, and reasonable privacy. Conditions are verified through internal audits and third-party CSR audits. Workers also have access to grievance mechanisms to raise any concerns about living conditions.
 
 Supporting document: JA Solar Human Rights Policy</div>
-    
-  </div>
-</div><div class="qa-item" data-id="32" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#33</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">Does your company have a human rights policy?</span>
-    <button class="status-btn ai" onclick="toggleStatus(32,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="32" oninput="markDirty(32,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a dedicated Human Rights Policy covering: prohibition of forced labor and modern slavery; child labor prohibition; fair wages and working conditions; non-discrimination and DEI; freedom of association and collective bargaining; local community rights; supply chain human rights standards; and a SpeakUp grievance mechanism with no-retaliation guarantee.
+</div>
+</div><div class="qa-item" data-cat="S" data-id="32">
+<div class="qa-header">
+<span class="qa-rank">#32</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">Does your company have a human rights policy?</span>
+<button class="status-btn ai" onclick="toggleStatus(32,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="32" oninput="markDirty(32,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a dedicated Human Rights Policy covering: prohibition of forced labor and modern slavery; child labor prohibition; fair wages and working conditions; non-discrimination and DEI; freedom of association and collective bargaining; local community rights; supply chain human rights standards; and a SpeakUp grievance mechanism with no-retaliation guarantee.
 
 The policy is approved by the Board-level Compliance Management Committee and reviewed at least annually.
 
 Supporting document: JA Solar Human Rights Policy</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="33" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#34</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">How do you manage hazardous chemicals / substances?</span>
-    <button class="status-btn ai" onclick="toggleStatus(33,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="33" oninput="markDirty(33,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar strictly adheres to applicable laws and regulations on hazardous chemical management at all operating locations. Key measures:
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="33">
+<div class="qa-header">
+<span class="qa-rank">#33</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">How do you manage hazardous chemicals / substances?</span>
+<button class="status-btn ai" onclick="toggleStatus(33,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="33" oninput="markDirty(33,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar strictly adheres to applicable laws and regulations on hazardous chemical management at all operating locations. Key measures:
 - Proper storage, labeling, segregation, and handling of hazardous substances
 - Dedicated waste gas treatment facilities for chemical emissions
 - Low-VOC materials used in production to minimize emissions
@@ -755,19 +702,18 @@ Supporting document: JA Solar Human Rights Policy</div>
 - Safety Data Sheets (SDS) maintained for all hazardous substances
 
 Supporting documents: JA Solar Environment Health &amp; Safety Policy | JA Solar HSSE Plan</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="34" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#35</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">How do you ensure legal / regulatory compliance?</span>
-    <button class="status-btn ai" onclick="toggleStatus(34,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="34" oninput="markDirty(34,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar has established a comprehensive compliance management system covering environmental, labor, product safety, data protection, and anti-corruption regulations across all jurisdictions. Key measures:
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="34">
+<div class="qa-header">
+<span class="qa-rank">#34</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">How do you ensure legal / regulatory compliance?</span>
+<button class="status-btn ai" onclick="toggleStatus(34,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="34" oninput="markDirty(34,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar has established a comprehensive compliance management system covering environmental, labor, product safety, data protection, and anti-corruption regulations across all jurisdictions. Key measures:
 - Regular internal audits and self-assessments
 - Third-party external audits (including EcoVadis, SSI, CSR audits)
 - Legal compliance monitoring by the Compliance Management Committee
@@ -775,76 +721,71 @@ Supporting documents: JA Solar Environment Health &amp; Safety Policy | JA Solar
 - Employee compliance training and Code of Conduct acknowledgment
 
 Supporting documents: JA Solar Code of Conduct | JA Solar Anti-Fraud Reporting Policy and Investigation Procedures</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="35" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#36</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">Do you have a policy against harassment / disciplinary procedures?</span>
-    <button class="status-btn ai" onclick="toggleStatus(35,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="35" oninput="markDirty(35,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar's Human Rights Policy and Code of Conduct explicitly prohibit all forms of harassment, bullying, and discriminatory treatment in the workplace. A clear disciplinary procedure applies to violations. Employees can report issues confidentially via the SpeakUp whistleblower channel. A no-retaliation policy protects those who raise concerns.
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="35">
+<div class="qa-header">
+<span class="qa-rank">#35</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">Do you have a policy against harassment / disciplinary procedures?</span>
+<button class="status-btn ai" onclick="toggleStatus(35,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="35" oninput="markDirty(35,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar's Human Rights Policy and Code of Conduct explicitly prohibit all forms of harassment, bullying, and discriminatory treatment in the workplace. A clear disciplinary procedure applies to violations. Employees can report issues confidentially via the SpeakUp whistleblower channel. A no-retaliation policy protects those who raise concerns.
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct | JA Solar Whistleblower Protection and Integrity Reporting Policy</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="36" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#37</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Do you have a Supplier Code of Conduct?</span>
-    <button class="status-btn ai" onclick="toggleStatus(36,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="36" oninput="markDirty(36,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a Supplier Code of Conduct (Version 2.0) that all core suppliers are required to sign before being admitted to the approved supplier list. As of 2024, 100% of core suppliers have signed the Supplier Code of Conduct. The CoC covers: labor rights and human rights; environmental protection; OHS; business ethics and anti-corruption; data security; and grievance mechanisms.
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="36">
+<div class="qa-header">
+<span class="qa-rank">#36</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Do you have a Supplier Code of Conduct?</span>
+<button class="status-btn ai" onclick="toggleStatus(36,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="36" oninput="markDirty(36,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a Supplier Code of Conduct (Version 2.0) that all core suppliers are required to sign before being admitted to the approved supplier list. As of 2024, 100% of core suppliers have signed the Supplier Code of Conduct. The CoC covers: labor rights and human rights; environmental protection; OHS; business ethics and anti-corruption; data security; and grievance mechanisms.
 
 Supporting document: JA Solar Supplier Code of Conduct Version 2.0</div>
-    
-  </div>
-</div><div class="qa-item" data-id="37" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#38</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Can you provide your supply chain map / supplier list?</span>
-    <button class="status-btn ai" onclick="toggleStatus(37,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="37" oninput="markDirty(37,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Please contact the Compliance and Traceability department.</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="38" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#39</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">Do you have a policy on freedom of association and collective bargaining?</span>
-    <button class="status-btn ai" onclick="toggleStatus(38,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="38" oninput="markDirty(38,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar recognizes and respects employees' rights to freedom of association and collective bargaining in accordance with ILO conventions and applicable national laws. These rights are stated in the JA Solar Human Rights Policy and the Code of Conduct. The same standards are extended to suppliers via the Supplier Code of Conduct.
+</div>
+</div><div class="qa-item" data-cat="G" data-id="37">
+<div class="qa-header">
+<span class="qa-rank">#37</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Can you provide your supply chain map / supplier list?</span>
+<button class="status-btn ai" onclick="toggleStatus(37,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="37" oninput="markDirty(37,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Please contact the Compliance and Traceability department.</div>
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="38">
+<div class="qa-header">
+<span class="qa-rank">#38</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">Do you have a policy on freedom of association and collective bargaining?</span>
+<button class="status-btn ai" onclick="toggleStatus(38,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="38" oninput="markDirty(38,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar recognizes and respects employees' rights to freedom of association and collective bargaining in accordance with ILO conventions and applicable national laws. These rights are stated in the JA Solar Human Rights Policy and the Code of Conduct. The same standards are extended to suppliers via the Supplier Code of Conduct.
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="39" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#40</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Does your company follow GRI / UNGC / other international frameworks?</span>
-    <button class="status-btn ai" onclick="toggleStatus(39,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="39" oninput="markDirty(39,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar participates in and aligns with the following international frameworks:
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="39">
+<div class="qa-header">
+<span class="qa-rank">#39</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Does your company follow GRI / UNGC / other international frameworks?</span>
+<button class="status-btn ai" onclick="toggleStatus(39,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="39" oninput="markDirty(39,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar participates in and aligns with the following international frameworks:
 - United Nations Global Compact (UNGC) — signatory; reports annually on progress against the Ten Principles
 - GRI Standards — referenced in JA Solar's ESG reporting
 - TCFD recommendations — Climate-Related Disclosure and TCFD Report (most recently: 2023)
@@ -852,125 +793,117 @@ Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct</d
 - SBTi — GHG reduction targets officially validated
 
 Supporting documents: UNGC participant page | 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="40" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#41</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">Do you provide employment contracts / appointment letters to all workers?</span>
-    <button class="status-btn ai" onclick="toggleStatus(40,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="40" oninput="markDirty(40,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar provides written employment contracts to all employees prior to commencement of employment, clearly stating: job title and responsibilities; compensation and benefits; working hours and leave entitlements; applicable legal rights; and termination conditions. This is in compliance with applicable labor laws in each jurisdiction.
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="40">
+<div class="qa-header">
+<span class="qa-rank">#40</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">Do you provide employment contracts / appointment letters to all workers?</span>
+<button class="status-btn ai" onclick="toggleStatus(40,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="40" oninput="markDirty(40,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar provides written employment contracts to all employees prior to commencement of employment, clearly stating: job title and responsibilities; compensation and benefits; working hours and leave entitlements; applicable legal rights; and termination conditions. This is in compliance with applicable labor laws in each jurisdiction.
 
 Supporting document: JA Solar Human Rights Policy | JA Solar Code of Conduct</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="41" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#42</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Does your company have ISO 45001 / OHSAS 18001 certification?</span>
-    <button class="status-btn ai" onclick="toggleStatus(41,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="41" oninput="markDirty(41,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar holds ISO 45001:2018 Occupational Health and Safety Management System certification.
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="41">
+<div class="qa-header">
+<span class="qa-rank">#41</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Does your company have ISO 45001 / OHSAS 18001 certification?</span>
+<button class="status-btn ai" onclick="toggleStatus(41,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="41" oninput="markDirty(41,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar holds ISO 45001:2018 Occupational Health and Safety Management System certification.
 
 Please refer to the Certificates folder for copies of individual certificates.</div>
-    
-  </div>
-</div><div class="qa-item" data-id="42" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#43</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Do you have a responsible sourcing / procurement policy?</span>
-    <button class="status-btn ai" onclick="toggleStatus(42,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="42" oninput="markDirty(42,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a dedicated Responsible Sourcing Policy (Version 3.0) that governs all procurement activities. The policy is built on UNGP, ILO, OECD, and CSDDD guidelines, and covers: supplier selection criteria; ESG assessment requirements; audit procedures; corrective action processes; and exit mechanisms for non-compliant suppliers.
+</div>
+</div><div class="qa-item" data-cat="G" data-id="42">
+<div class="qa-header">
+<span class="qa-rank">#42</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Do you have a responsible sourcing / procurement policy?</span>
+<button class="status-btn ai" onclick="toggleStatus(42,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="42" oninput="markDirty(42,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a dedicated Responsible Sourcing Policy (Version 3.0) that governs all procurement activities. The policy is built on UNGP, ILO, OECD, and CSDDD guidelines, and covers: supplier selection criteria; ESG assessment requirements; audit procedures; corrective action processes; and exit mechanisms for non-compliant suppliers.
 
 Supporting document: JA Solar Responsible Sourcing Policy Version 3.0</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="43" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#44</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">Is decarbonization part of your company strategy?</span>
-    <button class="status-btn ai" onclick="toggleStatus(43,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="43" oninput="markDirty(43,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has established a comprehensive climate management system based on four key strategies:
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="43">
+<div class="qa-header">
+<span class="qa-rank">#43</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">Is decarbonization part of your company strategy?</span>
+<button class="status-btn ai" onclick="toggleStatus(43,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="43" oninput="markDirty(43,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has established a comprehensive climate management system based on four key strategies:
 1. Climate Product Development — reducing product carbon footprint through n-type technology, silver-free cells, low-carbon materials, and eco-design
 2. Empowering the Green Value Chain — reducing production carbon footprint, building green industrial parks, promoting supply chain decarbonization via CDP Supply Chain Program
 3. Driving Social Transition — promoting green culture, energy conservation, green office practices, and enabling green transition projects
 4. Addressing Physical Climate Risks — strengthening emergency management, climate resilience, and supplier climate assessments
 
 Supporting documents: 2024 JA Solar Sustainability and ESG Report | 2023 Climate-Related Disclosure and TCFD Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="44" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#45</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">What is the composition of your workforce (headcount, gender, age)?</span>
-    <button class="status-btn ai" onclick="toggleStatus(44,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="44" oninput="markDirty(44,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Please refer to the 2024 JA Solar Sustainability and ESG Report for detailed workforce composition data, including total headcount, gender ratio by category, age distribution, employment type, and geographical breakdown.
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="44">
+<div class="qa-header">
+<span class="qa-rank">#44</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">What is the composition of your workforce (headcount, gender, age)?</span>
+<button class="status-btn ai" onclick="toggleStatus(44,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="44" oninput="markDirty(44,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Please refer to the 2024 JA Solar Sustainability and ESG Report for detailed workforce composition data, including total headcount, gender ratio by category, age distribution, employment type, and geographical breakdown.
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="45" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#46</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">How do you manage wastewater / water discharge?</span>
-    <button class="status-btn ai" onclick="toggleStatus(45,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="45" oninput="markDirty(45,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar has built comprehensive advanced wastewater treatment systems at each production site, including: quartz sand filters; ultrafiltration units; reverse osmosis devices; pH adjustment equipment. All wastewater pollutants are tested before discharge to verify compliance with applicable standards. Process water recycling and reuse rates are continuously improved to reduce freshwater consumption. In 2024, 100% of wastewater was compliantly treated with no incidents of exceeding discharge standards.
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="45">
+<div class="qa-header">
+<span class="qa-rank">#45</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">How do you manage wastewater / water discharge?</span>
+<button class="status-btn ai" onclick="toggleStatus(45,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="45" oninput="markDirty(45,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar has built comprehensive advanced wastewater treatment systems at each production site, including: quartz sand filters; ultrafiltration units; reverse osmosis devices; pH adjustment equipment. All wastewater pollutants are tested before discharge to verify compliance with applicable standards. Process water recycling and reuse rates are continuously improved to reduce freshwater consumption. In 2024, 100% of wastewater was compliantly treated with no incidents of exceeding discharge standards.
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="qa-item" data-id="46" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#47</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">Have your GHG emissions been verified by a third party?</span>
-    <button class="status-btn ai" onclick="toggleStatus(46,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="46" oninput="markDirty(46,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. All JA Solar production sites conduct GHG inventory in accordance with ISO 14064-1:2018 and the GHG Protocol Corporate Accounting and Reporting Standard. All GHG inventory results are independently verified by a qualified third-party verification body, and verification statements are obtained.
+</div>
+</div><div class="qa-item" data-cat="E" data-id="46">
+<div class="qa-header">
+<span class="qa-rank">#46</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">Have your GHG emissions been verified by a third party?</span>
+<button class="status-btn ai" onclick="toggleStatus(46,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="46" oninput="markDirty(46,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. All JA Solar production sites conduct GHG inventory in accordance with ISO 14064-1:2018 and the GHG Protocol Corporate Accounting and Reporting Standard. All GHG inventory results are independently verified by a qualified third-party verification body, and verification statements are obtained.
 
 Supporting documents: 2024 JA Solar Environmental Sustainability Report</div>
-    
-  </div>
-</div><div class="qa-item" data-id="47" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#48</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">What is your approach to product packaging / transport sustainability?</span>
-    <button class="status-btn ai" onclick="toggleStatus(47,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="47" oninput="markDirty(47,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar has implemented the following packaging and logistics sustainability measures:
+</div>
+</div><div class="qa-item" data-cat="E" data-id="47">
+<div class="qa-header">
+<span class="qa-rank">#47</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">What is your approach to product packaging / transport sustainability?</span>
+<button class="status-btn ai" onclick="toggleStatus(47,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="47" oninput="markDirty(47,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar has implemented the following packaging and logistics sustainability measures:
 - Reusable film boxes used for module packaging
 - Silicon wafer packaging box capacity increased by 50% in 2024, reducing per-unit shipping emissions by approximately one-third
 - Rail-road-water combined transport prioritized to minimize logistics carbon emissions
@@ -978,19 +911,18 @@ Supporting documents: 2024 JA Solar Environmental Sustainability Report</div>
 - Electric vehicles used for on-campus logistics transport
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="48" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#49</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">What ESG ratings / scores does your company have (EcoVadis, CDP, etc.)?</span>
-    <button class="status-btn ai" onclick="toggleStatus(48,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="48" oninput="markDirty(48,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar's current ESG ratings and certifications:
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="48">
+<div class="qa-header">
+<span class="qa-rank">#48</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">What ESG ratings / scores does your company have (EcoVadis, CDP, etc.)?</span>
+<button class="status-btn ai" onclick="toggleStatus(48,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="48" oninput="markDirty(48,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar's current ESG ratings and certifications:
 - EcoVadis: Silver Medal, score 73 (top 6% of all participants assessed)
 - CDP Climate: Score B (2023 and 2024; 2025 result pending)
 - S&amp;P CSA (Corporate Sustainability Assessment): Score 60
@@ -999,18 +931,17 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 - UNGC: Signatory member
 
 Supporting document: EcoVadis scorecard | CDP response | 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="qa-item" data-id="49" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#50</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Do you conduct internal audits / self-assessments on ESG / compliance?</span>
-    <button class="status-btn ai" onclick="toggleStatus(49,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="49" oninput="markDirty(49,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar conducts regular internal audits and self-assessments on ESG compliance, including:
+</div>
+</div><div class="qa-item" data-cat="G" data-id="49">
+<div class="qa-header">
+<span class="qa-rank">#49</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Do you conduct internal audits / self-assessments on ESG / compliance?</span>
+<button class="status-btn ai" onclick="toggleStatus(49,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="49" oninput="markDirty(49,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar conducts regular internal audits and self-assessments on ESG compliance, including:
 - Environmental management system audits (ISO 14001)
 - OHS management system audits (ISO 45001)
 - Social compliance audits on labor rights
@@ -1018,97 +949,91 @@ Supporting document: EcoVadis scorecard | CDP response | 2024 JA Solar Sustainab
 - ESG performance reviewed in senior management performance evaluation
 
 Results are reported to the Board-level Compliance Management Committee. Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="50" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#51</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">What actions reduce environmental impact from product use / end-of-life?</span>
-    <button class="status-btn ai" onclick="toggleStatus(50,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="50" oninput="markDirty(50,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar takes the following actions to reduce environmental impact from product use and end-of-life:
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="50">
+<div class="qa-header">
+<span class="qa-rank">#50</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">What actions reduce environmental impact from product use / end-of-life?</span>
+<button class="status-btn ai" onclick="toggleStatus(50,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="50" oninput="markDirty(50,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar takes the following actions to reduce environmental impact from product use and end-of-life:
 - Design stage: Easy-disassembly frameworks, 100% recyclable polyurethane frames, lead-free solder ribbons, fluorine-free backsheets, low-acid encapsulants
 - Use stage: High-efficiency modules maximize energy yield and shorten carbon payback period; n-type products reduced carbon value to below 400 kg CO₂e/kW in 2024
 - End-of-life: PV CYCLE partnership for take-back and recycling across 17 EU countries; national demonstration line for glass, metal, and silicon recovery; active participation in national PV recycling R&amp;D programs
 
 Supporting documents: JA Solar Circular Economy Strategy | 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="51" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#52</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">Do you have operations or suppliers in Xinjiang?</span>
-    <button class="status-btn ai" onclick="toggleStatus(51,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="51" oninput="markDirty(51,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">⚠️ Note: Previous responses to this question were referred to the Compliance department. Please confirm the answer before sending.</div>
-    
-  </div>
-</div><div class="qa-item" data-id="52" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#53</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">Do you have a conflict minerals / responsible minerals policy?</span>
-    <button class="status-btn ai" onclick="toggleStatus(52,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="52" oninput="markDirty(52,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a Conflict Minerals Management Policy (Version 2.0) that addresses responsible sourcing of minerals including tin, tantalum, tungsten, gold (3TG), and cobalt. JA Solar conducts due diligence on the origin of minerals used in its products and does not knowingly source minerals from conflict-affected or high-risk areas.
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="51">
+<div class="qa-header">
+<span class="qa-rank">#51</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">Do you have operations or suppliers in Xinjiang?</span>
+<button class="status-btn ai" onclick="toggleStatus(51,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="51" oninput="markDirty(51,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">⚠️ Note: Previous responses to this question were referred to the Compliance department. Please confirm the answer before sending.</div>
+</div>
+</div><div class="qa-item" data-cat="S" data-id="52">
+<div class="qa-header">
+<span class="qa-rank">#52</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">Do you have a conflict minerals / responsible minerals policy?</span>
+<button class="status-btn ai" onclick="toggleStatus(52,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="52" oninput="markDirty(52,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has a Conflict Minerals Management Policy (Version 2.0) that addresses responsible sourcing of minerals including tin, tantalum, tungsten, gold (3TG), and cobalt. JA Solar conducts due diligence on the origin of minerals used in its products and does not knowingly source minerals from conflict-affected or high-risk areas.
 
 Supporting document: JA Solar Conflict Minerals Management Policy Version 2.0</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="53" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#54</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">What is your data security / privacy policy?</span>
-    <button class="status-btn ai" onclick="toggleStatus(53,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="53" oninput="markDirty(53,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar's Code of Conduct covers confidentiality of information and data protection obligations for all employees. JA Solar holds ISO 27001 Information Security Management certification. Data handling practices comply with applicable data protection regulations in each jurisdiction.
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="53">
+<div class="qa-header">
+<span class="qa-rank">#53</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">What is your data security / privacy policy?</span>
+<button class="status-btn ai" onclick="toggleStatus(53,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="53" oninput="markDirty(53,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar's Code of Conduct covers confidentiality of information and data protection obligations for all employees. JA Solar holds ISO 27001 Information Security Management certification. Data handling practices comply with applicable data protection regulations in each jurisdiction.
 
 Supporting document: JA Solar Code of Conduct</div>
-    
-  </div>
-</div><div class="qa-item" data-id="54" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#55</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Do you make external disclosure about your environmental / social performance?</span>
-    <button class="status-btn ai" onclick="toggleStatus(54,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="54" oninput="markDirty(54,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar publicly discloses environmental and social performance through annual reports published on its official website (www.jasolar.com → Sustainability → Download Center):
+</div>
+</div><div class="qa-item" data-cat="G" data-id="54">
+<div class="qa-header">
+<span class="qa-rank">#54</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Do you make external disclosure about your environmental / social performance?</span>
+<button class="status-btn ai" onclick="toggleStatus(54,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="54" oninput="markDirty(54,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar publicly discloses environmental and social performance through annual reports published on its official website (www.jasolar.com → Sustainability → Download Center):
 - 2024 JA Solar Sustainability and ESG Report
 - 2024 JA Solar Environmental Sustainability Report
 - 2023 Climate-Related Disclosure Report and TCFD Report
 - 2024 TNFD Report
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="55" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#56</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">What GHG reduction initiatives / measures do you have?</span>
-    <button class="status-btn ai" onclick="toggleStatus(55,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="55" oninput="markDirty(55,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Key GHG reduction initiatives implemented by JA Solar:
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="55">
+<div class="qa-header">
+<span class="qa-rank">#55</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">What GHG reduction initiatives / measures do you have?</span>
+<button class="status-btn ai" onclick="toggleStatus(55,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="55" oninput="markDirty(55,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Key GHG reduction initiatives implemented by JA Solar:
 1. Distributed PV: 298 MW of self-consumption rooftop PV installed by end of 2024 (34% green electricity ratio)
 2. Smart EMS: AI-enhanced energy management platform monitors and optimizes real-time energy use
 3. Process efficiency: AI crystal-pulling furnaces; argon-recovery systems; waste heat recovery; silver-paste reduction; thinner wafer slicing
@@ -1127,19 +1052,18 @@ Scope 3 measures: 1) Advanced granular silicon process innovation, increasing it
 Key results 2024: Vehicle diesel ↓45%, gasoline ↓31% vs. 2023 | Distributed PV capacity: 298 MW (+160 MW vs. 2023) | Green electricity ratio: 34% (+6% vs. 2023) | Silicon wafer box packaging capacity: +50% per box.
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="56" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#57</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">Do you have emergency response / fire safety procedures?</span>
-    <button class="status-btn ai" onclick="toggleStatus(56,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="56" oninput="markDirty(56,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has established comprehensive emergency response procedures covering fire safety, extreme weather, chemical spills, and other operational risks. Key elements:
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="56">
+<div class="qa-header">
+<span class="qa-rank">#56</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">Do you have emergency response / fire safety procedures?</span>
+<button class="status-btn ai" onclick="toggleStatus(56,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="56" oninput="markDirty(56,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has established comprehensive emergency response procedures covering fire safety, extreme weather, chemical spills, and other operational risks. Key elements:
 - Emergency response plans for each production site
 - Regular fire drills and emergency evacuation exercises
 - Fire detection and suppression systems installed
@@ -1147,47 +1071,44 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 - Climate risk emergency drills (heavy rain, typhoons, extreme heat)
 
 Supporting document: JA Solar HSSE Plan</div>
-    
-  </div>
-</div><div class="qa-item" data-id="57" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#58</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">Do workers pay recruitment fees? How do you manage migrant workers?</span>
-    <button class="status-btn ai" onclick="toggleStatus(57,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="57" oninput="markDirty(57,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar strictly prohibits charging any recruitment fees to workers at any stage (pre-employment, during employment, or at termination). No identity documents are retained by the company or its recruitment agents. Migrant workers receive the same wages, benefits, and working conditions as local workers, without discrimination. These standards are also required of suppliers via the Supplier Code of Conduct.
+</div>
+</div><div class="qa-item" data-cat="S" data-id="57">
+<div class="qa-header">
+<span class="qa-rank">#57</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">Do workers pay recruitment fees? How do you manage migrant workers?</span>
+<button class="status-btn ai" onclick="toggleStatus(57,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="57" oninput="markDirty(57,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar strictly prohibits charging any recruitment fees to workers at any stage (pre-employment, during employment, or at termination). No identity documents are retained by the company or its recruitment agents. Migrant workers receive the same wages, benefits, and working conditions as local workers, without discrimination. These standards are also required of suppliers via the Supplier Code of Conduct.
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar Supplier Code of Conduct Version 2.0</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="58" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#59</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">What is your impact on / approach to biodiversity?</span>
-    <button class="status-btn ai" onclick="toggleStatus(58,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="58" oninput="markDirty(58,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar published its Biodiversity Policy in 2024. JA Solar is the first company in the PV industry to become a TNFD Adopter. A systematic biodiversity impact assessment has been conducted across production sites, power stations, and office premises to identify operational impacts and dependencies on the ecological environment. Results inform future biodiversity protection strategies.
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="58">
+<div class="qa-header">
+<span class="qa-rank">#58</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">What is your impact on / approach to biodiversity?</span>
+<button class="status-btn ai" onclick="toggleStatus(58,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="58" oninput="markDirty(58,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar published its Biodiversity Policy in 2024. JA Solar is the first company in the PV industry to become a TNFD Adopter. A systematic biodiversity impact assessment has been conducted across production sites, power stations, and office premises to identify operational impacts and dependencies on the ecological environment. Results inform future biodiversity protection strategies.
 
 Supporting documents: JA Solar Biodiversity Policy | 2024 JA Solar TNFD Report</div>
-    
-  </div>
-</div><div class="qa-item" data-id="59" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#60</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">Do you conduct environmental monitoring (air, water, noise, soil)?</span>
-    <button class="status-btn ai" onclick="toggleStatus(59,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="59" oninput="markDirty(59,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar conducts regular environmental monitoring at all production sites, including:
+</div>
+</div><div class="qa-item" data-cat="E" data-id="59">
+<div class="qa-header">
+<span class="qa-rank">#59</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">Do you conduct environmental monitoring (air, water, noise, soil)?</span>
+<button class="status-btn ai" onclick="toggleStatus(59,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="59" oninput="markDirty(59,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar conducts regular environmental monitoring at all production sites, including:
 - Air quality monitoring (NOx, SOx, VOCs, ammonia, PM concentrations)
 - Wastewater quality testing before discharge
 - Noise monitoring at site boundaries
@@ -1196,18 +1117,17 @@ Supporting documents: JA Solar Biodiversity Policy | 2024 JA Solar TNFD Report</
 Monitoring follows a dual control mechanism of "self-inspection + external audit" to ensure continuous compliance with applicable standards.
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="qa-item" data-id="60" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#61</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">Have you assessed environmental risks / impacts of your operations?</span>
-    <button class="status-btn ai" onclick="toggleStatus(60,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="60" oninput="markDirty(60,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has conducted a structured environmental risk assessment to identify its most significant environmental impacts and dependencies:
+</div>
+</div><div class="qa-item" data-cat="E" data-id="60">
+<div class="qa-header">
+<span class="qa-rank">#60</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">Have you assessed environmental risks / impacts of your operations?</span>
+<button class="status-btn ai" onclick="toggleStatus(60,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="60" oninput="markDirty(60,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has conducted a structured environmental risk assessment to identify its most significant environmental impacts and dependencies:
 - GHG inventories assessed for all product families
 - Air emissions and waste streams quantified
 - Energy mix, water sources, and raw-material carbon intensity evaluated
@@ -1216,76 +1136,71 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 Outcomes and corresponding reduction initiatives are detailed in the 2024 JA Solar Environmental Sustainability Report (pages 121–126).
 
 Supporting document: 2024 JA Solar Environmental Sustainability Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="61" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#62</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Do you conduct internal ESG / social compliance reporting to management?</span>
-    <button class="status-btn ai" onclick="toggleStatus(61,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="61" oninput="markDirty(61,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar reports ESG and social compliance performance to senior management on a regular basis. ESG-related metrics are incorporated into the performance evaluation system for senior management. The Board-level Compliance Management Committee oversees ESG governance. The Sustainability and ESG Report is approved at the highest governance level before publication.
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="61">
+<div class="qa-header">
+<span class="qa-rank">#61</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Do you conduct internal ESG / social compliance reporting to management?</span>
+<button class="status-btn ai" onclick="toggleStatus(61,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="61" oninput="markDirty(61,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar reports ESG and social compliance performance to senior management on a regular basis. ESG-related metrics are incorporated into the performance evaluation system for senior management. The Board-level Compliance Management Committee oversees ESG governance. The Sustainability and ESG Report is approved at the highest governance level before publication.
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="qa-item" data-id="62" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#63</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Can your company accept third-party / on-site audits?</span>
-    <button class="status-btn ai" onclick="toggleStatus(62,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="62" oninput="markDirty(62,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar accepts third-party and on-site audits from customers, certification bodies, and independent auditors. JA Solar has received SSI (Social Solidarity Initiative) audits at its Yangzhou and Shanghai manufacturing facilities (both achieved Silver Medal). The company also undergoes annual EcoVadis assessments and CSR audits from various customers. Audit findings are addressed through formal corrective action plans.
+</div>
+</div><div class="qa-item" data-cat="G" data-id="62">
+<div class="qa-header">
+<span class="qa-rank">#62</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Can your company accept third-party / on-site audits?</span>
+<button class="status-btn ai" onclick="toggleStatus(62,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="62" oninput="markDirty(62,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar accepts third-party and on-site audits from customers, certification bodies, and independent auditors. JA Solar has received SSI (Social Solidarity Initiative) audits at its Yangzhou and Shanghai manufacturing facilities (both achieved Silver Medal). The company also undergoes annual EcoVadis assessments and CSR audits from various customers. Audit findings are addressed through formal corrective action plans.
 
 Supporting document: SSI audit reports | EcoVadis scorecard</div>
-    
-  </div>
-</div><div class="qa-item" data-id="63" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#64</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Does your company have ISO 9001 certification?</span>
-    <button class="status-btn ai" onclick="toggleStatus(63,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="63" oninput="markDirty(63,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar holds ISO 9001:2015 Quality Management System certification.
+</div>
+</div><div class="qa-item" data-cat="G" data-id="63">
+<div class="qa-header">
+<span class="qa-rank">#63</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Does your company have ISO 9001 certification?</span>
+<button class="status-btn ai" onclick="toggleStatus(63,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="63" oninput="markDirty(63,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar holds ISO 9001:2015 Quality Management System certification.
 
 Please refer to the Certificates folder for copies of individual certificates.</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="64" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#65</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">Does your company comply with applicable labor laws?</span>
-    <button class="status-btn ai" onclick="toggleStatus(64,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="64" oninput="markDirty(64,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar complies with all applicable labor laws and regulations in each jurisdiction where it operates, including: minimum wage requirements; working hours and overtime limits; employment contract requirements; mandatory social insurance contributions; legally required leave entitlements; and health and safety regulations. Compliance is verified through internal audits, third-party assessments, and legal monitoring.
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="64">
+<div class="qa-header">
+<span class="qa-rank">#64</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">Does your company comply with applicable labor laws?</span>
+<button class="status-btn ai" onclick="toggleStatus(64,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="64" oninput="markDirty(64,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar complies with all applicable labor laws and regulations in each jurisdiction where it operates, including: minimum wage requirements; working hours and overtime limits; employment contract requirements; mandatory social insurance contributions; legally required leave entitlements; and health and safety regulations. Compliance is verified through internal audits, third-party assessments, and legal monitoring.
 
 Supporting documents: JA Solar Code of Conduct | JA Solar Human Rights Policy</div>
-    
-  </div>
-</div><div class="qa-item" data-id="65" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#66</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">What safety training do you provide?</span>
-    <button class="status-btn ai" onclick="toggleStatus(65,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="65" oninput="markDirty(65,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar provides mandatory safety training to all relevant employees, covering:
+</div>
+</div><div class="qa-item" data-cat="S" data-id="65">
+<div class="qa-header">
+<span class="qa-rank">#65</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">What safety training do you provide?</span>
+<button class="status-btn ai" onclick="toggleStatus(65,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="65" oninput="markDirty(65,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar provides mandatory safety training to all relevant employees, covering:
 - Hazard identification and risk assessment
 - Emergency response and evacuation procedures
 - Correct use of PPE
@@ -1295,19 +1210,18 @@ Supporting documents: JA Solar Code of Conduct | JA Solar Human Rights Policy</d
 Training records are maintained and verified. In 2024, JA Solar also provided suppliers with ESG and SA8000 training covering compliance and sustainability assessment standards.
 
 Supporting document: JA Solar HSSE Plan | 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="66" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#67</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">How do you monitor / calculate your GHG emissions?</span>
-    <button class="status-btn ai" onclick="toggleStatus(66,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="66" oninput="markDirty(66,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar conducts GHG inventory in accordance with ISO 14064-1:2018 and the GHG Protocol Corporate Accounting and Reporting Standard:
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="66">
+<div class="qa-header">
+<span class="qa-rank">#66</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">How do you monitor / calculate your GHG emissions?</span>
+<button class="status-btn ai" onclick="toggleStatus(66,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="66" oninput="markDirty(66,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar conducts GHG inventory in accordance with ISO 14064-1:2018 and the GHG Protocol Corporate Accounting and Reporting Standard:
 - Scope 1: Direct emissions from owned/controlled sources (combustion in boilers, on-site vehicles)
 - Scope 2: Indirect emissions from purchased electricity, steam, heating, and cooling (market-based and location-based)
 - Scope 3: Value chain emissions including purchased goods and services, business travel, employee commuting, logistics, and use of sold products
@@ -1315,33 +1229,31 @@ Supporting document: JA Solar HSSE Plan | 2024 JA Solar Sustainability and ESG R
 All production sites complete annual GHG inventories. Results are independently verified by a qualified third party.
 
 Supporting documents: 2024 JA Solar Environmental Sustainability Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="67" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#68</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Does your company have written corporate sustainability principles / commitments?</span>
-    <button class="status-btn ai" onclick="toggleStatus(67,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="67" oninput="markDirty(67,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has published the JA Solar Environmental, Social, and Governance (ESG) Sustainability Policy, which sets out the company's sustainability commitments and governance framework.Mission, Vision &amp; Values:JA Solar's mission, established since 2005, is "Developing Solar Energy for the Benefit of All Mankind." Our vision is Green to Great — a sustainable world where solar energy contributes to people and the planet. Our values are embodied in the G2G (Green to Green, Green to Grow, Green to Great) sustainability philosophy: Green to Green reflects our sustainable development philosophy across operations and the value chain; Green to Grow reflects our strategic approach to extending green development beyond our organization; Green to Great reflects our long-term vision underpinned by our mission.4F Strategy Themes:JA Solar's sustainability strategy is organized around the "4F" themes: Faster (accelerating supply chain collaboration), Foster (climate strategy and circular economy), Fairer (stakeholder well-being and community impact), and Foundation (solid governance and compliance).
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="67">
+<div class="qa-header">
+<span class="qa-rank">#67</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Does your company have written corporate sustainability principles / commitments?</span>
+<button class="status-btn ai" onclick="toggleStatus(67,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="67" oninput="markDirty(67,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar has published the JA Solar Environmental, Social, and Governance (ESG) Sustainability Policy, which sets out the company's sustainability commitments and governance framework.Mission, Vision &amp; Values:JA Solar's mission, established since 2005, is "Developing Solar Energy for the Benefit of All Mankind." Our vision is Green to Great — a sustainable world where solar energy contributes to people and the planet. Our values are embodied in the G2G (Green to Green, Green to Grow, Green to Great) sustainability philosophy: Green to Green reflects our sustainable development philosophy across operations and the value chain; Green to Grow reflects our strategic approach to extending green development beyond our organization; Green to Great reflects our long-term vision underpinned by our mission.4F Strategy Themes:JA Solar's sustainability strategy is organized around the "4F" themes: Faster (accelerating supply chain collaboration), Foster (climate strategy and circular economy), Fairer (stakeholder well-being and community impact), and Foundation (solid governance and compliance).
 
 Supporting document: JA Solar Environmental, Social, and Governance (ESG) Sustainability Policy | 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="qa-item" data-id="68" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#69</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">What due diligence do you perform on human rights / ESG?</span>
-    <button class="status-btn ai" onclick="toggleStatus(68,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="68" oninput="markDirty(68,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar has developed a comprehensive Human Rights Due Diligence (HRDD) framework aligned with the UN Guiding Principles on Business and Human Rights (UNGP):
+</div>
+</div><div class="qa-item" data-cat="G" data-id="68">
+<div class="qa-header">
+<span class="qa-rank">#68</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">What due diligence do you perform on human rights / ESG?</span>
+<button class="status-btn ai" onclick="toggleStatus(68,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="68" oninput="markDirty(68,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar has developed a comprehensive Human Rights Due Diligence (HRDD) framework aligned with the UN Guiding Principles on Business and Human Rights (UNGP):
 1. Policy commitment — JA Solar Human Rights Policy
 2. HRDD questionnaire — developed following international human rights standards, applied at all manufacturing facilities
 3. On-site assessments — including worker interviews and document reviews; completed at Shanghai Fengxian and Yangzhou facilities (no forced labor found)
@@ -1349,36 +1261,34 @@ Supporting document: JA Solar Environmental, Social, and Governance (ESG) Sustai
 5. Grievance mechanism — SpeakUp channel accessible to all workers and stakeholders
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar Responsible Sourcing Policy | 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
-<div class="qa-item" data-id="69" data-cat="E">
-  <div class="qa-header">
-    <span class="qa-rank">#70</span>
-    <span class="cat-badge cat-E">E</span>
-    <span class="qa-question">Do you have green factory / green manufacturing certifications?</span>
-    <button class="status-btn ai" onclick="toggleStatus(69,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="69" oninput="markDirty(69,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. As of end of 2024, six JA Solar production bases have been awarded the national "Green Factory" title by China's Ministry of Industry and Information Technology. Additionally:
+</div>
+</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+<div class="qa-item" data-cat="E" data-id="69">
+<div class="qa-header">
+<span class="qa-rank">#69</span>
+<span class="cat-badge cat-E">E</span>
+<span class="qa-question">Do you have green factory / green manufacturing certifications?</span>
+<button class="status-btn ai" onclick="toggleStatus(69,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="69" oninput="markDirty(69,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. As of end of 2024, six JA Solar production bases have been awarded the national "Green Factory" title by China's Ministry of Industry and Information Technology. Additionally:
 - JA Solar Qujing Phase III Project: Carbon Neutrality Certification (Beijing Green Exchange) + Zero-Carbon Factory Certificate (China Energy Conservation Association)
 - JA Solar Yangzhou Jinshan facility: Zero-Carbon Factory Certification (TÜV SÜD)
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="70" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#71</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">What compliance / ESG training do you provide to employees?</span>
-    <button class="status-btn ai" onclick="toggleStatus(70,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="70" oninput="markDirty(70,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar provides ESG and compliance training to employees covering:
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="70">
+<div class="qa-header">
+<span class="qa-rank">#70</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">What compliance / ESG training do you provide to employees?</span>
+<button class="status-btn ai" onclick="toggleStatus(70,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="70" oninput="markDirty(70,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar provides ESG and compliance training to employees covering:
 - ESG background and international standards (GRI, TCFD, TNFD)
 - Carbon emission measurement and standards
 - SA8000 certification requirements
@@ -1389,18 +1299,17 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 In 2024, specialized ESG and SA8000 training was also provided to suppliers covering 68% of procurement value. Training records are maintained.
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="qa-item" data-id="71" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#72</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Has your company joined international sustainability initiatives (RE100, EP100, etc.)?</span>
-    <button class="status-btn ai" onclick="toggleStatus(71,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="71" oninput="markDirty(71,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar participates in the following international sustainability initiatives:
+</div>
+</div><div class="qa-item" data-cat="G" data-id="71">
+<div class="qa-header">
+<span class="qa-rank">#71</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Has your company joined international sustainability initiatives (RE100, EP100, etc.)?</span>
+<button class="status-btn ai" onclick="toggleStatus(71,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="71" oninput="markDirty(71,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar participates in the following international sustainability initiatives:
 - United Nations Global Compact (UNGC) — signatory; submits annual Communication on Progress
 - CDP Supply Chain Program — participant; invites suppliers to participate (68% of procurement value in 2024)
 - Solar Industry Forced Labor Prevention Pledge — signatory
@@ -1410,48 +1319,45 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 - Green Electricity 100% Initiative (GE100) — founding member
 
 Supporting document: UNGC participant page | 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
-<div class="qa-item" data-id="72" data-cat="S">
-  <div class="qa-header">
-    <span class="qa-rank">#73</span>
-    <span class="cat-badge cat-S">S</span>
-    <span class="qa-question">What are your policies on leave (sick, maternity, annual)?</span>
-    <button class="status-btn ai" onclick="toggleStatus(72,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="72" oninput="markDirty(72,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar complies with all applicable national laws on leave entitlements in every jurisdiction where it operates, including: annual/paid leave; sick leave; maternity and paternity leave; public holidays; and other legally mandated rest periods. All leave entitlements are stated in individual employment contracts. JA Solar's Human Rights Policy confirms that employees are entitled to regular time-off and rest periods per national legislation.
+</div>
+</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="qa-item" data-cat="S" data-id="72">
+<div class="qa-header">
+<span class="qa-rank">#72</span>
+<span class="cat-badge cat-S">S</span>
+<span class="qa-question">What are your policies on leave (sick, maternity, annual)?</span>
+<button class="status-btn ai" onclick="toggleStatus(72,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="72" oninput="markDirty(72,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar complies with all applicable national laws on leave entitlements in every jurisdiction where it operates, including: annual/paid leave; sick leave; maternity and paternity leave; public holidays; and other legally mandated rest periods. All leave entitlements are stated in individual employment contracts. JA Solar's Human Rights Policy confirms that employees are entitled to regular time-off and rest periods per national legislation.
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct</div>
-    
-  </div>
-</div><div class="cat-header" style="background:#8e44ad">G &nbsp; Governance</div>
-<div class="qa-item" data-id="73" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#74</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">What stakeholder engagement / materiality assessment do you conduct?</span>
-    <button class="status-btn ai" onclick="toggleStatus(73,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="73" oninput="markDirty(73,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar conducts regular stakeholder engagement to identify material ESG topics. Key stakeholder groups include: investors and shareholders; customers; employees; suppliers; local communities; regulators; NGOs and industry associations. Engagement methods include: annual ESG surveys; customer questionnaires; employee feedback; community consultations; and participation in industry forums. Results inform JA Solar's ESG strategy and are reflected in the annual Sustainability and ESG Report.
+</div>
+</div><div class="cat-header" style="background:#8e44ad">G   Governance</div>
+<div class="qa-item" data-cat="G" data-id="73">
+<div class="qa-header">
+<span class="qa-rank">#73</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">What stakeholder engagement / materiality assessment do you conduct?</span>
+<button class="status-btn ai" onclick="toggleStatus(73,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="73" oninput="markDirty(73,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar conducts regular stakeholder engagement to identify material ESG topics. Key stakeholder groups include: investors and shareholders; customers; employees; suppliers; local communities; regulators; NGOs and industry associations. Engagement methods include: annual ESG surveys; customer questionnaires; employee feedback; community consultations; and participation in industry forums. Results inform JA Solar's ESG strategy and are reflected in the annual Sustainability and ESG Report.
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
-</div><div class="qa-item" data-id="74" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#75</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">How do you manage / audit your suppliers on ESG?</span>
-    <button class="status-btn ai" onclick="toggleStatus(74,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="74" oninput="markDirty(74,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar's supplier ESG management process:
+</div>
+</div><div class="qa-item" data-cat="G" data-id="74">
+<div class="qa-header">
+<span class="qa-rank">#74</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">How do you manage / audit your suppliers on ESG?</span>
+<button class="status-btn ai" onclick="toggleStatus(74,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="74" oninput="markDirty(74,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar's supplier ESG management process:
 1. Supplier selection: Only suppliers that have signed the Supplier Code of Conduct are admitted to the approved list (100% of core suppliers as of 2024)
 2. Risk identification: Priority suppliers identified based on ESG risk indicators
 3. Assessment: Priority suppliers complete Supplier Sustainability Assessment questionnaires (covering labor rights, OHS, environment, and management systems)
@@ -1461,18 +1367,17 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 7. Capacity building: ESG and SA8000 training organized for suppliers (465 suppliers covering 68% of procurement value in 2024)
 
 Supporting documents: JA Solar Responsible Sourcing Policy | JA Solar Supplier Code of Conduct Version 2.0</div>
-    
-  </div>
-</div><div class="qa-item" data-id="75" data-cat="G">
-  <div class="qa-header">
-    <span class="qa-rank">#76</span>
-    <span class="cat-badge cat-G">G</span>
-    <span class="qa-question">Do you assess sustainability performance of your supply chain partners?</span>
-    <button class="status-btn ai" onclick="toggleStatus(75,this)">🤖 AI生成</button>
-  </div>
-  <div class="qa-body">
-    <div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
-    <div class="qa-answer" contenteditable="true" data-id="75" oninput="markDirty(75,this)" onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar assesses the sustainability performance of all key supply chain partners through:
+</div>
+</div><div class="qa-item" data-cat="G" data-id="75">
+<div class="qa-header">
+<span class="qa-rank">#75</span>
+<span class="cat-badge cat-G">G</span>
+<span class="qa-question">Do you assess sustainability performance of your supply chain partners?</span>
+<button class="status-btn ai" onclick="toggleStatus(75,this)">🤖 AI生成</button>
+</div>
+<div class="qa-body">
+<div class="answer-label">答案 <span class="edit-hint">（点击编辑，Ctrl+S 保存）</span></div>
+<div class="qa-answer" contenteditable="true" data-id="75" oninput="markDirty(75,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Yes. JA Solar assesses the sustainability performance of all key supply chain partners through:
 - Mandatory signing of Supplier Code of Conduct (100% of key suppliers as of 2025)
 - Supplier Sustainability Assessment questionnaires — covering labor rights, OHS, environmental management, and governance
 - Risk-based on-site audits for high-risk and priority suppliers
@@ -1480,22 +1385,19 @@ Supporting documents: JA Solar Responsible Sourcing Policy | JA Solar Supplier C
 - Annual supplier ESG training
 
 Supporting documents: JA Solar Responsible Sourcing Policy | JA Solar Supplier Code of Conduct Version 2.0 | 2024 JA Solar Sustainability and ESG Report</div>
-    
-  </div>
+</div>
 </div>
 <div class="no-results" id="noResults">No matching questions found.</div>
 </div>
-
 <div class="save-bar">
-  <button class="save-btn" id="saveBtn" onclick="saveToGitHub()" disabled>Save</button>
-  <span class="save-note" id="saveNote">Loading...</span>
-  <button class="logout-btn" onclick="logout()">重置 Token</button>
+<button class="save-btn" disabled="" id="saveBtn" onclick="saveToGitHub()">Save</button>
+<span class="save-note" id="saveNote">Loading...</span>
+<button class="logout-btn" onclick="logout()">重置 Token</button>
 </div>
-
 <script>
 var OWNER = 'Rray292';
 var REPO  = 'JA-Solar-ESG-answer-pair';
-var TOTAL = 76;
+var TOTAL = 75;
 var DATA_FILE = 'data.json';
 
 var state = {};
