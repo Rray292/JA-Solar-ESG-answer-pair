@@ -108,7 +108,8 @@ body{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;backgroun
 .btn-confirm{background:#3b82f6;color:#fff;}.btn-confirm:hover{background:#2563eb;}
 .btn-cancel{background:#f1f5f9;color:#374151;}.btn-cancel:hover{background:#e2e8f0;}
 
-.delete-btn{flex-shrink:0;padding:3px 8px;border-radius:6px;border:1px solid #fca5a5;background:#fff5f5;color:#dc2626;font-size:11px;font-weight:600;cursor:pointer;margin-top:2px;}
+.delete-btn{flex-shrink:0;padding:3px 8px;border-radius:6px;border:1px solid #fca5a5;background:#fff5f5;color:#dc2626;font-size:11px;font-weight:600;cursor:pointer;margin-top:2px;display:none;}
+.qa-item.open .delete-btn{display:inline-block;}
 </style>
 </head>
 <body>
@@ -1824,7 +1825,7 @@ function addDeleteButtons() {
     var header = item.querySelector('.qa-header');
     var btn = document.createElement('button');
     btn.className = 'delete-btn';
-    btn.textContent = '✕';
+    btn.textContent = '✕ Delete';
     btn.title = 'Delete question';
     btn.setAttribute('onclick', 'deleteQuestion(' + id + ', this)');
     header.appendChild(btn);
