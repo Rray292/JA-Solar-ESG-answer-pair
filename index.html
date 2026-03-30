@@ -1625,23 +1625,31 @@ function applyFilters() {
   });
   document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
 
-  // Hide/show category headers: only show if at least one visible qa-item follows before next header
+  // Category headers: hide all when filtering by category; else hide empty ones
   (function() {
     var main = document.querySelector('.main');
     var children = Array.from(main.children);
-    for (var i = 0; i < children.length; i++) {
-      var child = children[i];
-      if (!child.classList || !child.classList.contains('cat-header')) continue;
-      var found = false;
-      for (var j = i + 1; j < children.length; j++) {
-        var sib = children[j];
-        if (!sib.classList) continue;
-        if (sib.classList.contains('cat-header')) break;
-        if (sib.classList.contains('qa-item') && sib.style.display !== 'none' && !sib.classList.contains('hidden')) {
-          found = true; break;
+    if (activeCat !== 'all') {
+      for (var i = 0; i < children.length; i++) {
+        if (children[i].classList && children[i].classList.contains('cat-header')) {
+          children[i].style.display = 'none';
         }
       }
-      child.style.display = found ? '' : 'none';
+    } else {
+      for (var i = 0; i < children.length; i++) {
+        var child = children[i];
+        if (!child.classList || !child.classList.contains('cat-header')) continue;
+        var found = false;
+        for (var j = i + 1; j < children.length; j++) {
+          var sib = children[j];
+          if (!sib.classList) continue;
+          if (sib.classList.contains('cat-header')) break;
+          if (sib.classList.contains('qa-item') && !sib.classList.contains('hidden')) {
+            found = true; break;
+          }
+        }
+        child.style.display = found ? '' : 'none';
+      }
     }
   })();
 }
