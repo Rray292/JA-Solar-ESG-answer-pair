@@ -1811,6 +1811,10 @@ function deleteQuestion(id, btn) {
   if (!confirm('Delete this question?\n\n' + q)) return;
   card.remove();
   delete state[id];
+  document.querySelectorAll('.qa-item').forEach(function(item, index) {
+    var rankEl = item.querySelector('.qa-rank');
+    if (rankEl) rankEl.textContent = '#' + (index + 1);
+  });
   dirty = true;
   scheduleSave();
   updateProgress();
