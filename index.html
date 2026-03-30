@@ -107,6 +107,9 @@ body{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;backgroun
 .add-modal-btn{padding:8px 20px;border-radius:6px;border:none;font-size:13px;font-weight:600;cursor:pointer;}
 .btn-confirm{background:#3b82f6;color:#fff;}.btn-confirm:hover{background:#2563eb;}
 .btn-cancel{background:#f1f5f9;color:#374151;}.btn-cancel:hover{background:#e2e8f0;}
+
+.delete-btn{flex-shrink:0;padding:3px 8px;border-radius:6px;border:1px solid #fca5a5;background:#fff5f5;color:#dc2626;font-size:11px;font-weight:600;cursor:pointer;margin-top:2px;opacity:0;transition:opacity 0.15s;}
+.qa-item:hover .delete-btn{opacity:1;}
 </style>
 </head>
 <body>
@@ -1778,8 +1781,37 @@ function confirmAddQuestion() {
   dirty = true;
   scheduleSave();
   closeAddModal();
+  addDeleteButtons();
   updateProgress();
   applyFilters();
+}
+
+
+function deleteQuestion(id, btn) {
+  var card = btn.closest('.qa-item');
+  var q = card.querySelector('.qa-question').textContent;
+  if (!confirm('Delete this question?\n\n' + q)) return;
+  card.remove();
+  delete state[id];
+  dirty = true;
+  scheduleSave();
+  updateProgress();
+  applyFilters();
+}
+
+// Add delete button to all existing cards
+function addDeleteButtons() {
+  document.querySelectorAll('.qa-item').forEach(function(item) {
+    var id = item.getAttribute('data-id');
+    if (item.querySelector('.delete-btn')) return; // already has one
+    var header = item.querySelector('.qa-header');
+    var btn = document.createElement('button');
+    btn.className = 'delete-btn';
+    btn.textContent = '✕';
+    btn.title = 'Delete question';
+    btn.setAttribute('onclick', 'deleteQuestion(' + id + ', this)');
+    header.appendChild(btn);
+  });
 }
 
 </script>
