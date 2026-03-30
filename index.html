@@ -1499,6 +1499,9 @@ function applyState() {
     if (entry.status === 'verified') {
       btn.className = 'status-btn verified';
       btn.textContent = '✅ Verified';
+    } else {
+      btn.className = 'status-btn ai';
+      btn.textContent = '⏳ Pending';
     }
     if (entry.answer !== undefined) {
       item.querySelector('.qa-answer').textContent = entry.answer;
@@ -1609,7 +1612,7 @@ function applyFilters() {
   document.querySelectorAll('.qa-item').forEach(function(item) {
     var id = item.getAttribute('data-id');
     var cat = item.getAttribute('data-cat');
-    var status = (state[id] || {}).status || 'pending';
+    var st = (state[id] || {}).status || 'pending'; var status = (st === 'ai') ? 'pending' : st;
     var q = item.querySelector('.qa-question').textContent.toLowerCase();
     var a = item.querySelector('.qa-answer').textContent.toLowerCase();
     var show = true;
@@ -1622,21 +1625,25 @@ function applyFilters() {
   });
   document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
 
-  // Hide/show category headers based on visible items below them
-  var allEls = Array.from(document.querySelector('.main').children);
-  for (var i = 0; i < allEls.length; i++) {
-    var el = allEls[i];
-    if (!el.classList.contains('cat-header')) continue;
-    var hasVisible = false;
-    for (var j = i + 1; j < allEls.length; j++) {
-      if (allEls[j].classList.contains('cat-header')) break;
-      if (allEls[j].classList.contains('qa-item') && !allEls[j].classList.contains('hidden')) {
-        hasVisible = true;
-        break;
+  // Hide/show category headers: only show if at least one visible qa-item follows before next header
+  (function() {
+    var main = document.querySelector('.main');
+    var children = Array.from(main.children);
+    for (var i = 0; i < children.length; i++) {
+      var child = children[i];
+      if (!child.classList || !child.classList.contains('cat-header')) continue;
+      var found = false;
+      for (var j = i + 1; j < children.length; j++) {
+        var sib = children[j];
+        if (!sib.classList) continue;
+        if (sib.classList.contains('cat-header')) break;
+        if (sib.classList.contains('qa-item') && sib.style.display !== 'none' && !sib.classList.contains('hidden')) {
+          found = true; break;
+        }
       }
+      child.style.display = found ? '' : 'none';
     }
-    el.style.display = hasVisible ? '' : 'none';
-  }
+  })();
 }
 
 function updateProgress() {
