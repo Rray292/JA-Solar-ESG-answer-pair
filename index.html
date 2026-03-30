@@ -1598,7 +1598,7 @@ function toggleStatusFilter(status, btn) {
     btn.classList.remove('active');
   } else {
     activeStatus = status;
-    document.querySelectorAll('.f-ai,.f-verified').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.f-pending,.f-verified').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
   }
   applyFilters();
