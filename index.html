@@ -1479,6 +1479,7 @@ async function loadFromGitHub() {
       state[item.id] = {status: item.status || 'pending', answer: item.answer};
     });
     applyState();
+    addDeleteButtons();
     updateProgress();
     setSync('Synced ✓', 'ok');
     document.getElementById('saveBtn').disabled = false;
