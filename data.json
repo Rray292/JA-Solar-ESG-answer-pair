@@ -323,8 +323,8 @@
     "id": 44,
     "cat": "S",
     "question": "What is the composition of your workforce (headcount, gender, age)?",
-    "status": "pending",
-    "answer": "Please refer to the 2024 JA Solar Sustainability and ESG Report for detailed workforce composition data, including total headcount, gender ratio by category, age distribution, employment type, and geographical breakdown. ",
+    "status": "verified",
+    "answer": "Please refer to the 2024 JA Solar Sustainability and ESG Report page 136 for detailed workforce composition data, including total headcount, gender ratio by category, age distribution, employment type, and geographical breakdown. ",
     "rank": 43
   },
   {
