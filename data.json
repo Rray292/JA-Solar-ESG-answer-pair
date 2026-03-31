@@ -416,14 +416,6 @@
     "rank": 54
   },
   {
-    "id": 56,
-    "cat": "S",
-    "question": "Do you have emergency response / fire safety procedures?",
-    "status": "pending",
-    "answer": "Yes. JA Solar has established comprehensive emergency response procedures covering fire safety, extreme weather, chemical spills, and other operational risks. Key elements:\n- Emergency response plans for each production site\n- Regular fire drills and emergency evacuation exercises\n- Fire detection and suppression systems installed\n- Designated emergency response teams and equipment reserves\n- Climate risk emergency drills (heavy rain, typhoons, extreme heat)\n\nSupporting document: JA Solar HSSE Plan",
-    "rank": 55
-  },
-  {
     "id": 57,
     "cat": "S",
     "question": "Do workers pay recruitment fees? How do you manage migrant workers?",
