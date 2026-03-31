@@ -147,7 +147,7 @@
     "id": 22,
     "cat": "E",
     "question": "Has your company set GHG reduction targets? / Are your targets science-based (SBTi)?",
-    "status": "pending",
+    "status": "verified",
     "answer": "Yes. JA Solar's GHG reduction targets have been officially validated by the Science Based Targets initiative (SBTi) in 2024, aligned with the 1.5Â°C pathway:\n\nShort-term (by 2034):\n- Reduce absolute Scope 1 and Scope 2 GHG emissions by 58.8% vs. 2023 base year\n- Reduce Scope 3 GHG emissions (purchased goods and services) by 63.8% per MW of solar product produced vs. 2023\n\nLong-term (by 2050):\n- Reduce Scope 1+2 by 90% vs. 2023\n- Reduce Scope 3 by 97% per MW vs. 2023\n- Achieve net-zero GHG emissions across the value chain by 2050\n\nSupporting documents: 2024 JA Solar Sustainability and ESG Report | SBTi target page",
     "rank": 21
   },
