@@ -45,11 +45,6 @@
     "answer": "Yes. All JA Solar production sites that have officially commenced operations hold ISO 14001:2015 Environmental Management System certification."
   },
   {
-    "id": 11,
-    "status": "pending",
-    "answer": "JA Solar has an ISO 45001-certified Occupational Health and Safety (OHS) Management System. JA Solar strictly abides by the Law of the People's Republic of China on Work Safety, the Law on the Prevention and Control of Occupational Diseases, and applicable laws at each operation location.\n\nKey elements:\n- EHS Management System Manual and EHS Accident Management Procedures are in place; a Safety Committee has been established\n- Hazard Identification and Evaluation Control Procedures and Risk and Opportunity Identification and Evaluation Control Procedures are implemented\n- The EHS team at headquarters and each production base organizes OHS risk identification and assessment at least once a year, covering production processes, labor processes, and production environment\n- \"Major risks\" and \"significant risks\" identified are classified as unacceptable and subject to strict controls\n- PPE is provided to all relevant employees; EHS training is mandatory for all employees\n\nSupporting documents: JA Solar Environment Health & Safety Policy | JA Solar HSSE Plan"
-  },
-  {
     "id": 12,
     "status": "pending",
     "answer": "JA Solar applies a dual control mechanism of \"self-inspection + external audit\" for air emissions management. Each production site is equipped with waste gas treatment facilities. The concentration of purified gases is continuously monitored to ensure all air pollutants meet applicable emission standards.\n\nKey controlled air pollutants: nitrogen oxides (NOx), sulfur oxides (SOx), volatile organic compounds (VOCs), ammonia, and particulate matter (PM). Low-VOC materials are used in production to minimize emissions.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report"
@@ -371,6 +366,12 @@
   },
   {
     "id": 9,
+    "deleted": true,
+    "status": "pending",
+    "answer": ""
+  },
+  {
+    "id": 11,
     "deleted": true,
     "status": "pending",
     "answer": ""
