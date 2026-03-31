@@ -176,14 +176,6 @@
     "rank": 24
   },
   {
-    "id": 26,
-    "cat": "S",
-    "question": "What PPE / safety equipment do you provide?",
-    "status": "pending",
-    "answer": "Yes. JA Solar provides appropriate PPE to all employees engaged in operations that require personal protection, in compliance with ISO 45001 requirements and applicable OHS regulations. PPE types are determined based on risk assessments for each work environment and may include: safety helmets, protective footwear, eye protection, respiratory protection, gloves, and high-visibility clothing. PPE usage is monitored and enforced.\n\nSupporting documents: JA Solar Environment Health & Safety Policy | JA Solar HSSE Plan",
-    "rank": 25
-  },
-  {
     "id": 27,
     "cat": "G",
     "question": "Where do you source polysilicon / raw materials? (Supply chain origin)",
