@@ -80,14 +80,6 @@
     "rank": 11
   },
   {
-    "id": 13,
-    "cat": "S",
-    "question": "How do you handle workplace accidents / incidents?",
-    "status": "pending",
-    "answer": "Yes. JA Solar records and investigates all workplace accidents and incidents. JA Solar has established formal Accident Reporting and Investigation Control Procedures (EHS Accident Management Procedures) as part of its ISO 45001-certified OHS Management System.\n\nWhen a workplace accident or near-miss occurs:\n1. Immediate response: medical attention and site securing\n2. Formal incident report filed within the required timeframe (significant events reported to external regulatory authorities as required by law)\n3. Root cause analysis conducted\n4. Corrective and preventive actions implemented with clear responsibility and deadlines\n5. Findings shared with relevant teams to prevent recurrence\n6. Annual accident summary reports are compiled, including calculation of accident frequency rate, severity rate, and incident rate\n\nSupporting document: JA Solar HSSE Plan | 2024 JA Solar Sustainability and ESG Report",
-    "rank": 12
-  },
-  {
     "id": 14,
     "cat": "E",
     "question": "How do you manage water consumption / water resources?",
