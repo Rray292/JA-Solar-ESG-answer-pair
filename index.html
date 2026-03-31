@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>JA Solar ESG — Q&amp;A Editor</title>
 <style>
 :root{--bg:#f5f6fa;--card:#fff;--border:#e0e4ea;--text:#1a1d23;--text2:#6b7280;--accent:#3b82f6;--radius:10px;}
@@ -117,8 +114,8 @@ body{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;backgroun
 <div class="modal-overlay" id="tokenModal" style="display:none">
 <div class="modal">
 <h2>Enter GitHub Token</h2>
-<p>首次使用需要输入 GitHub Token，保存后不需要再次输入。<br/>如果你是 Ray 的同事，向 Ray 索取 token。</p>
-<input autocomplete="off" id="tokenInput" placeholder="ghp_..." type="password"/>
+<p>首次使用需要输入 GitHub Token，保存后不需要再次输入。<br>如果你是 Ray 的同事，向 Ray 索取 token。</p>
+<input autocomplete="off" id="tokenInput" placeholder="ghp_..." type="password">
 <button class="modal-btn" onclick="submitToken()">确认</button>
 <p class="modal-note">Token 仅保存在你自己的浏览器中</p>
 </div>
@@ -133,7 +130,7 @@ body{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;backgroun
 <div style="display:flex;gap:8px;align-items:center;margin-left:auto;">
 <span class="save-note" id="saveNote">Loading...</span>
 <button class="save-btn" onclick="openAddModal()" style="background:#16a34a;padding:6px 16px;font-size:12px;">+ Add Question</button>
-<button class="save-btn" id="saveBtn" disabled onclick="saveToGitHub()" style="padding:6px 16px;font-size:12px;">Save</button>
+<button class="save-btn" id="saveBtn" disabled="" onclick="saveToGitHub()" style="padding:6px 16px;font-size:12px;">Save</button>
 </div>
 </div>
 <div class="filters">
@@ -146,10 +143,10 @@ body{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;backgroun
 <span class="filter-label">Status:</span>
 <button class="fbtn f-pending" onclick="toggleStatusFilter('pending',this)">⏳ Pending</button>
 <button class="fbtn f-verified" onclick="toggleStatusFilter('verified',this)">✅ Verified</button>
-<input class="search-input" oninput="doSearch(this.value)" placeholder="Search questions..." type="text"/>
+<input class="search-input" oninput="doSearch(this.value)" placeholder="Search questions..." type="text">
 </div>
 <div class="main">
-<div class="cat-header" style="background:#e74c3c">S   Social</div>
+<div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="0">
 <div class="qa-header">
 <span class="qa-rank">#1</span>
@@ -163,7 +160,7 @@ body{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;backgroun
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar GmbH UK Modern Slavery Statement 2024 | JA Solar USA Inc. Canada Annual S-211 Report 2025 | Solar Industry Forced Labor Prevention Pledge</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="1">
 <div class="qa-header">
 <span class="qa-rank">#2</span>
@@ -199,7 +196,7 @@ Scope 3 breakdown (tCO2e):
 
 Supporting documents: 2024 JA Solar Sustainability and ESG Report | 2024 JA Solar Environmental Sustainability Report | GHG verification statement.pdf (SGS)</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="2">
 <div class="qa-header">
 <span class="qa-rank">#3</span>
@@ -213,7 +210,7 @@ Supporting documents: 2024 JA Solar Sustainability and ESG Report | 2024 JA Sola
 
 Supporting documents: JA Solar Anti-Fraud Reporting Policy and Investigation Procedures | JA Solar Code of Conduct | JA Solar Antitrust and Competition Law Global Compliance Policy</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="3">
 <div class="qa-header">
 <span class="qa-rank">#4</span>
@@ -227,7 +224,7 @@ Supporting documents: JA Solar Anti-Fraud Reporting Policy and Investigation Pro
 
 Supporting document: JA Solar Diversity Equity &amp; Inclusion Policy</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="4">
 <div class="qa-header">
 <span class="qa-rank">#5</span>
@@ -248,7 +245,7 @@ Please refer to the Certificates folder for copies of individual certificates.
 
 Supporting document: ISO 45001 9001 14001-2027.5.pdf (ISO 14001, ISO 45001, ISO 9001 certificates)</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="5">
 <div class="qa-header">
 <span class="qa-rank">#6</span>
@@ -279,7 +276,7 @@ A smart Energy Management System (EMS) is deployed to monitor and optimize energ
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="7">
 <div class="qa-header">
 <span class="qa-rank">#8</span>
@@ -296,29 +293,11 @@ Wages are paid on time and in full. Recruitment fees are never charged to worker
 Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct</div>
 </div>
 </div>
-<div class="cat-header" style="background:#27ae60">E   Environmental</div>
-<div class="qa-item" data-cat="E" data-id="9">
-<div class="qa-header">
-<span class="qa-rank">#9</span>
-<span class="cat-badge cat-E">E</span>
-<span class="qa-question">How do you manage waste (hazardous and non-hazardous)?</span>
-<button class="status-btn ai" onclick="toggleStatus(9,this)">⏳ Pending</button>
-</div>
-<div class="qa-body">
-<div class="answer-label">Answer <span class="edit-hint">(click to edit, Ctrl+S to save)</span></div>
-<div class="qa-answer" contenteditable="true" data-id="9" oninput="markDirty(9,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">JA Solar strictly complies with waste management laws and regulations at all operating locations, following the principles of reduction, resource utilization, and harmlessness. Key measures include:
-- Waste Sorting: Strict waste classification to increase recycling rates
-- Material Recycling: Silicon scraps and other production materials are recycled
-- Packaging Recycling: Recyclable packaging promoted with recycling systems established
-- Hazardous Waste: Processed by licensed third-party disposal companies per applicable regulations
-- Solid Waste: Managed in accordance with national and local environmental laws
 
-Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
-</div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+<div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="10">
 <div class="qa-header">
-<span class="qa-rank">#10</span>
+<span class="qa-rank">#9</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Does your company have ISO 14001 certification?</span>
 <button class="status-btn ai" onclick="toggleStatus(10,this)">⏳ Pending</button>
@@ -329,10 +308,10 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 
 Please refer to the Certificates folder for copies of individual certificates.</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="11">
 <div class="qa-header">
-<span class="qa-rank">#11</span>
+<span class="qa-rank">#10</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What is your occupational health and safety policy / management system?</span>
 <button class="status-btn ai" onclick="toggleStatus(11,this)">⏳ Pending</button>
@@ -350,10 +329,10 @@ Key elements:
 
 Supporting documents: JA Solar Environment Health &amp; Safety Policy | JA Solar HSSE Plan</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="12">
 <div class="qa-header">
-<span class="qa-rank">#12</span>
+<span class="qa-rank">#11</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">How do you manage air emissions / pollution?</span>
 <button class="status-btn ai" onclick="toggleStatus(12,this)">⏳ Pending</button>
@@ -366,10 +345,10 @@ Key controlled air pollutants: nitrogen oxides (NOx), sulfur oxides (SOx), volat
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="13">
 <div class="qa-header">
-<span class="qa-rank">#13</span>
+<span class="qa-rank">#12</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">How do you handle workplace accidents / incidents?</span>
 <button class="status-btn ai" onclick="toggleStatus(13,this)">⏳ Pending</button>
@@ -388,10 +367,10 @@ When a workplace accident or near-miss occurs:
 
 Supporting document: JA Solar HSSE Plan | 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="14">
 <div class="qa-header">
-<span class="qa-rank">#14</span>
+<span class="qa-rank">#13</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">How do you manage water consumption / water resources?</span>
 <button class="status-btn ai" onclick="toggleStatus(14,this)">⏳ Pending</button>
@@ -408,10 +387,10 @@ In 2024, 100% of wastewater was compliantly treated with no incidents of exceedi
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="15">
 <div class="qa-header">
-<span class="qa-rank">#15</span>
+<span class="qa-rank">#14</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What is your grievance / whistleblowing mechanism?</span>
 <button class="status-btn ai" onclick="toggleStatus(15,this)">⏳ Pending</button>
@@ -431,7 +410,7 @@ Supporting document: JA Solar Whistleblower Protection and Integrity Reporting P
 </div>
 </div><div class="qa-item" data-cat="S" data-id="16">
 <div class="qa-header">
-<span class="qa-rank">#16</span>
+<span class="qa-rank">#15</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What is your policy on child labor?</span>
 <button class="status-btn ai" onclick="toggleStatus(16,this)">⏳ Pending</button>
@@ -442,10 +421,10 @@ Supporting document: JA Solar Whistleblower Protection and Integrity Reporting P
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct | JA Solar Supplier Code of Conduct</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="17">
 <div class="qa-header">
-<span class="qa-rank">#17</span>
+<span class="qa-rank">#16</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">What is your approach to circular economy / product recycling / end-of-life?</span>
 <button class="status-btn ai" onclick="toggleStatus(17,this)">⏳ Pending</button>
@@ -461,10 +440,10 @@ Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct | 
 
 Supporting documents: JA Solar Circular Economy Strategy | 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="18">
 <div class="qa-header">
-<span class="qa-rank">#18</span>
+<span class="qa-rank">#17</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">How do you manage contractor / subcontractor safety and compliance?</span>
 <button class="status-btn ai" onclick="toggleStatus(18,this)">⏳ Pending</button>
@@ -477,7 +456,7 @@ Supporting documents: JA Solar Supplier Code of Conduct Version 2.0 | JA Solar H
 </div>
 </div><div class="qa-item" data-cat="S" data-id="19">
 <div class="qa-header">
-<span class="qa-rank">#19</span>
+<span class="qa-rank">#18</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What are your working hours and overtime policies?</span>
 <button class="status-btn ai" onclick="toggleStatus(19,this)">⏳ Pending</button>
@@ -494,10 +473,10 @@ Working hours provisions are covered in the JA Solar Human Rights Policy and Cod
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="20">
 <div class="qa-header">
-<span class="qa-rank">#20</span>
+<span class="qa-rank">#19</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Does your company have an EMS (Environmental Management System)?</span>
 <button class="status-btn ai" onclick="toggleStatus(20,this)">⏳ Pending</button>
@@ -508,10 +487,10 @@ Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct</d
 
 Supporting document: ISO 14001 certificates</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="21">
 <div class="qa-header">
-<span class="qa-rank">#21</span>
+<span class="qa-rank">#20</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Do you have a corporate Code of Conduct / Business Ethics policy?</span>
 <button class="status-btn ai" onclick="toggleStatus(21,this)">⏳ Pending</button>
@@ -532,10 +511,10 @@ Supporting document: ISO 14001 certificates</div>
 
 Supporting document: JA Solar Code of Conduct</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="22">
 <div class="qa-header">
-<span class="qa-rank">#22</span>
+<span class="qa-rank">#21</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Has your company set GHG reduction targets? / Are your targets science-based (SBTi)?</span>
 <button class="status-btn ai" onclick="toggleStatus(22,this)">⏳ Pending</button>
@@ -555,10 +534,10 @@ Long-term (by 2050):
 
 Supporting documents: 2024 JA Solar Sustainability and ESG Report | SBTi target page</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="23">
 <div class="qa-header">
-<span class="qa-rank">#23</span>
+<span class="qa-rank">#22</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Have you identified ESG risks in your operations / supply chain?</span>
 <button class="status-btn ai" onclick="toggleStatus(23,this)">⏳ Pending</button>
@@ -571,10 +550,10 @@ Risk outcomes and mitigation measures are detailed in the 2024 JA Solar Sustaina
 
 Supporting documents: 2024 JA Solar Sustainability and ESG Report | 2023 Climate-Related Disclosure and TCFD Report | 2024 JA Solar TNFD Report</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="24">
 <div class="qa-header">
-<span class="qa-rank">#24</span>
+<span class="qa-rank">#23</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What is your approach to community engagement / social contribution?</span>
 <button class="status-btn ai" onclick="toggleStatus(24,this)">⏳ Pending</button>
@@ -591,10 +570,10 @@ Details and performance data are available in the 2024 JA Solar Sustainability a
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="25">
 <div class="qa-header">
-<span class="qa-rank">#25</span>
+<span class="qa-rank">#24</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">How do you handle corrective actions from audit findings?</span>
 <button class="status-btn ai" onclick="toggleStatus(25,this)">⏳ Pending</button>
@@ -610,10 +589,10 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 
 Supporting documents: JA Solar Responsible Sourcing Policy | 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="26">
 <div class="qa-header">
-<span class="qa-rank">#26</span>
+<span class="qa-rank">#25</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What PPE / safety equipment do you provide?</span>
 <button class="status-btn ai" onclick="toggleStatus(26,this)">⏳ Pending</button>
@@ -624,10 +603,10 @@ Supporting documents: JA Solar Responsible Sourcing Policy | 2024 JA Solar Susta
 
 Supporting documents: JA Solar Environment Health &amp; Safety Policy | JA Solar HSSE Plan</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="27">
 <div class="qa-header">
-<span class="qa-rank">#27</span>
+<span class="qa-rank">#26</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Where do you source polysilicon / raw materials? (Supply chain origin)</span>
 <button class="status-btn ai" onclick="toggleStatus(27,this)">⏳ Pending</button>
@@ -638,7 +617,7 @@ Supporting documents: JA Solar Environment Health &amp; Safety Policy | JA Solar
 </div>
 </div><div class="qa-item" data-cat="G" data-id="28">
 <div class="qa-header">
-<span class="qa-rank">#28</span>
+<span class="qa-rank">#27</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Does your company publish an ESG / sustainability report?</span>
 <button class="status-btn ai" onclick="toggleStatus(28,this)">⏳ Pending</button>
@@ -655,10 +634,10 @@ All reports are publicly available on the JA Solar official website (www.jasolar
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="29">
 <div class="qa-header">
-<span class="qa-rank">#29</span>
+<span class="qa-rank">#28</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">How do you verify worker identity documents and recruitment practices?</span>
 <button class="status-btn ai" onclick="toggleStatus(29,this)">⏳ Pending</button>
@@ -669,10 +648,10 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 
 Supporting document: JA Solar Human Rights Policy | JA Solar Responsible Sourcing Policy</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="30">
 <div class="qa-header">
-<span class="qa-rank">#30</span>
+<span class="qa-rank">#29</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Has your company defined an environmental policy?</span>
 <button class="status-btn ai" onclick="toggleStatus(30,this)">⏳ Pending</button>
@@ -689,10 +668,10 @@ Supporting document: JA Solar Human Rights Policy | JA Solar Responsible Sourcin
 
 Supporting documents: JA Solar Environmental, Social, and Governance (ESG) Sustainability Policy | JA Solar Environment Health &amp; Safety Policy</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="31">
 <div class="qa-header">
-<span class="qa-rank">#31</span>
+<span class="qa-rank">#30</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you have policies on working conditions (dormitory, sanitation, etc.)?</span>
 <button class="status-btn ai" onclick="toggleStatus(31,this)">⏳ Pending</button>
@@ -705,7 +684,7 @@ Supporting document: JA Solar Human Rights Policy</div>
 </div>
 </div><div class="qa-item" data-cat="S" data-id="32">
 <div class="qa-header">
-<span class="qa-rank">#32</span>
+<span class="qa-rank">#31</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Does your company have a human rights policy?</span>
 <button class="status-btn ai" onclick="toggleStatus(32,this)">⏳ Pending</button>
@@ -718,10 +697,10 @@ The policy is approved by the Board-level Compliance Management Committee and re
 
 Supporting document: JA Solar Human Rights Policy</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="33">
 <div class="qa-header">
-<span class="qa-rank">#33</span>
+<span class="qa-rank">#32</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">How do you manage hazardous chemicals / substances?</span>
 <button class="status-btn ai" onclick="toggleStatus(33,this)">⏳ Pending</button>
@@ -738,10 +717,10 @@ Supporting document: JA Solar Human Rights Policy</div>
 
 Supporting documents: JA Solar Environment Health &amp; Safety Policy | JA Solar HSSE Plan</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="34">
 <div class="qa-header">
-<span class="qa-rank">#34</span>
+<span class="qa-rank">#33</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">How do you ensure legal / regulatory compliance?</span>
 <button class="status-btn ai" onclick="toggleStatus(34,this)">⏳ Pending</button>
@@ -757,10 +736,10 @@ Supporting documents: JA Solar Environment Health &amp; Safety Policy | JA Solar
 
 Supporting documents: JA Solar Code of Conduct | JA Solar Anti-Fraud Reporting Policy and Investigation Procedures</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="35">
 <div class="qa-header">
-<span class="qa-rank">#35</span>
+<span class="qa-rank">#34</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you have a policy against harassment / disciplinary procedures?</span>
 <button class="status-btn ai" onclick="toggleStatus(35,this)">⏳ Pending</button>
@@ -771,10 +750,10 @@ Supporting documents: JA Solar Code of Conduct | JA Solar Anti-Fraud Reporting P
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct | JA Solar Whistleblower Protection and Integrity Reporting Policy</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="36">
 <div class="qa-header">
-<span class="qa-rank">#36</span>
+<span class="qa-rank">#35</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Do you have a Supplier Code of Conduct?</span>
 <button class="status-btn ai" onclick="toggleStatus(36,this)">⏳ Pending</button>
@@ -787,7 +766,7 @@ Supporting document: JA Solar Supplier Code of Conduct Version 2.0</div>
 </div>
 </div><div class="qa-item" data-cat="G" data-id="37">
 <div class="qa-header">
-<span class="qa-rank">#37</span>
+<span class="qa-rank">#36</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Can you provide your supply chain map / supplier list?</span>
 <button class="status-btn ai" onclick="toggleStatus(37,this)">⏳ Pending</button>
@@ -796,10 +775,10 @@ Supporting document: JA Solar Supplier Code of Conduct Version 2.0</div>
 <div class="answer-label">Answer <span class="edit-hint">(click to edit, Ctrl+S to save)</span></div>
 <div class="qa-answer" contenteditable="true" data-id="37" oninput="markDirty(37,this)" onkeydown="if((event.ctrlKey||event.metaKey)&amp;&amp;event.key==='s'){event.preventDefault();saveToGitHub();}">Please contact the Compliance and Traceability department.</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="38">
 <div class="qa-header">
-<span class="qa-rank">#38</span>
+<span class="qa-rank">#37</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you have a policy on freedom of association and collective bargaining?</span>
 <button class="status-btn ai" onclick="toggleStatus(38,this)">⏳ Pending</button>
@@ -810,10 +789,10 @@ Supporting document: JA Solar Supplier Code of Conduct Version 2.0</div>
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="39">
 <div class="qa-header">
-<span class="qa-rank">#39</span>
+<span class="qa-rank">#38</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Does your company follow GRI / UNGC / other international frameworks?</span>
 <button class="status-btn ai" onclick="toggleStatus(39,this)">⏳ Pending</button>
@@ -829,10 +808,10 @@ Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct</d
 
 Supporting documents: UNGC participant page | 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="40">
 <div class="qa-header">
-<span class="qa-rank">#40</span>
+<span class="qa-rank">#39</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you provide employment contracts / appointment letters to all workers?</span>
 <button class="status-btn ai" onclick="toggleStatus(40,this)">⏳ Pending</button>
@@ -843,10 +822,10 @@ Supporting documents: UNGC participant page | 2024 JA Solar Sustainability and E
 
 Supporting document: JA Solar Human Rights Policy | JA Solar Code of Conduct</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="41">
 <div class="qa-header">
-<span class="qa-rank">#41</span>
+<span class="qa-rank">#40</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Does your company have ISO 45001 / OHSAS 18001 certification?</span>
 <button class="status-btn ai" onclick="toggleStatus(41,this)">⏳ Pending</button>
@@ -859,7 +838,7 @@ Please refer to the Certificates folder for copies of individual certificates.</
 </div>
 </div><div class="qa-item" data-cat="G" data-id="42">
 <div class="qa-header">
-<span class="qa-rank">#42</span>
+<span class="qa-rank">#41</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Do you have a responsible sourcing / procurement policy?</span>
 <button class="status-btn ai" onclick="toggleStatus(42,this)">⏳ Pending</button>
@@ -870,10 +849,10 @@ Please refer to the Certificates folder for copies of individual certificates.</
 
 Supporting document: JA Solar Responsible Sourcing Policy Version 3.0</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="43">
 <div class="qa-header">
-<span class="qa-rank">#43</span>
+<span class="qa-rank">#42</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Is decarbonization part of your company strategy?</span>
 <button class="status-btn ai" onclick="toggleStatus(43,this)">⏳ Pending</button>
@@ -888,10 +867,10 @@ Supporting document: JA Solar Responsible Sourcing Policy Version 3.0</div>
 
 Supporting documents: 2024 JA Solar Sustainability and ESG Report | 2023 Climate-Related Disclosure and TCFD Report</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="44">
 <div class="qa-header">
-<span class="qa-rank">#44</span>
+<span class="qa-rank">#43</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What is the composition of your workforce (headcount, gender, age)?</span>
 <button class="status-btn ai" onclick="toggleStatus(44,this)">⏳ Pending</button>
@@ -902,10 +881,10 @@ Supporting documents: 2024 JA Solar Sustainability and ESG Report | 2023 Climate
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="45">
 <div class="qa-header">
-<span class="qa-rank">#45</span>
+<span class="qa-rank">#44</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">How do you manage wastewater / water discharge?</span>
 <button class="status-btn ai" onclick="toggleStatus(45,this)">⏳ Pending</button>
@@ -918,7 +897,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
 </div><div class="qa-item" data-cat="E" data-id="46">
 <div class="qa-header">
-<span class="qa-rank">#46</span>
+<span class="qa-rank">#45</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Have your GHG emissions been verified by a third party?</span>
 <button class="status-btn ai" onclick="toggleStatus(46,this)">⏳ Pending</button>
@@ -931,7 +910,7 @@ Supporting documents: 2024 JA Solar Environmental Sustainability Report</div>
 </div>
 </div><div class="qa-item" data-cat="E" data-id="47">
 <div class="qa-header">
-<span class="qa-rank">#47</span>
+<span class="qa-rank">#46</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">What is your approach to product packaging / transport sustainability?</span>
 <button class="status-btn ai" onclick="toggleStatus(47,this)">⏳ Pending</button>
@@ -947,10 +926,10 @@ Supporting documents: 2024 JA Solar Environmental Sustainability Report</div>
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="48">
 <div class="qa-header">
-<span class="qa-rank">#48</span>
+<span class="qa-rank">#47</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">What ESG ratings / scores does your company have (EcoVadis, CDP, etc.)?</span>
 <button class="status-btn ai" onclick="toggleStatus(48,this)">⏳ Pending</button>
@@ -969,7 +948,7 @@ Supporting document: EcoVadis scorecard | CDP response | 2024 JA Solar Sustainab
 </div>
 </div><div class="qa-item" data-cat="G" data-id="49">
 <div class="qa-header">
-<span class="qa-rank">#49</span>
+<span class="qa-rank">#48</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Do you conduct internal audits / self-assessments on ESG / compliance?</span>
 <button class="status-btn ai" onclick="toggleStatus(49,this)">⏳ Pending</button>
@@ -985,10 +964,10 @@ Supporting document: EcoVadis scorecard | CDP response | 2024 JA Solar Sustainab
 
 Results are reported to the Board-level Compliance Management Committee. Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="50">
 <div class="qa-header">
-<span class="qa-rank">#50</span>
+<span class="qa-rank">#49</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">What actions reduce environmental impact from product use / end-of-life?</span>
 <button class="status-btn ai" onclick="toggleStatus(50,this)">⏳ Pending</button>
@@ -1002,10 +981,10 @@ Results are reported to the Board-level Compliance Management Committee. Support
 
 Supporting documents: JA Solar Circular Economy Strategy | 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="51">
 <div class="qa-header">
-<span class="qa-rank">#51</span>
+<span class="qa-rank">#50</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you have operations or suppliers in Xinjiang?</span>
 <button class="status-btn ai" onclick="toggleStatus(51,this)">⏳ Pending</button>
@@ -1016,7 +995,7 @@ Supporting documents: JA Solar Circular Economy Strategy | 2024 JA Solar Sustain
 </div>
 </div><div class="qa-item" data-cat="S" data-id="52">
 <div class="qa-header">
-<span class="qa-rank">#52</span>
+<span class="qa-rank">#51</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you have a conflict minerals / responsible minerals policy?</span>
 <button class="status-btn ai" onclick="toggleStatus(52,this)">⏳ Pending</button>
@@ -1027,10 +1006,10 @@ Supporting documents: JA Solar Circular Economy Strategy | 2024 JA Solar Sustain
 
 Supporting document: JA Solar Conflict Minerals Management Policy Version 2.0</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="53">
 <div class="qa-header">
-<span class="qa-rank">#53</span>
+<span class="qa-rank">#52</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">What is your data security / privacy policy?</span>
 <button class="status-btn ai" onclick="toggleStatus(53,this)">⏳ Pending</button>
@@ -1043,7 +1022,7 @@ Supporting document: JA Solar Code of Conduct</div>
 </div>
 </div><div class="qa-item" data-cat="G" data-id="54">
 <div class="qa-header">
-<span class="qa-rank">#54</span>
+<span class="qa-rank">#53</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Do you make external disclosure about your environmental / social performance?</span>
 <button class="status-btn ai" onclick="toggleStatus(54,this)">⏳ Pending</button>
@@ -1058,10 +1037,10 @@ Supporting document: JA Solar Code of Conduct</div>
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="55">
 <div class="qa-header">
-<span class="qa-rank">#55</span>
+<span class="qa-rank">#54</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">What GHG reduction initiatives / measures do you have?</span>
 <button class="status-btn ai" onclick="toggleStatus(55,this)">⏳ Pending</button>
@@ -1088,10 +1067,10 @@ Key results 2024: Vehicle diesel ↓45%, gasoline ↓31% vs. 2023 | Distributed 
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="56">
 <div class="qa-header">
-<span class="qa-rank">#56</span>
+<span class="qa-rank">#55</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do you have emergency response / fire safety procedures?</span>
 <button class="status-btn ai" onclick="toggleStatus(56,this)">⏳ Pending</button>
@@ -1109,7 +1088,7 @@ Supporting document: JA Solar HSSE Plan</div>
 </div>
 </div><div class="qa-item" data-cat="S" data-id="57">
 <div class="qa-header">
-<span class="qa-rank">#57</span>
+<span class="qa-rank">#56</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Do workers pay recruitment fees? How do you manage migrant workers?</span>
 <button class="status-btn ai" onclick="toggleStatus(57,this)">⏳ Pending</button>
@@ -1120,10 +1099,10 @@ Supporting document: JA Solar HSSE Plan</div>
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar Supplier Code of Conduct Version 2.0</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="58">
 <div class="qa-header">
-<span class="qa-rank">#58</span>
+<span class="qa-rank">#57</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">What is your impact on / approach to biodiversity?</span>
 <button class="status-btn ai" onclick="toggleStatus(58,this)">⏳ Pending</button>
@@ -1136,7 +1115,7 @@ Supporting documents: JA Solar Biodiversity Policy | 2024 JA Solar TNFD Report</
 </div>
 </div><div class="qa-item" data-cat="E" data-id="59">
 <div class="qa-header">
-<span class="qa-rank">#59</span>
+<span class="qa-rank">#58</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Do you conduct environmental monitoring (air, water, noise, soil)?</span>
 <button class="status-btn ai" onclick="toggleStatus(59,this)">⏳ Pending</button>
@@ -1155,7 +1134,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
 </div><div class="qa-item" data-cat="E" data-id="60">
 <div class="qa-header">
-<span class="qa-rank">#60</span>
+<span class="qa-rank">#59</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Have you assessed environmental risks / impacts of your operations?</span>
 <button class="status-btn ai" onclick="toggleStatus(60,this)">⏳ Pending</button>
@@ -1172,10 +1151,10 @@ Outcomes and corresponding reduction initiatives are detailed in the 2024 JA Sol
 
 Supporting document: 2024 JA Solar Environmental Sustainability Report</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="61">
 <div class="qa-header">
-<span class="qa-rank">#61</span>
+<span class="qa-rank">#60</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Do you conduct internal ESG / social compliance reporting to management?</span>
 <button class="status-btn ai" onclick="toggleStatus(61,this)">⏳ Pending</button>
@@ -1188,7 +1167,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
 </div><div class="qa-item" data-cat="G" data-id="62">
 <div class="qa-header">
-<span class="qa-rank">#62</span>
+<span class="qa-rank">#61</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Can your company accept third-party / on-site audits?</span>
 <button class="status-btn ai" onclick="toggleStatus(62,this)">⏳ Pending</button>
@@ -1201,7 +1180,7 @@ Supporting document: SSI audit reports | EcoVadis scorecard</div>
 </div>
 </div><div class="qa-item" data-cat="G" data-id="63">
 <div class="qa-header">
-<span class="qa-rank">#63</span>
+<span class="qa-rank">#62</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Does your company have ISO 9001 certification?</span>
 <button class="status-btn ai" onclick="toggleStatus(63,this)">⏳ Pending</button>
@@ -1212,10 +1191,10 @@ Supporting document: SSI audit reports | EcoVadis scorecard</div>
 
 Please refer to the Certificates folder for copies of individual certificates.</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="64">
 <div class="qa-header">
-<span class="qa-rank">#64</span>
+<span class="qa-rank">#63</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">Does your company comply with applicable labor laws?</span>
 <button class="status-btn ai" onclick="toggleStatus(64,this)">⏳ Pending</button>
@@ -1228,7 +1207,7 @@ Supporting documents: JA Solar Code of Conduct | JA Solar Human Rights Policy</d
 </div>
 </div><div class="qa-item" data-cat="S" data-id="65">
 <div class="qa-header">
-<span class="qa-rank">#65</span>
+<span class="qa-rank">#64</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What safety training do you provide?</span>
 <button class="status-btn ai" onclick="toggleStatus(65,this)">⏳ Pending</button>
@@ -1246,10 +1225,10 @@ Training records are maintained and verified. In 2024, JA Solar also provided su
 
 Supporting document: JA Solar HSSE Plan | 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="66">
 <div class="qa-header">
-<span class="qa-rank">#66</span>
+<span class="qa-rank">#65</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">How do you monitor / calculate your GHG emissions?</span>
 <button class="status-btn ai" onclick="toggleStatus(66,this)">⏳ Pending</button>
@@ -1265,10 +1244,10 @@ All production sites complete annual GHG inventories. Results are independently 
 
 Supporting documents: 2024 JA Solar Environmental Sustainability Report</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="67">
 <div class="qa-header">
-<span class="qa-rank">#67</span>
+<span class="qa-rank">#66</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Does your company have written corporate sustainability principles / commitments?</span>
 <button class="status-btn ai" onclick="toggleStatus(67,this)">⏳ Pending</button>
@@ -1281,7 +1260,7 @@ Supporting document: JA Solar Environmental, Social, and Governance (ESG) Sustai
 </div>
 </div><div class="qa-item" data-cat="G" data-id="68">
 <div class="qa-header">
-<span class="qa-rank">#68</span>
+<span class="qa-rank">#67</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">What due diligence do you perform on human rights / ESG?</span>
 <button class="status-btn ai" onclick="toggleStatus(68,this)">⏳ Pending</button>
@@ -1297,10 +1276,10 @@ Supporting document: JA Solar Environmental, Social, and Governance (ESG) Sustai
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar Responsible Sourcing Policy | 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#27ae60">E   Environmental</div>
+</div><div class="cat-header" style="background:#27ae60">E &nbsp; Environmental</div>
 <div class="qa-item" data-cat="E" data-id="69">
 <div class="qa-header">
-<span class="qa-rank">#69</span>
+<span class="qa-rank">#68</span>
 <span class="cat-badge cat-E">E</span>
 <span class="qa-question">Do you have green factory / green manufacturing certifications?</span>
 <button class="status-btn ai" onclick="toggleStatus(69,this)">⏳ Pending</button>
@@ -1313,10 +1292,10 @@ Supporting documents: JA Solar Human Rights Policy | JA Solar Responsible Sourci
 
 Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="70">
 <div class="qa-header">
-<span class="qa-rank">#70</span>
+<span class="qa-rank">#69</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">What compliance / ESG training do you provide to employees?</span>
 <button class="status-btn ai" onclick="toggleStatus(70,this)">⏳ Pending</button>
@@ -1337,7 +1316,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
 </div><div class="qa-item" data-cat="G" data-id="71">
 <div class="qa-header">
-<span class="qa-rank">#71</span>
+<span class="qa-rank">#70</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Has your company joined international sustainability initiatives (RE100, EP100, etc.)?</span>
 <button class="status-btn ai" onclick="toggleStatus(71,this)">⏳ Pending</button>
@@ -1355,10 +1334,10 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 
 Supporting document: UNGC participant page | 2024 JA Solar Sustainability and ESG Report</div>
 </div>
-</div><div class="cat-header" style="background:#e74c3c">S   Social</div>
+</div><div class="cat-header" style="background:#e74c3c">S &nbsp; Social</div>
 <div class="qa-item" data-cat="S" data-id="72">
 <div class="qa-header">
-<span class="qa-rank">#72</span>
+<span class="qa-rank">#71</span>
 <span class="cat-badge cat-S">S</span>
 <span class="qa-question">What are your policies on leave (sick, maternity, annual)?</span>
 <button class="status-btn ai" onclick="toggleStatus(72,this)">⏳ Pending</button>
@@ -1369,10 +1348,10 @@ Supporting document: UNGC participant page | 2024 JA Solar Sustainability and ES
 
 Supporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct</div>
 </div>
-</div><div class="cat-header" style="background:#1d4ed8">G   Governance</div>
+</div><div class="cat-header" style="background:#1d4ed8">G &nbsp; Governance</div>
 <div class="qa-item" data-cat="G" data-id="73">
 <div class="qa-header">
-<span class="qa-rank">#73</span>
+<span class="qa-rank">#72</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">What stakeholder engagement / materiality assessment do you conduct?</span>
 <button class="status-btn ai" onclick="toggleStatus(73,this)">⏳ Pending</button>
@@ -1385,7 +1364,7 @@ Supporting document: 2024 JA Solar Sustainability and ESG Report</div>
 </div>
 </div><div class="qa-item" data-cat="G" data-id="74">
 <div class="qa-header">
-<span class="qa-rank">#74</span>
+<span class="qa-rank">#73</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">How do you manage / audit your suppliers on ESG?</span>
 <button class="status-btn ai" onclick="toggleStatus(74,this)">⏳ Pending</button>
@@ -1405,7 +1384,7 @@ Supporting documents: JA Solar Responsible Sourcing Policy | JA Solar Supplier C
 </div>
 </div><div class="qa-item" data-cat="G" data-id="75">
 <div class="qa-header">
-<span class="qa-rank">#75</span>
+<span class="qa-rank">#74</span>
 <span class="cat-badge cat-G">G</span>
 <span class="qa-question">Do you assess sustainability performance of your supply chain partners?</span>
 <button class="status-btn ai" onclick="toggleStatus(75,this)">⏳ Pending</button>
@@ -1893,7 +1872,7 @@ function addDeleteButtons() {
 <option value="G">G — Governance</option>
 </select>
 <label>Question</label>
-<input id="newQuestion" placeholder="Enter question text..." type="text"/>
+<input id="newQuestion" placeholder="Enter question text..." type="text">
 <label>Answer</label>
 <textarea id="newAnswer" placeholder="Enter answer text..."></textarea>
 <div class="add-modal-actions">
@@ -1923,5 +1902,5 @@ function addDeleteButtons() {
   </div>
 </div>
 
-</body>
-</html>
+
+</body></html>
