@@ -1,373 +1,594 @@
 [
   {
     "id": 0,
+    "cat": "S",
+    "question": "Do you have a forced labor / modern slavery policy?",
     "status": "verified",
-    "answer": "Yes. JA Solar does not tolerate any form of modern slavery, including forced labour, prison labour, indentured labour and human trafficking. The JA Solar Human Rights Policy explicitly prohibits all forms of forced labor throughout operations and the supply chain. The policy is approved by the Compliance Management Committee and reviewed regularly. JA Solar has also issued regional Modern Slavery Statements and signed the Solar Industry Forced Labor Prevention Pledge."
+    "answer": "Yes. JA Solar does not tolerate any form of modern slavery, including forced labour, prison labour, indentured labour and human trafficking. The JA Solar Human Rights Policy explicitly prohibits all forms of forced labor throughout operations and the supply chain. The policy is approved by the Compliance Management Committee and reviewed regularly. JA Solar has also issued regional Modern Slavery Statements and signed the Solar Industry Forced Labor Prevention Pledge.",
+    "rank": 1
   },
   {
     "id": 1,
+    "cat": "E",
+    "question": "Please provide / report your GHG emissions (Scope 1, 2, 3)",
     "status": "verified",
-    "answer": "JA Solar conducts GHG inventory at all production sites in accordance with ISO 14064-1:2018 and the GHG Protocol Corporate Accounting and Reporting Standard, covering Scope 1, 2, and 3 emissions. The 2024 GHG emissions have been independently verified by SGS in accordance with ISO 14064-3:2019 (verification statement issued April 2025, reasonable assurance).\n\n2024 GHG Emissions (SGS third-party verified, report period 01 Jan. 31-Dec. 2024):\n- Scope 1: 107,171 tCO2e (direct emissions from owned/controlled sources)\n- Scope 2: 3,220,788 tCO2e (indirect emissions from purchased electricity, market-based)\n- Scope 3: 32,233,663 tCO2e (value chain emissions from all 15 categories measured)\n\nScope 3 breakdown (tCO2e):\n1. Purchased goods and services: 27,778,243\n2. Capital goods: 2,775,785\n3. Fuel- and energy-related activities: 414,770\n4. Upstream transportation and distribution: 959,120\n5. Waste generated in operations: 12,336\n6. Business travel: 10,506\n7. Employee commuting: 42,206\n8. Upstream leased assets: 28,875\n9. Downstream transportation and distribution: 61,482\n10. Processing of sold products: 59,381\n11. Use of sold products: NA\n12. End-of-life treatment of sold products: 61,035\n13. Downstream leased assets: 254\n14. Franchises: NA\n15. Investments: 29,670"
+    "answer": "JA Solar conducts GHG inventory at all production sites in accordance with ISO 14064-1:2018 and the GHG Protocol Corporate Accounting and Reporting Standard, covering Scope 1, 2, and 3 emissions. The 2024 GHG emissions have been independently verified by SGS in accordance with ISO 14064-3:2019 (verification statement issued April 2025, reasonable assurance).\n\n2024 GHG Emissions (SGS third-party verified, report period 01 Jan. 31-Dec. 2024):\n- Scope 1: 107,171 tCO2e (direct emissions from owned/controlled sources)\n- Scope 2: 3,220,788 tCO2e (indirect emissions from purchased electricity, market-based)\n- Scope 3: 32,233,663 tCO2e (value chain emissions from all 15 categories measured)\n\nScope 3 breakdown (tCO2e):\n1. Purchased goods and services: 27,778,243\n2. Capital goods: 2,775,785\n3. Fuel- and energy-related activities: 414,770\n4. Upstream transportation and distribution: 959,120\n5. Waste generated in operations: 12,336\n6. Business travel: 10,506\n7. Employee commuting: 42,206\n8. Upstream leased assets: 28,875\n9. Downstream transportation and distribution: 61,482\n10. Processing of sold products: 59,381\n11. Use of sold products: NA\n12. End-of-life treatment of sold products: 61,035\n13. Downstream leased assets: 254\n14. Franchises: NA\n15. Investments: 29,670",
+    "rank": 2
   },
   {
     "id": 2,
+    "cat": "G",
+    "question": "Do you have an anti-corruption / anti-bribery policy?",
     "status": "verified",
-    "answer": "Yes. JA Solar has a dedicated Anti-Fraud Reporting Policy and Investigation Procedures that prohibits bribery, corruption, fraud, and other unethical conduct. Anti-corruption and anti-bribery provisions are also embedded in the JA Solar Code of Conduct. JA Solar has additionally established an Antitrust and Competition Law Global Compliance Policy."
+    "answer": "Yes. JA Solar has a dedicated Anti-Fraud Reporting Policy and Investigation Procedures that prohibits bribery, corruption, fraud, and other unethical conduct. Anti-corruption and anti-bribery provisions are also embedded in the JA Solar Code of Conduct. JA Solar has additionally established an Antitrust and Competition Law Global Compliance Policy.",
+    "rank": 3
   },
   {
     "id": 3,
+    "cat": "S",
+    "question": "Do you have a non-discrimination / DEI policy?",
     "status": "verified",
-    "answer": "Yes. JA Solar has a dedicated Diversity, Equity & Inclusion (DEI) Policy. The policy commits to equal pay for equal work, prohibits discrimination based on gender, age, race, nationality, religion, disability, and other characteristics, and strictly prohibits harassment and bullying. DEI principles apply to recruitment, promotion, compensation, and all employment decisions.\n\nSupporting document: JA Solar Diversity Equity & Inclusion Policy"
+    "answer": "Yes. JA Solar has a dedicated Diversity, Equity & Inclusion (DEI) Policy. The policy commits to equal pay for equal work, prohibits discrimination based on gender, age, race, nationality, religion, disability, and other characteristics, and strictly prohibits harassment and bullying. DEI principles apply to recruitment, promotion, compensation, and all employment decisions.\n\nSupporting document: JA Solar Diversity Equity & Inclusion Policy",
+    "rank": 4
   },
   {
     "id": 4,
+    "cat": "G",
+    "question": "What management system certifications does your company hold?",
     "status": "verified",
-    "answer": "JA Solar holds the following management system certifications across its production sites:\n- ISO 14001:2015 - Environmental Management System (all production sites), valid until May 2027\n- ISO 45001:2018 - Occupational Health & Safety Management System, valid until May 2027\n- ISO 9001:2015 - Quality Management System, valid until May 2027\n- ISO 50001:2018 - Energy Management System (select production sites incl. Ningjin, Yiwu, Qujing), valid through 2027 (expiry dates vary by site)\n- SA 8000:2014 - Social Accountability (select sites incl. Yangzhou, Fengxian, Beijing), certified by TUV Italia; validity varies by site: Yangzhou valid until Aug 2028, Fengxian valid until Oct 2028, Beijing valid until May 2026\n- ISO 27001 / ISO 27000 - Information Security Management"
+    "answer": "JA Solar holds the following management system certifications across its production sites:\n- ISO 14001:2015 - Environmental Management System (all production sites), valid until May 2027\n- ISO 45001:2018 - Occupational Health & Safety Management System, valid until May 2027\n- ISO 9001:2015 - Quality Management System, valid until May 2027\n- ISO 50001:2018 - Energy Management System (select production sites incl. Ningjin, Yiwu, Qujing), valid through 2027 (expiry dates vary by site)\n- SA 8000:2014 - Social Accountability (select sites incl. Yangzhou, Fengxian, Beijing), certified by TUV Italia; validity varies by site: Yangzhou valid until Aug 2028, Fengxian valid until Oct 2028, Beijing valid until May 2026\n- ISO 27001 / ISO 27000 - Information Security Management",
+    "rank": 5
   },
   {
     "id": 5,
+    "cat": "E",
+    "question": "Do you have a product carbon footprint / EPD / LCA?",
     "status": "verified",
-    "answer": "Yes. JA Solar has conducted a carbon life cycle assessment (LCA) of its solar modules and obtained Environmental Product Declarations (EPDs). JA Solar has also conducted an ECS (Environmental Carbon Score) simulation. All mainstream JA Solar products have achieved 100% carbon footprint certifications."
+    "answer": "Yes. JA Solar has conducted a carbon life cycle assessment (LCA) of its solar modules and obtained Environmental Product Declarations (EPDs). JA Solar has also conducted an ECS (Environmental Carbon Score) simulation. All mainstream JA Solar products have achieved 100% carbon footprint certifications.",
+    "rank": 6
   },
   {
     "id": 6,
+    "cat": "E",
+    "question": "What is your energy consumption and what proportion is renewable?",
     "status": "verified",
-    "answer": "In 2024, JA Solar achieved a green electricity usage ratio of 34% across its manufacturing facilities (a 6% increase from 2023), through the construction of distributed photovoltaic power plants and procurement of green power. The installed capacity of self-consumption distributed PV plants reached 298 MW in 2024, an increase of 160 MW from 2023. Detailed energy consumption data (total consumption, breakdown by energy type) is available in the 2024 JA Solar Sustainability and ESG Report (page 131)."
+    "answer": "In 2024, JA Solar achieved a green electricity usage ratio of 34% across its manufacturing facilities (a 6% increase from 2023), through the construction of distributed photovoltaic power plants and procurement of green power. The installed capacity of self-consumption distributed PV plants reached 298 MW in 2024, an increase of 160 MW from 2023. Detailed energy consumption data (total consumption, breakdown by energy type) is available in the 2024 JA Solar Sustainability and ESG Report (page 131).",
+    "rank": 7
   },
   {
     "id": 7,
+    "cat": "S",
+    "question": "What are your wage and benefit policies?",
     "status": "verified",
-    "answer": "JA Solar ensures all employees receive remuneration that: (1) meets at least the applicable legal minimum wage in each jurisdiction (2) is sufficient to cover basic needs; (3) includes overtime pay in accordance with national law. Employees receive legally mandated benefits including social insurance contributions.\n-Wages are paid on time and in full. Recruitment fees are never charged to workers. No deductions are made as disciplinary measures."
+    "answer": "JA Solar ensures all employees receive remuneration that: (1) meets at least the applicable legal minimum wage in each jurisdiction (2) is sufficient to cover basic needs; (3) includes overtime pay in accordance with national law. Employees receive legally mandated benefits including social insurance contributions.\n-Wages are paid on time and in full. Recruitment fees are never charged to workers. No deductions are made as disciplinary measures.",
+    "rank": 8
+  },
+  {
+    "id": 9,
+    "cat": "E",
+    "question": "How do you manage waste (hazardous and non-hazardous)?",
+    "status": "pending",
+    "answer": "JA Solar strictly complies with waste management laws and regulations at all operating locations, following the principles of reduction, resource utilization, and harmlessness. Key measures include:\n- Waste Sorting: Strict waste classification to increase recycling rates\n- Material Recycling: Silicon scraps and other production materials are recycled\n- Packaging Recycling: Recyclable packaging promoted with recycling systems established\n- Hazardous Waste: Processed by licensed third-party disposal companies per applicable regulations\n- Solid Waste: Managed in accordance with national and local environmental laws\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
+    "rank": 9
   },
   {
     "id": 10,
+    "cat": "G",
+    "question": "Does your company have ISO 14001 certification?",
     "status": "verified",
-    "answer": "Yes. All JA Solar production sites that have officially commenced operations hold ISO 14001:2015 Environmental Management System certification."
+    "answer": "Yes. All JA Solar production sites that have officially commenced operations hold ISO 14001:2015 Environmental Management System certification.",
+    "rank": 10
   },
   {
     "id": 12,
+    "cat": "E",
+    "question": "How do you manage air emissions / pollution?",
     "status": "pending",
-    "answer": "JA Solar applies a dual control mechanism of \"self-inspection + external audit\" for air emissions management. Each production site is equipped with waste gas treatment facilities. The concentration of purified gases is continuously monitored to ensure all air pollutants meet applicable emission standards.\n\nKey controlled air pollutants: nitrogen oxides (NOx), sulfur oxides (SOx), volatile organic compounds (VOCs), ammonia, and particulate matter (PM). Low-VOC materials are used in production to minimize emissions.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report"
+    "answer": "JA Solar applies a dual control mechanism of \"self-inspection + external audit\" for air emissions management. Each production site is equipped with waste gas treatment facilities. The concentration of purified gases is continuously monitored to ensure all air pollutants meet applicable emission standards.\n\nKey controlled air pollutants: nitrogen oxides (NOx), sulfur oxides (SOx), volatile organic compounds (VOCs), ammonia, and particulate matter (PM). Low-VOC materials are used in production to minimize emissions.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
+    "rank": 11
   },
   {
     "id": 13,
+    "cat": "S",
+    "question": "How do you handle workplace accidents / incidents?",
     "status": "pending",
-    "answer": "Yes. JA Solar records and investigates all workplace accidents and incidents. JA Solar has established formal Accident Reporting and Investigation Control Procedures (EHS Accident Management Procedures) as part of its ISO 45001-certified OHS Management System.\n\nWhen a workplace accident or near-miss occurs:\n1. Immediate response: medical attention and site securing\n2. Formal incident report filed within the required timeframe (significant events reported to external regulatory authorities as required by law)\n3. Root cause analysis conducted\n4. Corrective and preventive actions implemented with clear responsibility and deadlines\n5. Findings shared with relevant teams to prevent recurrence\n6. Annual accident summary reports are compiled, including calculation of accident frequency rate, severity rate, and incident rate\n\nSupporting document: JA Solar HSSE Plan | 2024 JA Solar Sustainability and ESG Report"
+    "answer": "Yes. JA Solar records and investigates all workplace accidents and incidents. JA Solar has established formal Accident Reporting and Investigation Control Procedures (EHS Accident Management Procedures) as part of its ISO 45001-certified OHS Management System.\n\nWhen a workplace accident or near-miss occurs:\n1. Immediate response: medical attention and site securing\n2. Formal incident report filed within the required timeframe (significant events reported to external regulatory authorities as required by law)\n3. Root cause analysis conducted\n4. Corrective and preventive actions implemented with clear responsibility and deadlines\n5. Findings shared with relevant teams to prevent recurrence\n6. Annual accident summary reports are compiled, including calculation of accident frequency rate, severity rate, and incident rate\n\nSupporting document: JA Solar HSSE Plan | 2024 JA Solar Sustainability and ESG Report",
+    "rank": 12
   },
   {
     "id": 14,
+    "cat": "E",
+    "question": "How do you manage water consumption / water resources?",
     "status": "verified",
-    "answer": "JA Solar has implemented the following water management measures at production sites:\n- Water-saving devices (sensor-based faucets and water-efficient equipment)\n- Wastewater recycling systems, treated wastewater is reused in production\n- Rainwater harvesting for landscaping and non-production uses\n- Advanced wastewater treatment systems: quartz sand filters, ultrafiltration units, reverse osmosis devices, and pH adjustment equipment\n\nIn 2024, 100% of wastewater was compliantly treated with no incidents of exceeding discharge standards or environmental pollution. Detailed water consumption data is in the 2024 JA Solar Sustainability and ESG Report.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report"
+    "answer": "JA Solar has implemented the following water management measures at production sites:\n- Water-saving devices (sensor-based faucets and water-efficient equipment)\n- Wastewater recycling systems, treated wastewater is reused in production\n- Rainwater harvesting for landscaping and non-production uses\n- Advanced wastewater treatment systems: quartz sand filters, ultrafiltration units, reverse osmosis devices, and pH adjustment equipment\n\nIn 2024, 100% of wastewater was compliantly treated with no incidents of exceeding discharge standards or environmental pollution. Detailed water consumption data is in the 2024 JA Solar Sustainability and ESG Report.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
+    "rank": 13
   },
   {
     "id": 15,
+    "cat": "S",
+    "question": "What is your grievance / whistleblowing mechanism?",
     "status": "verified",
-    "answer": " JA Solar operates the SpeakUp whistleblower program through a multi-channel, confidential grievance mechanism:\n- Hotline: +86-10-63611911\n- Email\n- Postal mail\n- QQ / WeChat\n- Online platform: https://clean.jasolar.com/lz/index_en.html\n\nReports can be made anonymously. A strict no-retaliation policy applies to all reporters. Cases are investigated by the Compliance function and results reported to the Board-level Compliance Management Committee.\n\nSupporting document: JA Solar Whistleblower Protection and Integrity Reporting Policy"
+    "answer": " JA Solar operates the SpeakUp whistleblower program through a multi-channel, confidential grievance mechanism:\n- Hotline: +86-10-63611911\n- Email\n- Postal mail\n- QQ / WeChat\n- Online platform: https://clean.jasolar.com/lz/index_en.html\n\nReports can be made anonymously. A strict no-retaliation policy applies to all reporters. Cases are investigated by the Compliance function and results reported to the Board-level Compliance Management Committee.\n\nSupporting document: JA Solar Whistleblower Protection and Integrity Reporting Policy",
+    "rank": 14
   },
   {
     "id": 16,
+    "cat": "S",
+    "question": "What is your policy on child labor?",
     "status": "pending",
-    "answer": "In line with the ILO Convention, JA Solar prohibits child labour. We do not employ anyone below the applicable legal minimum age in the relevant jurisdiction (typically under the age of 16). Young workers under 18 shall not perform high-risk work, including night shifts and overtime involving chemical hazards. These standards apply to direct employment and are extended to the supply chain via the Supplier Code of Conduct. No identity documents are retained and no recruitment fees are charged.\n\nSupporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct | JA Solar Supplier Code of Conduct"
+    "answer": "In line with the ILO Convention, JA Solar prohibits child labour. We do not employ anyone below the applicable legal minimum age in the relevant jurisdiction (typically under the age of 16). Young workers under 18 shall not perform high-risk work, including night shifts and overtime involving chemical hazards. These standards apply to direct employment and are extended to the supply chain via the Supplier Code of Conduct. No identity documents are retained and no recruitment fees are charged.\n\nSupporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct | JA Solar Supplier Code of Conduct",
+    "rank": 15
   },
   {
     "id": 17,
+    "cat": "E",
+    "question": "What is your approach to circular economy / product recycling / end-of-life?",
     "status": "pending",
-    "answer": "JA Solar promotes a circular economy approach throughout the product lifecycle:\n- Design: Easy-disassembly frameworks, polyurethane composite frames (100% recyclable), lead-free solder ribbons, fluorine-free backsheets\n- End-of-Life: Long-term strategic partnership with PV CYCLE for global module take-back and recycling\n- WEEE compliance: Registered in 17 European countries, covering >7 GW and >37,000 tonnes\n- China: Operates a national demonstration line for comprehensive recycling of glass, metals, and silicon from decommissioned modules\n- National R&D: Participates in the National Key R&D Program for efficient wet-method PV module recycling\n\nSupporting documents: JA Solar Circular Economy Strategy | 2024 JA Solar Sustainability and ESG Report"
+    "answer": "JA Solar promotes a circular economy approach throughout the product lifecycle:\n- Design: Easy-disassembly frameworks, polyurethane composite frames (100% recyclable), lead-free solder ribbons, fluorine-free backsheets\n- End-of-Life: Long-term strategic partnership with PV CYCLE for global module take-back and recycling\n- WEEE compliance: Registered in 17 European countries, covering >7 GW and >37,000 tonnes\n- China: Operates a national demonstration line for comprehensive recycling of glass, metals, and silicon from decommissioned modules\n- National R&D: Participates in the National Key R&D Program for efficient wet-method PV module recycling\n\nSupporting documents: JA Solar Circular Economy Strategy | 2024 JA Solar Sustainability and ESG Report",
+    "rank": 16
   },
   {
     "id": 18,
+    "cat": "S",
+    "question": "How do you manage contractor / subcontractor safety and compliance?",
     "status": "pending",
-    "answer": "JA Solar requires all contractors and subcontractors to comply with relevant OHS, environmental, and labor standards before commencing work. Requirements are communicated through the Supplier Code of Conduct and contract terms. On-site contractors are subject to the same safety rules as JA Solar employees, including PPE requirements, hazard identification, and emergency procedures.\n\nSupporting documents: JA Solar Supplier Code of Conduct Version 2.0 | JA Solar HSSE Plan"
+    "answer": "JA Solar requires all contractors and subcontractors to comply with relevant OHS, environmental, and labor standards before commencing work. Requirements are communicated through the Supplier Code of Conduct and contract terms. On-site contractors are subject to the same safety rules as JA Solar employees, including PPE requirements, hazard identification, and emergency procedures.\n\nSupporting documents: JA Solar Supplier Code of Conduct Version 2.0 | JA Solar HSSE Plan",
+    "rank": 17
   },
   {
     "id": 19,
+    "cat": "S",
+    "question": "What are your working hours and overtime policies?",
     "status": "pending",
-    "answer": "JA Solar complies with applicable national labor laws on working hours in every jurisdiction where it operates. Key commitments:\n- Total working hours (including overtime) do not exceed legal limits\n- Overtime is compensated at legally required premium rates\n- Employees are entitled to regular rest days and time off\n- No compulsory overtime without prior notice and consent\n\nWorking hours provisions are covered in the JA Solar Human Rights Policy and Code of Conduct.\n\nSupporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct"
+    "answer": "JA Solar complies with applicable national labor laws on working hours in every jurisdiction where it operates. Key commitments:\n- Total working hours (including overtime) do not exceed legal limits\n- Overtime is compensated at legally required premium rates\n- Employees are entitled to regular rest days and time off\n- No compulsory overtime without prior notice and consent\n\nWorking hours provisions are covered in the JA Solar Human Rights Policy and Code of Conduct.\n\nSupporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct",
+    "rank": 18
   },
   {
     "id": 20,
+    "cat": "E",
+    "question": "Does your company have an EMS (Environmental Management System)?",
     "status": "pending",
-    "answer": "Yes. JA Solar has implemented an ISO 14001:2015-certified Environmental Management System (EMS) at all production sites. The EMS covers: environmental policy, objectives, and targets; environmental risk identification and assessment; operational controls; monitoring and measurement; internal auditing; management review; and continuous improvement.\n\nSupporting document: ISO 14001 certificates"
+    "answer": "Yes. JA Solar has implemented an ISO 14001:2015-certified Environmental Management System (EMS) at all production sites. The EMS covers: environmental policy, objectives, and targets; environmental risk identification and assessment; operational controls; monitoring and measurement; internal auditing; management review; and continuous improvement.\n\nSupporting document: ISO 14001 certificates",
+    "rank": 19
   },
   {
     "id": 21,
+    "cat": "G",
+    "question": "Do you have a corporate Code of Conduct / Business Ethics policy?",
     "status": "pending",
-    "answer": "Yes. JA Solar has a Corporate Code of Conduct that covers:\n- Anti-corruption and anti-bribery\n- Non-discrimination and equal opportunity\n- Working hours and labor rights\n- Confidentiality of information\n- Conflicts of interest\n- Antitrust and fair competition\n- Money laundering and insider trading\n- Environment, health and safety\n- Whistleblowing and grievance reporting\n- Freedom of association and collective bargaining\n\nSupporting document: JA Solar Code of Conduct"
+    "answer": "Yes. JA Solar has a Corporate Code of Conduct that covers:\n- Anti-corruption and anti-bribery\n- Non-discrimination and equal opportunity\n- Working hours and labor rights\n- Confidentiality of information\n- Conflicts of interest\n- Antitrust and fair competition\n- Money laundering and insider trading\n- Environment, health and safety\n- Whistleblowing and grievance reporting\n- Freedom of association and collective bargaining\n\nSupporting document: JA Solar Code of Conduct",
+    "rank": 20
   },
   {
     "id": 22,
+    "cat": "E",
+    "question": "Has your company set GHG reduction targets? / Are your targets science-based (SBTi)?",
     "status": "pending",
-    "answer": "Yes. JA Solar's GHG reduction targets have been officially validated by the Science Based Targets initiative (SBTi) in 2024, aligned with the 1.5Â°C pathway:\n\nShort-term (by 2034):\n- Reduce absolute Scope 1 and Scope 2 GHG emissions by 58.8% vs. 2023 base year\n- Reduce Scope 3 GHG emissions (purchased goods and services) by 63.8% per MW of solar product produced vs. 2023\n\nLong-term (by 2050):\n- Reduce Scope 1+2 by 90% vs. 2023\n- Reduce Scope 3 by 97% per MW vs. 2023\n- Achieve net-zero GHG emissions across the value chain by 2050\n\nSupporting documents: 2024 JA Solar Sustainability and ESG Report | SBTi target page"
+    "answer": "Yes. JA Solar's GHG reduction targets have been officially validated by the Science Based Targets initiative (SBTi) in 2024, aligned with the 1.5Â°C pathway:\n\nShort-term (by 2034):\n- Reduce absolute Scope 1 and Scope 2 GHG emissions by 58.8% vs. 2023 base year\n- Reduce Scope 3 GHG emissions (purchased goods and services) by 63.8% per MW of solar product produced vs. 2023\n\nLong-term (by 2050):\n- Reduce Scope 1+2 by 90% vs. 2023\n- Reduce Scope 3 by 97% per MW vs. 2023\n- Achieve net-zero GHG emissions across the value chain by 2050\n\nSupporting documents: 2024 JA Solar Sustainability and ESG Report | SBTi target page",
+    "rank": 21
   },
   {
     "id": 23,
+    "cat": "G",
+    "question": "Have you identified ESG risks in your operations / supply chain?",
     "status": "pending",
-    "answer": "Yes. JA Solar has conducted a structured assessment to identify ESG risks across its operations and supply chain. Key environmental risks: GHG emissions, energy use, water consumption, waste and pollution. Key social risks: labor rights, OHS, supply chain human rights. Key governance risks: compliance, data security, anti-corruption.\n\nRisk outcomes and mitigation measures are detailed in the 2024 JA Solar Sustainability and ESG Report, 2023 TCFD Report, and 2024 TNFD Report.\n\nSupporting documents: 2024 JA Solar Sustainability and ESG Report | 2023 Climate-Related Disclosure and TCFD Report | 2024 JA Solar TNFD Report"
+    "answer": "Yes. JA Solar has conducted a structured assessment to identify ESG risks across its operations and supply chain. Key environmental risks: GHG emissions, energy use, water consumption, waste and pollution. Key social risks: labor rights, OHS, supply chain human rights. Key governance risks: compliance, data security, anti-corruption.\n\nRisk outcomes and mitigation measures are detailed in the 2024 JA Solar Sustainability and ESG Report, 2023 TCFD Report, and 2024 TNFD Report.\n\nSupporting documents: 2024 JA Solar Sustainability and ESG Report | 2023 Climate-Related Disclosure and TCFD Report | 2024 JA Solar TNFD Report",
+    "rank": 22
   },
   {
     "id": 24,
+    "cat": "S",
+    "question": "What is your approach to community engagement / social contribution?",
     "status": "pending",
-    "answer": "JA Solar engages with local communities through multiple channels:\n- Community consultation in decisions that may affect local populations\n- Educational support and charitable contributions\n- Rural revitalization: talent development, cultural programs, ecological restoration, and industrial support\n- Respect for local, indigenous, and tribal peoples' rights to maintain their institutions, cultures, and traditions\n\nDetails and performance data are available in the 2024 JA Solar Sustainability and ESG Report.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report"
+    "answer": "JA Solar engages with local communities through multiple channels:\n- Community consultation in decisions that may affect local populations\n- Educational support and charitable contributions\n- Rural revitalization: talent development, cultural programs, ecological restoration, and industrial support\n- Respect for local, indigenous, and tribal peoples' rights to maintain their institutions, cultures, and traditions\n\nDetails and performance data are available in the 2024 JA Solar Sustainability and ESG Report.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
+    "rank": 23
   },
   {
     "id": 25,
+    "cat": "G",
+    "question": "How do you handle corrective actions from audit findings?",
     "status": "pending",
-    "answer": "When issues or non-compliance are identified through audits (internal or third-party), JA Solar follows a structured corrective action process:\n1. Notify the relevant entity of the specific non-compliance and required correction\n2. Develop a detailed corrective action plan (goals, measures, responsible parties, deadlines)\n3. Track progress through regular meetings and follow-up assessments\n4. Verify effectiveness of corrections through a follow-up audit or assessment\n5. For persistently non-compliant suppliers: activate exit mechanism and blacklist\n\nSupporting documents: JA Solar Responsible Sourcing Policy | 2024 JA Solar Sustainability and ESG Report"
+    "answer": "When issues or non-compliance are identified through audits (internal or third-party), JA Solar follows a structured corrective action process:\n1. Notify the relevant entity of the specific non-compliance and required correction\n2. Develop a detailed corrective action plan (goals, measures, responsible parties, deadlines)\n3. Track progress through regular meetings and follow-up assessments\n4. Verify effectiveness of corrections through a follow-up audit or assessment\n5. For persistently non-compliant suppliers: activate exit mechanism and blacklist\n\nSupporting documents: JA Solar Responsible Sourcing Policy | 2024 JA Solar Sustainability and ESG Report",
+    "rank": 24
   },
   {
     "id": 26,
+    "cat": "S",
+    "question": "What PPE / safety equipment do you provide?",
     "status": "pending",
-    "answer": "Yes. JA Solar provides appropriate PPE to all employees engaged in operations that require personal protection, in compliance with ISO 45001 requirements and applicable OHS regulations. PPE types are determined based on risk assessments for each work environment and may include: safety helmets, protective footwear, eye protection, respiratory protection, gloves, and high-visibility clothing. PPE usage is monitored and enforced.\n\nSupporting documents: JA Solar Environment Health & Safety Policy | JA Solar HSSE Plan"
+    "answer": "Yes. JA Solar provides appropriate PPE to all employees engaged in operations that require personal protection, in compliance with ISO 45001 requirements and applicable OHS regulations. PPE types are determined based on risk assessments for each work environment and may include: safety helmets, protective footwear, eye protection, respiratory protection, gloves, and high-visibility clothing. PPE usage is monitored and enforced.\n\nSupporting documents: JA Solar Environment Health & Safety Policy | JA Solar HSSE Plan",
+    "rank": 25
   },
   {
     "id": 27,
+    "cat": "G",
+    "question": "Where do you source polysilicon / raw materials? (Supply chain origin)",
     "status": "pending",
-    "answer": "Please contact the Compliance and Traceability department."
+    "answer": "Please contact the Compliance and Traceability department.",
+    "rank": 26
   },
   {
     "id": 28,
+    "cat": "G",
+    "question": "Does your company publish an ESG / sustainability report?",
     "status": "pending",
-    "answer": "Yes. JA Solar publishes the following sustainability disclosures annually:\n- JA Solar Sustainability and ESG Report (Chinese and English)\n- JA Solar Environmental Sustainability Report\n\nPreviously published: Greenhouse Gas Emissions Report, Climate-Related Disclosure Report (TCFD), TNFD Report. JA Solar is the first TNFD adopter in the solar industry.\n\nAll reports are publicly available on the JA Solar official website (www.jasolar.com â Sustainability â Download Center).\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report"
+    "answer": "Yes. JA Solar publishes the following sustainability disclosures annually:\n- JA Solar Sustainability and ESG Report (Chinese and English)\n- JA Solar Environmental Sustainability Report\n\nPreviously published: Greenhouse Gas Emissions Report, Climate-Related Disclosure Report (TCFD), TNFD Report. JA Solar is the first TNFD adopter in the solar industry.\n\nAll reports are publicly available on the JA Solar official website (www.jasolar.com â Sustainability â Download Center).\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
+    "rank": 27
   },
   {
     "id": 29,
+    "cat": "S",
+    "question": "How do you verify worker identity documents and recruitment practices?",
     "status": "pending",
-    "answer": "JA Solar does not retain worker identity documents. No recruitment fees are charged to workers at any stage of the hiring process. To verify compliance, JA Solar has developed a Human Rights Due Diligence (HRDD) questionnaire aligned with international human rights standards. HRDD assessments (including worker interviews and document reviews) have been conducted at the Shanghai Fengxian and Yangzhou manufacturing facilities, with no evidence of forced labor found.\n\nSupporting document: JA Solar Human Rights Policy | JA Solar Responsible Sourcing Policy"
+    "answer": "JA Solar does not retain worker identity documents. No recruitment fees are charged to workers at any stage of the hiring process. To verify compliance, JA Solar has developed a Human Rights Due Diligence (HRDD) questionnaire aligned with international human rights standards. HRDD assessments (including worker interviews and document reviews) have been conducted at the Shanghai Fengxian and Yangzhou manufacturing facilities, with no evidence of forced labor found.\n\nSupporting document: JA Solar Human Rights Policy | JA Solar Responsible Sourcing Policy",
+    "rank": 28
   },
   {
     "id": 30,
+    "cat": "E",
+    "question": "Has your company defined an environmental policy?",
     "status": "pending",
-    "answer": "Yes. JA Solar has a comprehensive environmental policy embedded in the JA Solar Environmental, Social, and Governance (ESG) Sustainability Policy, governing global operations. Key commitments:\n- Carbon peak by 2030 and carbon neutrality by 2060 (aligned with China's Dual Carbon Goals)\n- SBTi-aligned GHG reduction targets\n- Green manufacturing and eco-design principles\n- Sustainable procurement practices\n- Material recycling and circular economy promotion\n- Continuous waste and emission reduction\n\nSupporting documents: JA Solar Environmental, Social, and Governance (ESG) Sustainability Policy | JA Solar Environment Health & Safety Policy"
+    "answer": "Yes. JA Solar has a comprehensive environmental policy embedded in the JA Solar Environmental, Social, and Governance (ESG) Sustainability Policy, governing global operations. Key commitments:\n- Carbon peak by 2030 and carbon neutrality by 2060 (aligned with China's Dual Carbon Goals)\n- SBTi-aligned GHG reduction targets\n- Green manufacturing and eco-design principles\n- Sustainable procurement practices\n- Material recycling and circular economy promotion\n- Continuous waste and emission reduction\n\nSupporting documents: JA Solar Environmental, Social, and Governance (ESG) Sustainability Policy | JA Solar Environment Health & Safety Policy",
+    "rank": 29
   },
   {
     "id": 31,
+    "cat": "S",
+    "question": "Do you have policies on working conditions (dormitory, sanitation, etc.)?",
     "status": "pending",
-    "answer": "JA Solar provides living and working conditions that comply with applicable regulations. Where company-provided dormitories are offered, facilities include: proper sanitation, adequate living space, safety provisions, fire exits, and reasonable privacy. Conditions are verified through internal audits and third-party CSR audits. Workers also have access to grievance mechanisms to raise any concerns about living conditions.\n\nSupporting document: JA Solar Human Rights Policy"
+    "answer": "JA Solar provides living and working conditions that comply with applicable regulations. Where company-provided dormitories are offered, facilities include: proper sanitation, adequate living space, safety provisions, fire exits, and reasonable privacy. Conditions are verified through internal audits and third-party CSR audits. Workers also have access to grievance mechanisms to raise any concerns about living conditions.\n\nSupporting document: JA Solar Human Rights Policy",
+    "rank": 30
   },
   {
     "id": 32,
+    "cat": "S",
+    "question": "Does your company have a human rights policy?",
     "status": "pending",
-    "answer": "Yes. JA Solar has a dedicated Human Rights Policy covering: prohibition of forced labor and modern slavery; child labor prohibition; fair wages and working conditions; non-discrimination and DEI; freedom of association and collective bargaining; local community rights; supply chain human rights standards; and a SpeakUp grievance mechanism with no-retaliation guarantee.\n\nThe policy is approved by the Board-level Compliance Management Committee and reviewed at least annually.\n\nSupporting document: JA Solar Human Rights Policy"
+    "answer": "Yes. JA Solar has a dedicated Human Rights Policy covering: prohibition of forced labor and modern slavery; child labor prohibition; fair wages and working conditions; non-discrimination and DEI; freedom of association and collective bargaining; local community rights; supply chain human rights standards; and a SpeakUp grievance mechanism with no-retaliation guarantee.\n\nThe policy is approved by the Board-level Compliance Management Committee and reviewed at least annually.\n\nSupporting document: JA Solar Human Rights Policy",
+    "rank": 31
   },
   {
     "id": 33,
+    "cat": "E",
+    "question": "How do you manage hazardous chemicals / substances?",
     "status": "pending",
-    "answer": "JA Solar strictly adheres to applicable laws and regulations on hazardous chemical management at all operating locations. Key measures:\n- Proper storage, labeling, segregation, and handling of hazardous substances\n- Dedicated waste gas treatment facilities for chemical emissions\n- Low-VOC materials used in production to minimize emissions\n- Licensed third-party contractors for hazardous waste disposal\n- Regular training for employees who work with hazardous chemicals\n- Safety Data Sheets (SDS) maintained for all hazardous substances\n\nSupporting documents: JA Solar Environment Health & Safety Policy | JA Solar HSSE Plan"
+    "answer": "JA Solar strictly adheres to applicable laws and regulations on hazardous chemical management at all operating locations. Key measures:\n- Proper storage, labeling, segregation, and handling of hazardous substances\n- Dedicated waste gas treatment facilities for chemical emissions\n- Low-VOC materials used in production to minimize emissions\n- Licensed third-party contractors for hazardous waste disposal\n- Regular training for employees who work with hazardous chemicals\n- Safety Data Sheets (SDS) maintained for all hazardous substances\n\nSupporting documents: JA Solar Environment Health & Safety Policy | JA Solar HSSE Plan",
+    "rank": 32
   },
   {
     "id": 34,
+    "cat": "G",
+    "question": "How do you ensure legal / regulatory compliance?",
     "status": "pending",
-    "answer": "JA Solar has established a comprehensive compliance management system covering environmental, labor, product safety, data protection, and anti-corruption regulations across all jurisdictions. Key measures:\n- Regular internal audits and self-assessments\n- Third-party external audits (including EcoVadis, SSI, CSR audits)\n- Legal compliance monitoring by the Compliance Management Committee\n- Corrective action plans for identified non-compliance\n- Employee compliance training and Code of Conduct acknowledgment\n\nSupporting documents: JA Solar Code of Conduct | JA Solar Anti-Fraud Reporting Policy and Investigation Procedures"
+    "answer": "JA Solar has established a comprehensive compliance management system covering environmental, labor, product safety, data protection, and anti-corruption regulations across all jurisdictions. Key measures:\n- Regular internal audits and self-assessments\n- Third-party external audits (including EcoVadis, SSI, CSR audits)\n- Legal compliance monitoring by the Compliance Management Committee\n- Corrective action plans for identified non-compliance\n- Employee compliance training and Code of Conduct acknowledgment\n\nSupporting documents: JA Solar Code of Conduct | JA Solar Anti-Fraud Reporting Policy and Investigation Procedures",
+    "rank": 33
   },
   {
     "id": 35,
+    "cat": "S",
+    "question": "Do you have a policy against harassment / disciplinary procedures?",
     "status": "pending",
-    "answer": "Yes. JA Solar's Human Rights Policy and Code of Conduct explicitly prohibit all forms of harassment, bullying, and discriminatory treatment in the workplace. A clear disciplinary procedure applies to violations. Employees can report issues confidentially via the SpeakUp whistleblower channel. A no-retaliation policy protects those who raise concerns.\n\nSupporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct | JA Solar Whistleblower Protection and Integrity Reporting Policy"
+    "answer": "Yes. JA Solar's Human Rights Policy and Code of Conduct explicitly prohibit all forms of harassment, bullying, and discriminatory treatment in the workplace. A clear disciplinary procedure applies to violations. Employees can report issues confidentially via the SpeakUp whistleblower channel. A no-retaliation policy protects those who raise concerns.\n\nSupporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct | JA Solar Whistleblower Protection and Integrity Reporting Policy",
+    "rank": 34
   },
   {
     "id": 36,
+    "cat": "G",
+    "question": "Do you have a Supplier Code of Conduct?",
     "status": "pending",
-    "answer": "Yes. JA Solar has a Supplier Code of Conduct (Version 2.0) that all core suppliers are required to sign before being admitted to the approved supplier list. As of 2024, 100% of core suppliers have signed the Supplier Code of Conduct. The CoC covers: labor rights and human rights; environmental protection; OHS; business ethics and anti-corruption; data security; and grievance mechanisms.\n\nSupporting document: JA Solar Supplier Code of Conduct Version 2.0"
+    "answer": "Yes. JA Solar has a Supplier Code of Conduct (Version 2.0) that all core suppliers are required to sign before being admitted to the approved supplier list. As of 2024, 100% of core suppliers have signed the Supplier Code of Conduct. The CoC covers: labor rights and human rights; environmental protection; OHS; business ethics and anti-corruption; data security; and grievance mechanisms.\n\nSupporting document: JA Solar Supplier Code of Conduct Version 2.0",
+    "rank": 35
   },
   {
     "id": 37,
+    "cat": "G",
+    "question": "Can you provide your supply chain map / supplier list?",
     "status": "pending",
-    "answer": "Please contact the Compliance and Traceability department."
+    "answer": "Please contact the Compliance and Traceability department.",
+    "rank": 36
   },
   {
     "id": 38,
+    "cat": "S",
+    "question": "Do you have a policy on freedom of association and collective bargaining?",
     "status": "pending",
-    "answer": "Yes. JA Solar recognizes and respects employees' rights to freedom of association and collective bargaining in accordance with ILO conventions and applicable national laws. These rights are stated in the JA Solar Human Rights Policy and the Code of Conduct. The same standards are extended to suppliers via the Supplier Code of Conduct.\n\nSupporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct"
+    "answer": "Yes. JA Solar recognizes and respects employees' rights to freedom of association and collective bargaining in accordance with ILO conventions and applicable national laws. These rights are stated in the JA Solar Human Rights Policy and the Code of Conduct. The same standards are extended to suppliers via the Supplier Code of Conduct.\n\nSupporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct",
+    "rank": 37
   },
   {
     "id": 39,
+    "cat": "G",
+    "question": "Does your company follow GRI / UNGC / other international frameworks?",
     "status": "pending",
-    "answer": "Yes. JA Solar participates in and aligns with the following international frameworks:\n- United Nations Global Compact (UNGC) — signatory; reports annually on progress against the Ten Principles\n- GRI Standards — referenced in JA Solar's ESG reporting\n- TCFD recommendations — Climate-Related Disclosure and TCFD Report (most recently: 2023)\n- TNFD — first PV company to become a TNFD Adopter\n- SBTi — GHG reduction targets officially validated\n\nSupporting documents: UNGC participant page | 2024 JA Solar Sustainability and ESG Report"
+    "answer": "Yes. JA Solar participates in and aligns with the following international frameworks:\n- United Nations Global Compact (UNGC) — signatory; reports annually on progress against the Ten Principles\n- GRI Standards — referenced in JA Solar's ESG reporting\n- TCFD recommendations — Climate-Related Disclosure and TCFD Report (most recently: 2023)\n- TNFD — first PV company to become a TNFD Adopter\n- SBTi — GHG reduction targets officially validated\n\nSupporting documents: UNGC participant page | 2024 JA Solar Sustainability and ESG Report",
+    "rank": 38
   },
   {
     "id": 40,
+    "cat": "S",
+    "question": "Do you provide employment contracts / appointment letters to all workers?",
     "status": "pending",
-    "answer": "Yes. JA Solar provides written employment contracts to all employees prior to commencement of employment, clearly stating: job title and responsibilities; compensation and benefits; working hours and leave entitlements; applicable legal rights; and termination conditions. This is in compliance with applicable labor laws in each jurisdiction.\n\nSupporting document: JA Solar Human Rights Policy | JA Solar Code of Conduct"
+    "answer": "Yes. JA Solar provides written employment contracts to all employees prior to commencement of employment, clearly stating: job title and responsibilities; compensation and benefits; working hours and leave entitlements; applicable legal rights; and termination conditions. This is in compliance with applicable labor laws in each jurisdiction.\n\nSupporting document: JA Solar Human Rights Policy | JA Solar Code of Conduct",
+    "rank": 39
   },
   {
     "id": 41,
+    "cat": "G",
+    "question": "Does your company have ISO 45001 / OHSAS 18001 certification?",
     "status": "verified",
-    "answer": "Yes. JA Solar holds ISO 45001:2018 Occupational Health and Safety Management System certification."
+    "answer": "Yes. JA Solar holds ISO 45001:2018 Occupational Health and Safety Management System certification.",
+    "rank": 40
   },
   {
     "id": 42,
+    "cat": "G",
+    "question": "Do you have a responsible sourcing / procurement policy?",
     "status": "pending",
-    "answer": "Yes. JA Solar has a dedicated Responsible Sourcing Policy (Version 3.0) that governs all procurement activities. The policy is built on UNGP, ILO, OECD, and CSDDD guidelines, and covers: supplier selection criteria; ESG assessment requirements; audit procedures; corrective action processes; and exit mechanisms for non-compliant suppliers.\n\nSupporting document: JA Solar Responsible Sourcing Policy Version 3.0"
+    "answer": "Yes. JA Solar has a dedicated Responsible Sourcing Policy (Version 3.0) that governs all procurement activities. The policy is built on UNGP, ILO, OECD, and CSDDD guidelines, and covers: supplier selection criteria; ESG assessment requirements; audit procedures; corrective action processes; and exit mechanisms for non-compliant suppliers.\n\nSupporting document: JA Solar Responsible Sourcing Policy Version 3.0",
+    "rank": 41
   },
   {
     "id": 43,
+    "cat": "E",
+    "question": "Is decarbonization part of your company strategy?",
     "status": "pending",
-    "answer": "Yes. JA Solar has established a comprehensive climate management system based on four key strategies:\n1. Climate Product Development — reducing product carbon footprint through n-type technology, silver-free cells, low-carbon materials, and eco-design\n2. Empowering the Green Value Chain — reducing production carbon footprint, building green industrial parks, promoting supply chain decarbonization via CDP Supply Chain Program\n3. Driving Social Transition — promoting green culture, energy conservation, green office practices, and enabling green transition projects\n4. Addressing Physical Climate Risks — strengthening emergency management, climate resilience, and supplier climate assessments\n\nSupporting documents: 2024 JA Solar Sustainability and ESG Report | 2023 Climate-Related Disclosure and TCFD Report"
+    "answer": "Yes. JA Solar has established a comprehensive climate management system based on four key strategies:\n1. Climate Product Development — reducing product carbon footprint through n-type technology, silver-free cells, low-carbon materials, and eco-design\n2. Empowering the Green Value Chain — reducing production carbon footprint, building green industrial parks, promoting supply chain decarbonization via CDP Supply Chain Program\n3. Driving Social Transition — promoting green culture, energy conservation, green office practices, and enabling green transition projects\n4. Addressing Physical Climate Risks — strengthening emergency management, climate resilience, and supplier climate assessments\n\nSupporting documents: 2024 JA Solar Sustainability and ESG Report | 2023 Climate-Related Disclosure and TCFD Report",
+    "rank": 42
   },
   {
     "id": 44,
+    "cat": "S",
+    "question": "What is the composition of your workforce (headcount, gender, age)?",
     "status": "pending",
-    "answer": "Please refer to the 2024 JA Solar Sustainability and ESG Report for detailed workforce composition data, including total headcount, gender ratio by category, age distribution, employment type, and geographical breakdown.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report"
+    "answer": "Please refer to the 2024 JA Solar Sustainability and ESG Report for detailed workforce composition data, including total headcount, gender ratio by category, age distribution, employment type, and geographical breakdown.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
+    "rank": 43
   },
   {
     "id": 45,
+    "cat": "E",
+    "question": "How do you manage wastewater / water discharge?",
     "status": "pending",
-    "answer": "JA Solar has built comprehensive advanced wastewater treatment systems at each production site, including: quartz sand filters; ultrafiltration units; reverse osmosis devices; pH adjustment equipment. All wastewater pollutants are tested before discharge to verify compliance with applicable standards. Process water recycling and reuse rates are continuously improved to reduce freshwater consumption. In 2024, 100% of wastewater was compliantly treated with no incidents of exceeding discharge standards.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report"
+    "answer": "JA Solar has built comprehensive advanced wastewater treatment systems at each production site, including: quartz sand filters; ultrafiltration units; reverse osmosis devices; pH adjustment equipment. All wastewater pollutants are tested before discharge to verify compliance with applicable standards. Process water recycling and reuse rates are continuously improved to reduce freshwater consumption. In 2024, 100% of wastewater was compliantly treated with no incidents of exceeding discharge standards.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
+    "rank": 44
   },
   {
     "id": 46,
+    "cat": "E",
+    "question": "Have your GHG emissions been verified by a third party?",
     "status": "pending",
-    "answer": "Yes. All JA Solar production sites conduct GHG inventory in accordance with ISO 14064-1:2018 and the GHG Protocol Corporate Accounting and Reporting Standard. All GHG inventory results are independently verified by a qualified third-party verification body, and verification statements are obtained.\n\nSupporting documents: 2024 JA Solar Environmental Sustainability Report"
+    "answer": "Yes. All JA Solar production sites conduct GHG inventory in accordance with ISO 14064-1:2018 and the GHG Protocol Corporate Accounting and Reporting Standard. All GHG inventory results are independently verified by a qualified third-party verification body, and verification statements are obtained.\n\nSupporting documents: 2024 JA Solar Environmental Sustainability Report",
+    "rank": 45
   },
   {
     "id": 47,
+    "cat": "E",
+    "question": "What is your approach to product packaging / transport sustainability?",
     "status": "pending",
-    "answer": "JA Solar has implemented the following packaging and logistics sustainability measures:\n- Reusable film boxes used for module packaging\n- Silicon wafer packaging box capacity increased by 50% in 2024, reducing per-unit shipping emissions by approximately one-third\n- Rail-road-water combined transport prioritized to minimize logistics carbon emissions\n- Route optimization to reduce empty-running rates\n- Electric vehicles used for on-campus logistics transport\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report"
+    "answer": "JA Solar has implemented the following packaging and logistics sustainability measures:\n- Reusable film boxes used for module packaging\n- Silicon wafer packaging box capacity increased by 50% in 2024, reducing per-unit shipping emissions by approximately one-third\n- Rail-road-water combined transport prioritized to minimize logistics carbon emissions\n- Route optimization to reduce empty-running rates\n- Electric vehicles used for on-campus logistics transport\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
+    "rank": 46
   },
   {
     "id": 48,
+    "cat": "G",
+    "question": "What ESG ratings / scores does your company have (EcoVadis, CDP, etc.)?",
     "status": "pending",
-    "answer": "JA Solar's current ESG ratings and certifications:\n- EcoVadis: Silver Medal, score 73 (top 6% of all participants assessed)\n- CDP Climate: Score B (2023 and 2024; 2025 result pending)\n- S&P CSA (Corporate Sustainability Assessment): Score 60\n- MSCI ESG Rating: BBB\n- SSI (Social Solidarity Initiative) Audit: Silver Medal — Yangzhou and Shanghai manufacturing sites\n- UNGC: Signatory member\n\nSupporting document: EcoVadis scorecard | CDP response | 2024 JA Solar Sustainability and ESG Report"
+    "answer": "JA Solar's current ESG ratings and certifications:\n- EcoVadis: Silver Medal, score 73 (top 6% of all participants assessed)\n- CDP Climate: Score B (2023 and 2024; 2025 result pending)\n- S&P CSA (Corporate Sustainability Assessment): Score 60\n- MSCI ESG Rating: BBB\n- SSI (Social Solidarity Initiative) Audit: Silver Medal — Yangzhou and Shanghai manufacturing sites\n- UNGC: Signatory member\n\nSupporting document: EcoVadis scorecard | CDP response | 2024 JA Solar Sustainability and ESG Report",
+    "rank": 47
   },
   {
     "id": 49,
+    "cat": "G",
+    "question": "Do you conduct internal audits / self-assessments on ESG / compliance?",
     "status": "pending",
-    "answer": "Yes. JA Solar conducts regular internal audits and self-assessments on ESG compliance, including:\n- Environmental management system audits (ISO 14001)\n- OHS management system audits (ISO 45001)\n- Social compliance audits on labor rights\n- Self-inspection on air emissions and wastewater (dual control: self-inspection + external audit)\n- ESG performance reviewed in senior management performance evaluation"
+    "answer": "Yes. JA Solar conducts regular internal audits and self-assessments on ESG compliance, including:\n- Environmental management system audits (ISO 14001)\n- OHS management system audits (ISO 45001)\n- Social compliance audits on labor rights\n- Self-inspection on air emissions and wastewater (dual control: self-inspection + external audit)\n- ESG performance reviewed in senior management performance evaluation",
+    "rank": 48
   },
   {
     "id": 50,
+    "cat": "E",
+    "question": "What actions reduce environmental impact from product use / end-of-life?",
     "status": "pending",
-    "answer": "JA Solar takes the following actions to reduce environmental impact from product use and end-of-life:\n- Design stage: Easy-disassembly frameworks, 100% recyclable polyurethane frames, lead-free solder ribbons, fluorine-free backsheets, low-acid encapsulants\n- Use stage: High-efficiency modules maximize energy yield and shorten carbon payback period; n-type products reduced carbon value to below 400 kg COâe/kW in 2024\n- End-of-life: PV CYCLE partnership for take-back and recycling across 17 EU countries; national demonstration line for glass, metal, and silicon recovery; active participation in national PV recycling R&D programs\n\nSupporting documents: JA Solar Circular Economy Strategy | 2024 JA Solar Sustainability and ESG Report"
+    "answer": "JA Solar takes the following actions to reduce environmental impact from product use and end-of-life:\n- Design stage: Easy-disassembly frameworks, 100% recyclable polyurethane frames, lead-free solder ribbons, fluorine-free backsheets, low-acid encapsulants\n- Use stage: High-efficiency modules maximize energy yield and shorten carbon payback period; n-type products reduced carbon value to below 400 kg COâe/kW in 2024\n- End-of-life: PV CYCLE partnership for take-back and recycling across 17 EU countries; national demonstration line for glass, metal, and silicon recovery; active participation in national PV recycling R&D programs\n\nSupporting documents: JA Solar Circular Economy Strategy | 2024 JA Solar Sustainability and ESG Report",
+    "rank": 49
   },
   {
     "id": 51,
+    "cat": "S",
+    "question": "Do you have operations or suppliers in Xinjiang?",
     "status": "pending",
-    "answer": "â ï¸ Note: Previous responses to this question were referred to the Compliance department. Please confirm the answer before sending."
+    "answer": "â ï¸ Note: Previous responses to this question were referred to the Compliance department. Please confirm the answer before sending.",
+    "rank": 50
   },
   {
     "id": 52,
+    "cat": "S",
+    "question": "Do you have a conflict minerals / responsible minerals policy?",
     "status": "pending",
-    "answer": "Yes. JA Solar has a Conflict Minerals Management Policy (Version 2.0) that addresses responsible sourcing of minerals including tin, tantalum, tungsten, gold (3TG), and cobalt. JA Solar conducts due diligence on the origin of minerals used in its products and does not knowingly source minerals from conflict-affected or high-risk areas.\n\nSupporting document: JA Solar Conflict Minerals Management Policy Version 2.0"
+    "answer": "Yes. JA Solar has a Conflict Minerals Management Policy (Version 2.0) that addresses responsible sourcing of minerals including tin, tantalum, tungsten, gold (3TG), and cobalt. JA Solar conducts due diligence on the origin of minerals used in its products and does not knowingly source minerals from conflict-affected or high-risk areas.\n\nSupporting document: JA Solar Conflict Minerals Management Policy Version 2.0",
+    "rank": 51
   },
   {
     "id": 53,
+    "cat": "G",
+    "question": "What is your data security / privacy policy?",
     "status": "pending",
-    "answer": "JA Solar's Code of Conduct covers confidentiality of information and data protection obligations for all employees. JA Solar holds ISO 27001 Information Security Management certification. Data handling practices comply with applicable data protection regulations in each jurisdiction.\n\nSupporting document: JA Solar Code of Conduct"
+    "answer": "JA Solar's Code of Conduct covers confidentiality of information and data protection obligations for all employees. JA Solar holds ISO 27001 Information Security Management certification. Data handling practices comply with applicable data protection regulations in each jurisdiction.\n\nSupporting document: JA Solar Code of Conduct",
+    "rank": 52
   },
   {
     "id": 54,
+    "cat": "G",
+    "question": "Do you make external disclosure about your environmental / social performance?",
     "status": "pending",
-    "answer": "Yes. JA Solar publicly discloses environmental and social performance through annual reports published on its official website (www.jasolar.com â Sustainability â Download Center):\n- 2024 JA Solar Sustainability and ESG Report\n- 2024 JA Solar Environmental Sustainability Report\n- 2023 Climate-Related Disclosure Report and TCFD Report\n- 2024 TNFD Report\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report"
+    "answer": "Yes. JA Solar publicly discloses environmental and social performance through annual reports published on its official website (www.jasolar.com â Sustainability â Download Center):\n- 2024 JA Solar Sustainability and ESG Report\n- 2024 JA Solar Environmental Sustainability Report\n- 2023 Climate-Related Disclosure Report and TCFD Report\n- 2024 TNFD Report\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
+    "rank": 53
   },
   {
     "id": 55,
+    "cat": "E",
+    "question": "What GHG reduction initiatives / measures do you have?",
     "status": "pending",
-    "answer": "Key GHG reduction initiatives implemented by JA Solar:\n1. Distributed PV: 298 MW of self-consumption rooftop PV installed by end of 2024 (34% green electricity ratio)\n2. Smart EMS: AI-enhanced energy management platform monitors and optimizes real-time energy use\n3. Process efficiency: AI crystal-pulling furnaces; argon-recovery systems; waste heat recovery; silver-paste reduction; thinner wafer slicing\n4. Vehicle electrification: No new fuel vehicles purchased for on-campus official use; 41 new-energy forklifts at Xingtai base (diesel down 45%, gasoline down 31% vs. 2023)\n5. Green logistics: Rail-road-water combined transport; route optimization; reusable packaging\n6. Supply chain: CDP Supply Chain Program for supplier decarbonization\n\nDetailed emission reduction measures and results (source: 2024 Sustainability and ESG Report — Combating Climate Change):\n\nScope 1 measures: 1) Revised vehicle management policy to mandate purchase of new energy vehicles for all future acquisitions; 2) Procured equipment with low-GWP refrigerants; 3) Implemented targeted energy-saving programs at factories, including energy efficiency retrofits; 4) Standardized startup/shutdown management, optimized maintenance and equipment upgrades.\n\nScope 2 measures: 5) Expanded self-consumed distributed PV capacity; 6) Increased procurement of green electricity and green certificates; 7) Prioritized regions with abundant renewable energy for new factory site selection.\n\nScope 3 measures: 1) Advanced granular silicon process innovation, increasing its share from 10% (2023) to 40% (2024); 2) Selected environmentally friendly auxiliary materials (lead-free solder ribbons, alcohol-free sealants, low-acid EVA films); explored recycled aluminium frames; 3) Launched CDP supply chain program (68% of procurement spend in 2024); 4) Encouraged key suppliers to obtain carbon footprint certifications and increase green electricity use; 5) Reduced packaging materials; replaced paper boxes with reusable packaging; 6) Promoted rail-road and water-road intermodal transport; explored biofuels in maritime shipping with CMA CGM (3,774 TEUs in 2024, saving 528 tCOÃ¢ÂÂ).\n\nKey results 2024: Vehicle diesel Ã¢ÂÂ45%, gasoline Ã¢ÂÂ31% vs. 2023 | Distributed PV capacity: 298 MW (+160 MW vs. 2023) | Green electricity ratio: 34% (+6% vs. 2023) | Silicon wafer box packaging capacity: +50% per box.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report"
+    "answer": "Key GHG reduction initiatives implemented by JA Solar:\n1. Distributed PV: 298 MW of self-consumption rooftop PV installed by end of 2024 (34% green electricity ratio)\n2. Smart EMS: AI-enhanced energy management platform monitors and optimizes real-time energy use\n3. Process efficiency: AI crystal-pulling furnaces; argon-recovery systems; waste heat recovery; silver-paste reduction; thinner wafer slicing\n4. Vehicle electrification: No new fuel vehicles purchased for on-campus official use; 41 new-energy forklifts at Xingtai base (diesel down 45%, gasoline down 31% vs. 2023)\n5. Green logistics: Rail-road-water combined transport; route optimization; reusable packaging\n6. Supply chain: CDP Supply Chain Program for supplier decarbonization\n\nDetailed emission reduction measures and results (source: 2024 Sustainability and ESG Report — Combating Climate Change):\n\nScope 1 measures: 1) Revised vehicle management policy to mandate purchase of new energy vehicles for all future acquisitions; 2) Procured equipment with low-GWP refrigerants; 3) Implemented targeted energy-saving programs at factories, including energy efficiency retrofits; 4) Standardized startup/shutdown management, optimized maintenance and equipment upgrades.\n\nScope 2 measures: 5) Expanded self-consumed distributed PV capacity; 6) Increased procurement of green electricity and green certificates; 7) Prioritized regions with abundant renewable energy for new factory site selection.\n\nScope 3 measures: 1) Advanced granular silicon process innovation, increasing its share from 10% (2023) to 40% (2024); 2) Selected environmentally friendly auxiliary materials (lead-free solder ribbons, alcohol-free sealants, low-acid EVA films); explored recycled aluminium frames; 3) Launched CDP supply chain program (68% of procurement spend in 2024); 4) Encouraged key suppliers to obtain carbon footprint certifications and increase green electricity use; 5) Reduced packaging materials; replaced paper boxes with reusable packaging; 6) Promoted rail-road and water-road intermodal transport; explored biofuels in maritime shipping with CMA CGM (3,774 TEUs in 2024, saving 528 tCOÃ¢ÂÂ).\n\nKey results 2024: Vehicle diesel Ã¢ÂÂ45%, gasoline Ã¢ÂÂ31% vs. 2023 | Distributed PV capacity: 298 MW (+160 MW vs. 2023) | Green electricity ratio: 34% (+6% vs. 2023) | Silicon wafer box packaging capacity: +50% per box.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
+    "rank": 54
   },
   {
     "id": 56,
+    "cat": "S",
+    "question": "Do you have emergency response / fire safety procedures?",
     "status": "pending",
-    "answer": "Yes. JA Solar has established comprehensive emergency response procedures covering fire safety, extreme weather, chemical spills, and other operational risks. Key elements:\n- Emergency response plans for each production site\n- Regular fire drills and emergency evacuation exercises\n- Fire detection and suppression systems installed\n- Designated emergency response teams and equipment reserves\n- Climate risk emergency drills (heavy rain, typhoons, extreme heat)\n\nSupporting document: JA Solar HSSE Plan"
+    "answer": "Yes. JA Solar has established comprehensive emergency response procedures covering fire safety, extreme weather, chemical spills, and other operational risks. Key elements:\n- Emergency response plans for each production site\n- Regular fire drills and emergency evacuation exercises\n- Fire detection and suppression systems installed\n- Designated emergency response teams and equipment reserves\n- Climate risk emergency drills (heavy rain, typhoons, extreme heat)\n\nSupporting document: JA Solar HSSE Plan",
+    "rank": 55
   },
   {
     "id": 57,
+    "cat": "S",
+    "question": "Do workers pay recruitment fees? How do you manage migrant workers?",
     "status": "pending",
-    "answer": "JA Solar strictly prohibits charging any recruitment fees to workers at any stage (pre-employment, during employment, or at termination). No identity documents are retained by the company or its recruitment agents. Migrant workers receive the same wages, benefits, and working conditions as local workers, without discrimination. These standards are also required of suppliers via the Supplier Code of Conduct.\n\nSupporting documents: JA Solar Human Rights Policy | JA Solar Supplier Code of Conduct Version 2.0"
+    "answer": "JA Solar strictly prohibits charging any recruitment fees to workers at any stage (pre-employment, during employment, or at termination). No identity documents are retained by the company or its recruitment agents. Migrant workers receive the same wages, benefits, and working conditions as local workers, without discrimination. These standards are also required of suppliers via the Supplier Code of Conduct.\n\nSupporting documents: JA Solar Human Rights Policy | JA Solar Supplier Code of Conduct Version 2.0",
+    "rank": 56
   },
   {
     "id": 58,
+    "cat": "E",
+    "question": "What is your impact on / approach to biodiversity?",
     "status": "pending",
-    "answer": "Yes. JA Solar published its Biodiversity Policy in 2024. JA Solar is the first company in the PV industry to become a TNFD Adopter. A systematic biodiversity impact assessment has been conducted across production sites, power stations, and office premises to identify operational impacts and dependencies on the ecological environment. Results inform future biodiversity protection strategies.\n\nSupporting documents: JA Solar Biodiversity Policy | 2024 JA Solar TNFD Report"
+    "answer": "Yes. JA Solar published its Biodiversity Policy in 2024. JA Solar is the first company in the PV industry to become a TNFD Adopter. A systematic biodiversity impact assessment has been conducted across production sites, power stations, and office premises to identify operational impacts and dependencies on the ecological environment. Results inform future biodiversity protection strategies.\n\nSupporting documents: JA Solar Biodiversity Policy | 2024 JA Solar TNFD Report",
+    "rank": 57
   },
   {
     "id": 59,
+    "cat": "E",
+    "question": "Do you conduct environmental monitoring (air, water, noise, soil)?",
     "status": "pending",
-    "answer": "Yes. JA Solar conducts regular environmental monitoring at all production sites, including:\n- Air quality monitoring (NOx, SOx, VOCs, ammonia, PM concentrations)\n- Wastewater quality testing before discharge\n- Noise monitoring at site boundaries\n- Solid waste tracking and reporting\n\nMonitoring follows a dual control mechanism of \"self-inspection + external audit\" to ensure continuous compliance with applicable standards.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report"
+    "answer": "Yes. JA Solar conducts regular environmental monitoring at all production sites, including:\n- Air quality monitoring (NOx, SOx, VOCs, ammonia, PM concentrations)\n- Wastewater quality testing before discharge\n- Noise monitoring at site boundaries\n- Solid waste tracking and reporting\n\nMonitoring follows a dual control mechanism of \"self-inspection + external audit\" to ensure continuous compliance with applicable standards.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
+    "rank": 58
   },
   {
     "id": 60,
+    "cat": "E",
+    "question": "Have you assessed environmental risks / impacts of your operations?",
     "status": "pending",
-    "answer": "Yes. JA Solar has conducted a structured environmental risk assessment to identify its most significant environmental impacts and dependencies:\n- GHG inventories assessed for all product families\n- Air emissions and waste streams quantified\n- Energy mix, water sources, and raw-material carbon intensity evaluated\n- Findings integrated into the corporate risk matrix and sourcing criteria\n\nOutcomes and corresponding reduction initiatives are detailed in the 2024 JA Solar Environmental Sustainability Report (pages 121â126).\n\nSupporting document: 2024 JA Solar Environmental Sustainability Report"
+    "answer": "Yes. JA Solar has conducted a structured environmental risk assessment to identify its most significant environmental impacts and dependencies:\n- GHG inventories assessed for all product families\n- Air emissions and waste streams quantified\n- Energy mix, water sources, and raw-material carbon intensity evaluated\n- Findings integrated into the corporate risk matrix and sourcing criteria\n\nOutcomes and corresponding reduction initiatives are detailed in the 2024 JA Solar Environmental Sustainability Report (pages 121â126).\n\nSupporting document: 2024 JA Solar Environmental Sustainability Report",
+    "rank": 59
   },
   {
     "id": 61,
+    "cat": "G",
+    "question": "Do you conduct internal ESG / social compliance reporting to management?",
     "status": "pending",
-    "answer": "Yes. JA Solar reports ESG and social compliance performance to senior management on a regular basis. ESG-related metrics are incorporated into the performance evaluation system for senior management. The Board-level Compliance Management Committee oversees ESG governance. The Sustainability and ESG Report is approved at the highest governance level before publication.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report"
+    "answer": "Yes. JA Solar reports ESG and social compliance performance to senior management on a regular basis. ESG-related metrics are incorporated into the performance evaluation system for senior management. The Board-level Compliance Management Committee oversees ESG governance. The Sustainability and ESG Report is approved at the highest governance level before publication.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
+    "rank": 60
   },
   {
     "id": 62,
+    "cat": "G",
+    "question": "Can your company accept third-party / on-site audits?",
     "status": "pending",
-    "answer": "Yes. JA Solar accepts third-party and on-site audits from customers, certification bodies, and independent auditors. JA Solar has received SSI (Social Solidarity Initiative) audits at its Yangzhou and Shanghai manufacturing facilities (both achieved Silver Medal). The company also undergoes annual EcoVadis assessments and CSR audits from various customers. Audit findings are addressed through formal corrective action plans.\n\nSupporting document: SSI audit reports | EcoVadis scorecard"
+    "answer": "Yes. JA Solar accepts third-party and on-site audits from customers, certification bodies, and independent auditors. JA Solar has received SSI (Social Solidarity Initiative) audits at its Yangzhou and Shanghai manufacturing facilities (both achieved Silver Medal). The company also undergoes annual EcoVadis assessments and CSR audits from various customers. Audit findings are addressed through formal corrective action plans.\n\nSupporting document: SSI audit reports | EcoVadis scorecard",
+    "rank": 61
   },
   {
     "id": 63,
+    "cat": "G",
+    "question": "Does your company have ISO 9001 certification?",
     "status": "pending",
-    "answer": "Yes. JA Solar holds ISO 9001:2015 Quality Management System certification.\n\nPlease refer to the Certificates folder for copies of individual certificates."
+    "answer": "Yes. JA Solar holds ISO 9001:2015 Quality Management System certification.\n\nPlease refer to the Certificates folder for copies of individual certificates.",
+    "rank": 62
   },
   {
     "id": 64,
+    "cat": "S",
+    "question": "Does your company comply with applicable labor laws?",
     "status": "pending",
-    "answer": "Yes. JA Solar complies with all applicable labor laws and regulations in each jurisdiction where it operates, including: minimum wage requirements; working hours and overtime limits; employment contract requirements; mandatory social insurance contributions; legally required leave entitlements; and health and safety regulations. Compliance is verified through internal audits, third-party assessments, and legal monitoring.\n\nSupporting documents: JA Solar Code of Conduct | JA Solar Human Rights Policy"
+    "answer": "Yes. JA Solar complies with all applicable labor laws and regulations in each jurisdiction where it operates, including: minimum wage requirements; working hours and overtime limits; employment contract requirements; mandatory social insurance contributions; legally required leave entitlements; and health and safety regulations. Compliance is verified through internal audits, third-party assessments, and legal monitoring.\n\nSupporting documents: JA Solar Code of Conduct | JA Solar Human Rights Policy",
+    "rank": 63
   },
   {
     "id": 65,
+    "cat": "S",
+    "question": "What safety training do you provide?",
     "status": "pending",
-    "answer": "Yes. JA Solar provides mandatory safety training to all relevant employees, covering:\n- Hazard identification and risk assessment\n- Emergency response and evacuation procedures\n- Correct use of PPE\n- OHS management system requirements and employee rights\n- Specialized training for employees in high-risk roles (e.g., electrical, chemical, height)\n\nTraining records are maintained and verified. In 2024, JA Solar also provided suppliers with ESG and SA8000 training covering compliance and sustainability assessment standards.\n\nSupporting document: JA Solar HSSE Plan | 2024 JA Solar Sustainability and ESG Report"
+    "answer": "Yes. JA Solar provides mandatory safety training to all relevant employees, covering:\n- Hazard identification and risk assessment\n- Emergency response and evacuation procedures\n- Correct use of PPE\n- OHS management system requirements and employee rights\n- Specialized training for employees in high-risk roles (e.g., electrical, chemical, height)\n\nTraining records are maintained and verified. In 2024, JA Solar also provided suppliers with ESG and SA8000 training covering compliance and sustainability assessment standards.\n\nSupporting document: JA Solar HSSE Plan | 2024 JA Solar Sustainability and ESG Report",
+    "rank": 64
   },
   {
     "id": 66,
+    "cat": "E",
+    "question": "How do you monitor / calculate your GHG emissions?",
     "status": "pending",
-    "answer": "JA Solar conducts GHG inventory in accordance with ISO 14064-1:2018 and the GHG Protocol Corporate Accounting and Reporting Standard:\n- Scope 1: Direct emissions from owned/controlled sources (combustion in boilers, on-site vehicles)\n- Scope 2: Indirect emissions from purchased electricity, steam, heating, and cooling (market-based and location-based)\n- Scope 3: Value chain emissions including purchased goods and services, business travel, employee commuting, logistics, and use of sold products\n\nAll production sites complete annual GHG inventories. Results are independently verified by a qualified third party.\n\nSupporting documents: 2024 JA Solar Environmental Sustainability Report"
+    "answer": "JA Solar conducts GHG inventory in accordance with ISO 14064-1:2018 and the GHG Protocol Corporate Accounting and Reporting Standard:\n- Scope 1: Direct emissions from owned/controlled sources (combustion in boilers, on-site vehicles)\n- Scope 2: Indirect emissions from purchased electricity, steam, heating, and cooling (market-based and location-based)\n- Scope 3: Value chain emissions including purchased goods and services, business travel, employee commuting, logistics, and use of sold products\n\nAll production sites complete annual GHG inventories. Results are independently verified by a qualified third party.\n\nSupporting documents: 2024 JA Solar Environmental Sustainability Report",
+    "rank": 65
   },
   {
     "id": 67,
+    "cat": "G",
+    "question": "Does your company have written corporate sustainability principles / commitments?",
     "status": "pending",
-    "answer": "Yes. JA Solar has published the JA Solar Environmental, Social, and Governance (ESG) Sustainability Policy, which sets out the company's sustainability commitments and governance framework.Mission, Vision & Values:JA Solar's mission, established since 2005, is \"Developing Solar Energy for the Benefit of All Mankind.\" Our vision is Green to Great — a sustainable world where solar energy contributes to people and the planet. Our values are embodied in the G2G (Green to Green, Green to Grow, Green to Great) sustainability philosophy: Green to Green reflects our sustainable development philosophy across operations and the value chain; Green to Grow reflects our strategic approach to extending green development beyond our organization; Green to Great reflects our long-term vision underpinned by our mission.4F Strategy Themes:JA Solar's sustainability strategy is organized around the \"4F\" themes: Faster (accelerating supply chain collaboration), Foster (climate strategy and circular economy), Fairer (stakeholder well-being and community impact), and Foundation (solid governance and compliance).\n\nSupporting document: JA Solar Environmental, Social, and Governance (ESG) Sustainability Policy | 2024 JA Solar Sustainability and ESG Report"
+    "answer": "Yes. JA Solar has published the JA Solar Environmental, Social, and Governance (ESG) Sustainability Policy, which sets out the company's sustainability commitments and governance framework.Mission, Vision & Values:JA Solar's mission, established since 2005, is \"Developing Solar Energy for the Benefit of All Mankind.\" Our vision is Green to Great — a sustainable world where solar energy contributes to people and the planet. Our values are embodied in the G2G (Green to Green, Green to Grow, Green to Great) sustainability philosophy: Green to Green reflects our sustainable development philosophy across operations and the value chain; Green to Grow reflects our strategic approach to extending green development beyond our organization; Green to Great reflects our long-term vision underpinned by our mission.4F Strategy Themes:JA Solar's sustainability strategy is organized around the \"4F\" themes: Faster (accelerating supply chain collaboration), Foster (climate strategy and circular economy), Fairer (stakeholder well-being and community impact), and Foundation (solid governance and compliance).\n\nSupporting document: JA Solar Environmental, Social, and Governance (ESG) Sustainability Policy | 2024 JA Solar Sustainability and ESG Report",
+    "rank": 66
   },
   {
     "id": 68,
+    "cat": "G",
+    "question": "What due diligence do you perform on human rights / ESG?",
     "status": "pending",
-    "answer": "JA Solar has developed a comprehensive Human Rights Due Diligence (HRDD) framework aligned with the UN Guiding Principles on Business and Human Rights (UNGP):\n1. Policy commitment — JA Solar Human Rights Policy\n2. HRDD questionnaire — developed following international human rights standards, applied at all manufacturing facilities\n3. On-site assessments — including worker interviews and document reviews; completed at Shanghai Fengxian and Yangzhou facilities (no forced labor found)\n4. Supply chain audits — risk-based audits of priority suppliers\n5. Grievance mechanism — SpeakUp channel accessible to all workers and stakeholders\n\nSupporting documents: JA Solar Human Rights Policy | JA Solar Responsible Sourcing Policy | 2024 JA Solar Sustainability and ESG Report"
+    "answer": "JA Solar has developed a comprehensive Human Rights Due Diligence (HRDD) framework aligned with the UN Guiding Principles on Business and Human Rights (UNGP):\n1. Policy commitment — JA Solar Human Rights Policy\n2. HRDD questionnaire — developed following international human rights standards, applied at all manufacturing facilities\n3. On-site assessments — including worker interviews and document reviews; completed at Shanghai Fengxian and Yangzhou facilities (no forced labor found)\n4. Supply chain audits — risk-based audits of priority suppliers\n5. Grievance mechanism — SpeakUp channel accessible to all workers and stakeholders\n\nSupporting documents: JA Solar Human Rights Policy | JA Solar Responsible Sourcing Policy | 2024 JA Solar Sustainability and ESG Report",
+    "rank": 67
   },
   {
     "id": 69,
+    "cat": "E",
+    "question": "Do you have green factory / green manufacturing certifications?",
     "status": "pending",
-    "answer": "Yes. As of end of 2024, six JA Solar production bases have been awarded the national \"Green Factory\" title by China's Ministry of Industry and Information Technology. Additionally:\n- JA Solar Qujing Phase III Project: Carbon Neutrality Certification (Beijing Green Exchange) + Zero-Carbon Factory Certificate (China Energy Conservation Association)\n- JA Solar Yangzhou Jinshan facility: Zero-Carbon Factory Certification (TÃV SÃD)\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report"
+    "answer": "Yes. As of end of 2024, six JA Solar production bases have been awarded the national \"Green Factory\" title by China's Ministry of Industry and Information Technology. Additionally:\n- JA Solar Qujing Phase III Project: Carbon Neutrality Certification (Beijing Green Exchange) + Zero-Carbon Factory Certificate (China Energy Conservation Association)\n- JA Solar Yangzhou Jinshan facility: Zero-Carbon Factory Certification (TÃV SÃD)\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
+    "rank": 68
   },
   {
     "id": 70,
+    "cat": "G",
+    "question": "What compliance / ESG training do you provide to employees?",
     "status": "pending",
-    "answer": "Yes. JA Solar provides ESG and compliance training to employees covering:\n- ESG background and international standards (GRI, TCFD, TNFD)\n- Carbon emission measurement and standards\n- SA8000 certification requirements\n- MSCI, CDP, and EcoVadis rating standards\n- OHS and emergency response (regular drills)\n- Code of Conduct and anti-corruption awareness\n\nIn 2024, specialized ESG and SA8000 training was also provided to suppliers covering 68% of procurement value. Training records are maintained.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report"
+    "answer": "Yes. JA Solar provides ESG and compliance training to employees covering:\n- ESG background and international standards (GRI, TCFD, TNFD)\n- Carbon emission measurement and standards\n- SA8000 certification requirements\n- MSCI, CDP, and EcoVadis rating standards\n- OHS and emergency response (regular drills)\n- Code of Conduct and anti-corruption awareness\n\nIn 2024, specialized ESG and SA8000 training was also provided to suppliers covering 68% of procurement value. Training records are maintained.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
+    "rank": 69
   },
   {
     "id": 71,
+    "cat": "G",
+    "question": "Has your company joined international sustainability initiatives (RE100, EP100, etc.)?",
     "status": "pending",
-    "answer": "Yes. JA Solar participates in the following international sustainability initiatives:\n- United Nations Global Compact (UNGC) — signatory; submits annual Communication on Progress\n- CDP Supply Chain Program — participant; invites suppliers to participate (68% of procurement value in 2024)\n- Solar Industry Forced Labor Prevention Pledge — signatory\n- TNFD Adopter — first in the global PV industry\n- SBTi — GHG reduction targets officially validated\n- Global Solar Sustainability Alliance — founding member (launched at COP29 2024 with 24 industry peers including Longi, Jinko, Tongwei)\n- Green Electricity 100% Initiative (GE100) — founding member\n\nSupporting document: UNGC participant page | 2024 JA Solar Sustainability and ESG Report"
+    "answer": "Yes. JA Solar participates in the following international sustainability initiatives:\n- United Nations Global Compact (UNGC) — signatory; submits annual Communication on Progress\n- CDP Supply Chain Program — participant; invites suppliers to participate (68% of procurement value in 2024)\n- Solar Industry Forced Labor Prevention Pledge — signatory\n- TNFD Adopter — first in the global PV industry\n- SBTi — GHG reduction targets officially validated\n- Global Solar Sustainability Alliance — founding member (launched at COP29 2024 with 24 industry peers including Longi, Jinko, Tongwei)\n- Green Electricity 100% Initiative (GE100) — founding member\n\nSupporting document: UNGC participant page | 2024 JA Solar Sustainability and ESG Report",
+    "rank": 70
   },
   {
     "id": 72,
+    "cat": "S",
+    "question": "What are your policies on leave (sick, maternity, annual)?",
     "status": "pending",
-    "answer": "JA Solar complies with all applicable national laws on leave entitlements in every jurisdiction where it operates, including: annual/paid leave; sick leave; maternity and paternity leave; public holidays; and other legally mandated rest periods. All leave entitlements are stated in individual employment contracts. JA Solar's Human Rights Policy confirms that employees are entitled to regular time-off and rest periods per national legislation.\n\nSupporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct"
+    "answer": "JA Solar complies with all applicable national laws on leave entitlements in every jurisdiction where it operates, including: annual/paid leave; sick leave; maternity and paternity leave; public holidays; and other legally mandated rest periods. All leave entitlements are stated in individual employment contracts. JA Solar's Human Rights Policy confirms that employees are entitled to regular time-off and rest periods per national legislation.\n\nSupporting documents: JA Solar Human Rights Policy | JA Solar Code of Conduct",
+    "rank": 71
   },
   {
     "id": 73,
+    "cat": "G",
+    "question": "What stakeholder engagement / materiality assessment do you conduct?",
     "status": "pending",
-    "answer": "Yes. JA Solar conducts regular stakeholder engagement to identify material ESG topics. Key stakeholder groups include: investors and shareholders; customers; employees; suppliers; local communities; regulators; NGOs and industry associations. Engagement methods include: annual ESG surveys; customer questionnaires; employee feedback; community consultations; and participation in industry forums. Results inform JA Solar's ESG strategy and are reflected in the annual Sustainability and ESG Report.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report"
+    "answer": "Yes. JA Solar conducts regular stakeholder engagement to identify material ESG topics. Key stakeholder groups include: investors and shareholders; customers; employees; suppliers; local communities; regulators; NGOs and industry associations. Engagement methods include: annual ESG surveys; customer questionnaires; employee feedback; community consultations; and participation in industry forums. Results inform JA Solar's ESG strategy and are reflected in the annual Sustainability and ESG Report.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
+    "rank": 72
   },
   {
     "id": 74,
+    "cat": "G",
+    "question": "How do you manage / audit your suppliers on ESG?",
     "status": "pending",
-    "answer": "JA Solar's supplier ESG management process:\n1. Supplier selection: Only suppliers that have signed the Supplier Code of Conduct are admitted to the approved list (100% of core suppliers as of 2024)\n2. Risk identification: Priority suppliers identified based on ESG risk indicators\n3. Assessment: Priority suppliers complete Supplier Sustainability Assessment questionnaires (covering labor rights, OHS, environment, and management systems)\n4. Audit: High-risk suppliers undergo on-site audits by a JA Solar internal joint team, supported by professional third-party auditors\n5. Corrective action: Non-compliant suppliers required to develop and implement corrective action plans with tracked deadlines\n6. Exit mechanism: Persistently non-compliant suppliers are removed from the approved list\n7. Capacity building: ESG and SA8000 training organized for suppliers (465 suppliers covering 68% of procurement value in 2024)\n\nSupporting documents: JA Solar Responsible Sourcing Policy | JA Solar Supplier Code of Conduct Version 2.0"
+    "answer": "JA Solar's supplier ESG management process:\n1. Supplier selection: Only suppliers that have signed the Supplier Code of Conduct are admitted to the approved list (100% of core suppliers as of 2024)\n2. Risk identification: Priority suppliers identified based on ESG risk indicators\n3. Assessment: Priority suppliers complete Supplier Sustainability Assessment questionnaires (covering labor rights, OHS, environment, and management systems)\n4. Audit: High-risk suppliers undergo on-site audits by a JA Solar internal joint team, supported by professional third-party auditors\n5. Corrective action: Non-compliant suppliers required to develop and implement corrective action plans with tracked deadlines\n6. Exit mechanism: Persistently non-compliant suppliers are removed from the approved list\n7. Capacity building: ESG and SA8000 training organized for suppliers (465 suppliers covering 68% of procurement value in 2024)\n\nSupporting documents: JA Solar Responsible Sourcing Policy | JA Solar Supplier Code of Conduct Version 2.0",
+    "rank": 73
   },
   {
     "id": 75,
+    "cat": "G",
+    "question": "Do you assess sustainability performance of your supply chain partners?",
     "status": "pending",
-    "answer": "Yes. JA Solar assesses the sustainability performance of all key supply chain partners through:\n- Mandatory signing of Supplier Code of Conduct (100% of key suppliers as of 2025)\n- Supplier Sustainability Assessment questionnaires — covering labor rights, OHS, environmental management, and governance\n- Risk-based on-site audits for high-risk and priority suppliers\n- Corrective action tracking for identified issues\n- Annual supplier ESG training\n\nSupporting documents: JA Solar Responsible Sourcing Policy | JA Solar Supplier Code of Conduct Version 2.0 | 2024 JA Solar Sustainability and ESG Report"
-  },
-  {
-    "id": 11,
-    "deleted": true,
-    "status": "pending",
-    "answer": ""
+    "answer": "Yes. JA Solar assesses the sustainability performance of all key supply chain partners through:\n- Mandatory signing of Supplier Code of Conduct (100% of key suppliers as of 2025)\n- Supplier Sustainability Assessment questionnaires — covering labor rights, OHS, environmental management, and governance\n- Risk-based on-site audits for high-risk and priority suppliers\n- Corrective action tracking for identified issues\n- Annual supplier ESG training\n\nSupporting documents: JA Solar Responsible Sourcing Policy | JA Solar Supplier Code of Conduct Version 2.0 | 2024 JA Solar Sustainability and ESG Report",
+    "rank": 74
   }
 ]
