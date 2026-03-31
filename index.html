@@ -1815,7 +1815,7 @@ function deleteQuestion(id, btn) {
   var q = card.querySelector('.qa-question').textContent;
   if (!confirm('Delete this question?\n\n' + q)) return;
   card.remove();
-  delete state[id];
+  state[id] = {deleted: true};
   document.querySelectorAll('.qa-item').forEach(function(item, index) {
     var rankEl = item.querySelector('.qa-rank');
     if (rankEl) rankEl.textContent = '#' + (index + 1);
