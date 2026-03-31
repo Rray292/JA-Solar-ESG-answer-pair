@@ -216,14 +216,6 @@
     "rank": 31
   },
   {
-    "id": 33,
-    "cat": "E",
-    "question": "How do you manage hazardous chemicals / substances?",
-    "status": "pending",
-    "answer": "JA Solar strictly adheres to applicable laws and regulations on hazardous chemical management at all operating locations. Key measures:\n- Proper storage, labeling, segregation, and handling of hazardous substances\n- Dedicated waste gas treatment facilities for chemical emissions\n- Low-VOC materials used in production to minimize emissions\n- Licensed third-party contractors for hazardous waste disposal\n- Regular training for employees who work with hazardous chemicals\n- Safety Data Sheets (SDS) maintained for all hazardous substances\n\nSupporting documents: JA Solar Environment Health & Safety Policy | JA Solar HSSE Plan",
-    "rank": 32
-  },
-  {
     "id": 35,
     "cat": "S",
     "question": "Do you have a policy against harassment / disciplinary procedures?",
