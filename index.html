@@ -1830,34 +1830,28 @@ function confirmAddQuestion() {
 async function deleteQuestion(id, btn) {
   var card = btn.closest('.qa-item');
   var q = card.querySelector('.qa-question').textContent;
-  if (!confirm('Delete this question?
-
-' + q)) return;
+  if (!confirm('Delete this question?\n\n' + q)) return;
   var token = getToken();
   if (!token) { alert('No token'); return; }
   setSync('Deleting...', 'saving');
-  card.remove();
-  delete state[id];
+  card.remove(); delete state[id];
   document.querySelectorAll('.qa-item').forEach(function(item, index) {
     var rankEl = item.querySelector('.qa-rank');
     if (rankEl) rankEl.textContent = '#' + (index + 1);
   });
-  updateProgress();
-  applyFilters();
+  updateProgress(); applyFilters();
   try {
     var hResp = await fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/index.html', {headers: {'Authorization': 'token ' + token}});
     if (!hResp.ok) throw new Error('Fetch HTML ' + hResp.status);
-    var hMeta = await hResp.json();
-    var hSha = hMeta.sha;
-    var binary = atob(hMeta.content.replace(/
-/g, ''));
+    var hMeta = await hResp.json(); var hSha = hMeta.sha;
+    var binary = atob(hMeta.content.replace(/\n/g, ''));
     var bytes = new Uint8Array(binary.length);
     for (var i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
     var decoded = new TextDecoder('utf-8').decode(bytes);
-    var parser = new DOMParser();
-    var doc = parser.parseFromString(decoded, 'text/html');
-    var el = doc.querySelector('.qa-item[data-id="' + id + '"]');
-    if (el) el.remove();
+    var doc = new DOMParser().parseFromString(decoded, 'text/html');
+    doc.querySelectorAll('.qa-item').forEach(function(el) {
+      if (el.getAttribute('data-id') == id) el.remove();
+    });
     doc.querySelectorAll('.cat-header').forEach(function(h) {
       var next = h.nextElementSibling;
       if (!next || next.classList.contains('cat-header') || next.id === 'noResults') h.remove();
@@ -1865,16 +1859,11 @@ async function deleteQuestion(id, btn) {
     doc.querySelectorAll('.qa-item').forEach(function(item, i) {
       var r = item.querySelector('.qa-rank'); if (r) r.textContent = '#' + (i + 1);
     });
-    var updatedHtml = '<!DOCTYPE html>
-' + doc.documentElement.outerHTML;
-    var enc = btoa(unescape(encodeURIComponent(updatedHtml)));
-    var pResp = await fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/index.html', {
-      method: 'PUT', headers: {'Authorization': 'token ' + token, 'Content-Type': 'application/json'},
-      body: JSON.stringify({message: 'Delete question id=' + id, content: enc, sha: hSha})
-    });
+    var enc = btoa(unescape(encodeURIComponent(doc.documentElement.outerHTML)));
+    var pResp = await fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/index.html', {method: 'PUT', headers: {'Authorization': 'token ' + token, 'Content-Type': 'application/json'}, body: JSON.stringify({message: 'Delete question id=' + id, content: enc, sha: hSha})});
     if (!pResp.ok) throw new Error('Update HTML ' + pResp.status);
     await saveToGitHub();
-    setSync('Deleted ✓', 'ok');
+    setSync('Deleted ✝', 'ok');
   } catch(e) { setSync('Delete failed', 'error'); console.error(e); }
 }
 
