@@ -1836,8 +1836,6 @@ async function deleteQuestion(id, btn) {
   var token = getToken();
   if (!token) { alert('No token'); return; }
   setSync('Deleting...', 'saving');
-
-  // Remove from DOM immediately
   card.remove();
   delete state[id];
   document.querySelectorAll('.qa-item').forEach(function(item, index) {
@@ -1846,41 +1844,38 @@ async function deleteQuestion(id, btn) {
   });
   updateProgress();
   applyFilters();
-
   try {
-    // Fetch + update index.html
     var hResp = await fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/index.html', {headers: {'Authorization': 'token ' + token}});
     if (!hResp.ok) throw new Error('Fetch HTML ' + hResp.status);
     var hMeta = await hResp.json();
     var hSha = hMeta.sha;
     var binary = atob(hMeta.content.replace(/
-/g,''));
+/g, ''));
     var bytes = new Uint8Array(binary.length);
-    for (var i=0;i<binary.length;i++) bytes[i]=binary.charCodeAt(i);
+    for (var i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
     var decoded = new TextDecoder('utf-8').decode(bytes);
     var parser = new DOMParser();
     var doc = parser.parseFromString(decoded, 'text/html');
-    var el = doc.querySelector('.qa-item[data-id="'+id+'"]');
+    var el = doc.querySelector('.qa-item[data-id="' + id + '"]');
     if (el) el.remove();
     doc.querySelectorAll('.cat-header').forEach(function(h) {
       var next = h.nextElementSibling;
-      if (!next || next.classList.contains('cat-header') || next.id==='noResults') h.remove();
+      if (!next || next.classList.contains('cat-header') || next.id === 'noResults') h.remove();
     });
-    doc.querySelectorAll('.qa-item').forEach(function(item,i) {
-      var r=item.querySelector('.qa-rank'); if(r) r.textContent='#'+(i+1);
+    doc.querySelectorAll('.qa-item').forEach(function(item, i) {
+      var r = item.querySelector('.qa-rank'); if (r) r.textContent = '#' + (i + 1);
     });
     var updatedHtml = '<!DOCTYPE html>
 ' + doc.documentElement.outerHTML;
     var enc = btoa(unescape(encodeURIComponent(updatedHtml)));
     var pResp = await fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/index.html', {
-      method:'PUT', headers:{'Authorization':'token '+token,'Content-Type':'application/json'},
-      body: JSON.stringify({message:'Delete question id='+id, content:enc, sha:hSha})
+      method: 'PUT', headers: {'Authorization': 'token ' + token, 'Content-Type': 'application/json'},
+      body: JSON.stringify({message: 'Delete question id=' + id, content: enc, sha: hSha})
     });
     if (!pResp.ok) throw new Error('Update HTML ' + pResp.status);
-    // Update data.json
     await saveToGitHub();
     setSync('Deleted ✓', 'ok');
-  } catch(e) { setSync('Delete failed','error'); console.error(e); }
+  } catch(e) { setSync('Delete failed', 'error'); console.error(e); }
 }
 
 // Add delete button to all existing cards
