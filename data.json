@@ -379,7 +379,7 @@
     "id": 54,
     "cat": "G",
     "question": "Do you make external disclosure about your environmental / social performance?",
-    "status": "pending",
+    "status": "verified",
     "answer": "Yes. JA Solar publicly discloses reports published on its official website (www.jasolar.com - Sustainability - Download Center):\n- 2024 JA Solar Sustainability and ESG Report\n- 2024 JA Solar Environmental Sustainability Report\n- 2023 Climate-Related Disclosure Report and TCFD Report\n- 2024 TNFD Report",
     "rank": 53
   },
@@ -435,8 +435,8 @@
     "id": 62,
     "cat": "G",
     "question": "Can your company accept third-party / on-site audits?",
-    "status": "pending",
-    "answer": "Yes. JA Solar accepts third-party and on-site audits from customers, certification bodies, and independent auditors. JA Solar has received SSI (Social Solidarity Initiative) audits at its Yangzhou and Shanghai manufacturing facilities (both achieved Silver Medal). The company also undergoes annual EcoVadis assessments and CSR audits from various customers. Audit findings are addressed through formal corrective action plans.\n\nSupporting document: SSI audit reports | EcoVadis scorecard",
+    "status": "verified",
+    "answer": "Yes. JA Solar accepts third-party and on-site audits from customers, certification bodies, and independent auditors. Please contact quality department for further details.",
     "rank": 61
   },
   {
