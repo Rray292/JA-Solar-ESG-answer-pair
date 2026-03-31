@@ -1515,6 +1515,19 @@ function applyState() {
     var rankEl = item.querySelector('.qa-rank');
     if (rankEl) rankEl.textContent = '#' + (index + 1);
   });
+  // Remove orphaned cat-headers (no qa-item siblings before next header)
+  var main = document.querySelector('.main');
+  var children = Array.from(main.children);
+  for (var i = 0; i < children.length; i++) {
+    var child = children[i];
+    if (!child.classList || !child.classList.contains('cat-header')) continue;
+    var hasItems = false;
+    for (var j = i + 1; j < children.length; j++) {
+      if (children[j].classList.contains('cat-header')) break;
+      if (children[j].classList.contains('qa-item')) { hasItems = true; break; }
+    }
+    if (!hasItems) child.remove();
+  }
 }
 
 async function saveToGitHub() {
