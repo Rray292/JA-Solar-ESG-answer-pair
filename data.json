@@ -64,14 +64,6 @@
     "rank": 8
   },
   {
-    "id": 9,
-    "cat": "E",
-    "question": "How do you manage waste (hazardous and non-hazardous)?",
-    "status": "pending",
-    "answer": "JA Solar strictly complies with waste management laws and regulations at all operating locations, following the principles of reduction, resource utilization, and harmlessness. Key measures include:\n- Waste Sorting: Strict waste classification to increase recycling rates\n- Material Recycling: Silicon scraps and other production materials are recycled\n- Packaging Recycling: Recyclable packaging promoted with recycling systems established\n- Hazardous Waste: Processed by licensed third-party disposal companies per applicable regulations\n- Solid Waste: Managed in accordance with national and local environmental laws\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
-    "rank": 9
-  },
-  {
     "id": 10,
     "cat": "G",
     "question": "Does your company have ISO 14001 certification?",
