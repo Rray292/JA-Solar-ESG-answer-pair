@@ -315,7 +315,7 @@
     "id": 46,
     "cat": "E",
     "question": "Have your GHG emissions been verified by a third party?",
-    "status": "pending",
+    "status": "verified",
     "answer": "Yes. All JA Solar production sites conduct GHG inventory in accordance with ISO 14064-1:2018 and the GHG Protocol Corporate Accounting and Reporting Standard. All GHG inventory results are independently verified by a qualified third-party verification body, and verification statements are obtained.\n\nSupporting documents: 2024 JA Solar Environmental Sustainability Report",
     "rank": 45
   },
