@@ -443,7 +443,7 @@
     "id": 63,
     "cat": "G",
     "question": "Does your company have ISO 9001 certification?",
-    "status": "pending",
+    "status": "verified",
     "answer": "Yes. JA Solar holds ISO 9001:2015 Quality Management System certification.\n\nPlease refer to the Certificates folder for copies of individual certificates.",
     "rank": 62
   },
