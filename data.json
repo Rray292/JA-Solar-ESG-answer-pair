@@ -40,11 +40,6 @@
     "answer": "JA Solar ensures all employees receive remuneration that: (1) meets at least the applicable legal minimum wage in each jurisdiction (2) is sufficient to cover basic needs; (3) includes overtime pay in accordance with national law. Employees receive legally mandated benefits including social insurance contributions.\n-Wages are paid on time and in full. Recruitment fees are never charged to workers. No deductions are made as disciplinary measures."
   },
   {
-    "id": 9,
-    "status": "pending",
-    "answer": ""
-  },
-  {
     "id": 10,
     "status": "verified",
     "answer": "Yes. All JA Solar production sites that have officially commenced operations hold ISO 14001:2015 Environmental Management System certification."
@@ -368,6 +363,12 @@
     "id": 75,
     "status": "pending",
     "answer": "Yes. JA Solar assesses the sustainability performance of all key supply chain partners through:\n- Mandatory signing of Supplier Code of Conduct (100% of key suppliers as of 2025)\n- Supplier Sustainability Assessment questionnaires — covering labor rights, OHS, environmental management, and governance\n- Risk-based on-site audits for high-risk and priority suppliers\n- Corrective action tracking for identified issues\n- Annual supplier ESG training\n\nSupporting documents: JA Solar Responsible Sourcing Policy | JA Solar Supplier Code of Conduct Version 2.0 | 2024 JA Solar Sustainability and ESG Report"
+  },
+  {
+    "id": 9,
+    "deleted": true,
+    "status": "pending",
+    "answer": ""
   },
   {
     "id": 11,
