@@ -1527,9 +1527,12 @@ async function saveToGitHub() {
   document.querySelectorAll('.qa-item').forEach(function(item) {
     var id = item.getAttribute('data-id');
     var entry = state[id] || {};
-    var saveEntry = {id: parseInt(id), status: entry.status || 'pending', answer: item.querySelector('.qa-answer').textContent};
-      if (entry.deleted) saveEntry.deleted = true;
-      out.push(saveEntry);
+    out.push({id: parseInt(id), status: entry.status || 'pending', answer: item.querySelector('.qa-answer').textContent});
+  });
+  Object.keys(state).forEach(function(id) {
+    if (state[id] && state[id].deleted) {
+      out.push({id: parseInt(id), deleted: true, status: 'pending', answer: ''});
+    }
   });
 
   try {
@@ -1661,10 +1664,11 @@ function applyFilters() {
 }
 
 function updateProgress() {
-  var verified = Object.values(state).filter(function(e) { return e.status === 'verified'; }).length;
-  var pct = Math.round(verified / TOTAL * 100);
+  var total = document.querySelectorAll('.qa-item').length;
+  var verified = Object.values(state).filter(function(e) { return e && e.status === 'verified' && !e.deleted; }).length;
+  var pct = total > 0 ? Math.round(verified / total * 100) : 0;
   document.getElementById('progressBar').style.width = pct + '%';
-  document.getElementById('progressLabel').textContent = verified + ' / ' + TOTAL + ' verified';
+  document.getElementById('progressLabel').textContent = verified + ' / ' + total + ' verified';
 }
 
 document.querySelectorAll('.qa-header').forEach(function(header) {
