@@ -1478,7 +1478,7 @@ async function loadFromGitHub() {
     var rawR = await fetch('https://raw.githubusercontent.com/' + OWNER + '/' + REPO + '/main/' + DATA_FILE + '?t=' + Date.now());
     var content = await rawR.json();
     content.forEach(function(item) {
-      state[item.id] = {status: item.status || 'pending', answer: item.answer};
+      state[item.id] = {status: item.status || 'pending', answer: item.answer, deleted: item.deleted || false};
     });
     applyState();
     addDeleteButtons();
