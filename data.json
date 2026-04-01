@@ -446,8 +446,10 @@
     "cat": "G",
     "question": "Does your company have written corporate sustainability principles / commitments?",
     "status": "pending",
-    "answer": "Yes. JA Solar has established written corporate sustainability principles and commitments.\n\nCore sustainability philosophy — \"Green to Green, Green to Grow, Green to Great\":\n- Green to Green (绿动循环): Building a circular economy across the full value chain, from production to end-of-life recycling\n- Green to Grow (绿促发展): Driving technology innovation and intelligent manufacturing; creating shared value with supply chain partners and employees\n- Green to Great (绿见未来): Long-term commitment to climate action, ecological stewardship, and harmony between humanity and nature\n\nThree shared values: co-build green cycles, co-plan green development, co-create a green future.\n\nInternational framework alignment:\n- UN Global Compact (UNGC) 10 Principles\n- UN Sustainable Development Goals (SDGs)\n- ILO core conventions\n- UN Guiding Principles on Business and Human Rights (UNGP)\n\nGlobal commitments:\n- Participated in COP30 (UN Climate Change Conference); launched the Global Solar Sustainability Alliance (GSSA) initiative with peer companies\n\nSupporting document: JA Solar ESG Sustainability Policy | 2025 JA Solar Sustainability and ESG Report",
-    "rank": 66
+    "answer": "Yes. JA Solar has established written corporate sustainability principles and commitments.\n\nCore sustainability philosophy — \"Green to Green, Green to Grow, Green to Great\":\n- Green to Green: Building a circular economy across the full value chain, from production to end-of-life recycling\n- Green to Grow: Driving technology innovation and intelligent manufacturing; creating shared value with supply chain partners and employees\n- Green to Great: Long-term commitment to climate action, ecological stewardship, and harmony between humanity and nature\n\nThree shared values: co-build green cycles, co-plan green development, co-create a green future.\n\nInternational framework alignment:\n- UN Global Compact (UNGC) 10 Principles\n- UN Sustainable Development Goals (SDGs)\n- ILO core conventions\n- UN Guiding Principles on Business and Human Rights (UNGP)\n\nGlobal commitments:\n- Participated in COP30 (UN Climate Change Conference); launched the Global Solar Sustainability Alliance (GSSA) initiative with peer companies\n\nSupporting document: JA Solar ESG Sustainability Policy | 2025 JA Solar Sustainability and ESG Report",
+    "rank": 66,
+    "lastEditor": "Ray",
+    "lastEditedAt": "01 Apr 2026, 16:09"
   },
   {
     "id": 68,
@@ -485,7 +487,7 @@
     "id": 72,
     "cat": "S",
     "question": "What are your policies on leave (sick, maternity, annual)?",
-    "status": "pending",
+    "status": "verified",
     "answer": "JA Solar provides employees with the following statutory and non-statutory leave entitlements:\n\nStatutory leave:\n- Paid annual leave \n- Maternity leave: average 16.54 weeks for female employees in 2025\n- Paternity leave: average 3.74 weeks for male employees in 2025\n- Childcare leave: over 5,000 employees utilized this entitlement in 2025\n- Caregiving leave \n- Pre-natal check leave\n- Marriage leave\n- Bereavement leave\n\nAdditional family support:\n- Childcare facilities provided at select sites\n- Nursing rooms for breastfeeding employees\n- Children's holiday care programs\n- Paid family and caregiving leave beyond statutory minimums\n\nAll on-duty employees are covered by compensation and non-wage benefits.",
     "rank": 71,
     "lastEditor": "Ray",
