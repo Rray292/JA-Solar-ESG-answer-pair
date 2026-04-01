@@ -345,9 +345,11 @@
     "id": 50,
     "cat": "E",
     "question": "What actions reduce environmental impact from product use / end-of-life?",
-    "status": "pending",
+    "status": "verified",
     "answer": "JA Solar reduces environmental impact from product use and end-of-life through the following actions:\n\nProduct design for circularity:\n- Disassembly-friendly module design to facilitate component recovery\n- Use of 100% recyclable polyurethane composite frames\n- Lead-free solder ribbons and fluorine-free backsheets adopted in production\n- Low-carbon product innovation: silver paste consumption reduced by 50% (TBC battery technology)\n\nEnd-of-life management:\n- Circular economy strategy covering the full lifecycle from silicon ingot to decommissioned module recycling\n- EU WEEE Directive compliance targets: component recycling rate ≥85%; reprocessing rate ≥80%\n\nCarbon footprint and lifecycle assessment:\n- LCA/EPD methodology applied per ISO 14025, EN 15804+A2, and NPCR 029\n- SimaPro tool and Ecoinvent 3.9 database used for calculation\n- ISO 14067 and IEC 62994 certifications obtained for carbon footprint\n- Published module carbon footprint: 18.31 gCO₂eq/kWh (Norway scenario)\n- Norway and Italy EPDs updated in 2025; new Netherlands EPD obtained\n\nIndustry standards contribution:\n- T/CSTM 01556-2025: Component recovery grading standard (co-published)\n- T/CSTM 01544-2025: Polyurethane sealant standard (co-published)\n\nSupporting document: JA Solar Circular Economy Strategy | 2025 JA Solar Sustainability and ESG Report",
-    "rank": 49
+    "rank": 49,
+    "lastEditor": "Ray",
+    "lastEditedAt": "01 Apr 2026, 11:26"
   },
   {
     "id": 51,
