@@ -79,7 +79,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .btn-cancel{background:#f1f5f9;color:#64748b;}
 .btn-confirm{background:#16a34a;color:#fff;}
 .login-logo{display:block;height:32px;margin-bottom:16px;}
-.login-err{color:#dc2626;font-size:12px;margin-top:8px;display:none;}</style>
+.login-err{color:#dc2626;font-size:12px;margin-top:8px;display:none;}
+.view-only-badge{display:none;font-size:11px;padding:2px 10px;border-radius:10px;background:#78350f;color:#fef3c7;font-weight:600;}</style>
 </head>
 <body>
 <div class="topbar">
@@ -90,7 +91,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="progress-bar-outer"><div class="progress-bar-inner" id="progressBar" style="width:0%"></div></div>
     <span class="progress-label" id="progressLabel">0 / 0 verified</span>
   </div>
-  <div class="topbar-user">&#128100; <span id="topbarUser"></span> <button class="reset-btn" onclick="resetLogin()">Sign out</button></div>
+  <div class="topbar-user">&#128100; <span id="topbarUser"></span> <span class="view-only-badge" id="viewOnlyBadge">View Only</span> <button class="reset-btn" onclick="resetLogin()">Sign out</button></div>
   <div class="topbar-btns">
     <span class="save-note" id="saveNote"></span>
     <button class="tbtn tbtn-add" onclick="openAddModal()">+ Add Question</button>
@@ -146,6 +147,7 @@ var REPO  = 'JA-Solar-ESG-answer-pair';
 var DATA_FILE = 'data.json';
 var GH_TOKEN = ['ghp','7W8LN5ZQ9Fqd1DfsVoUp3VNIEFobjd0GZhjP'].join('_');
 var SITE_PWD = 'BiodiversityMatters';
+var VIEWER_PWD = 'salesESG';
 var data = [];
 var fileSha = null;
 var dirty = false;
@@ -155,6 +157,8 @@ var activeStatus = 'all';
 var searchTerm = '';
 
 function getCurrentUser() { return localStorage.getItem('esg_user') || null; }
+function getRole() { return localStorage.getItem('esg_role') || 'viewer'; }
+function isEditor() { return getRole() === 'editor'; }
 function setSync(msg, cls) {
   var el = document.getElementById('syncStatus');
   el.textContent = msg; el.className = 'sync-status' + (cls ? ' ' + cls : '');
@@ -165,8 +169,12 @@ function submitLogin() {
   var pwd  = document.getElementById('loginPwd').value;
   var err  = document.getElementById('loginErr');
   if (!name) { err.textContent = 'Please enter your name.'; err.style.display = 'block'; return; }
-  if (pwd !== SITE_PWD) { err.textContent = 'Incorrect password. Please try again.'; err.style.display = 'block'; return; }
+  var role = '';
+  if (pwd === SITE_PWD) role = 'editor';
+  else if (pwd === VIEWER_PWD) role = 'viewer';
+  else { err.textContent = 'Incorrect password. Please try again.'; err.style.display = 'block'; return; }
   localStorage.setItem('esg_user', name);
+  localStorage.setItem('esg_role', role);
   document.getElementById('loginModal').classList.remove('open');
   document.getElementById('topbarUser').textContent = name;
   loadData();
@@ -175,6 +183,7 @@ function submitLogin() {
 function resetLogin() {
   if (!confirm('Sign out and reset login?')) return;
   localStorage.removeItem('esg_user');
+  localStorage.removeItem('esg_role');
   location.reload();
 }
 
@@ -190,8 +199,10 @@ async function loadData() {
     data = JSON.parse(decoded);
     renderAll();
     setSync('Synced ✓', 'ok');
-    document.getElementById('saveBtn').disabled = false;
-    document.getElementById('saveNote').textContent = 'Ctrl+S to save';
+    if (isEditor()) {
+      document.getElementById('saveBtn').disabled = false;
+      document.getElementById('saveNote').textContent = 'Ctrl+S to save';
+    }
   } catch(e) {
     setSync('Error', 'error');
     console.error(e);
@@ -221,6 +232,18 @@ function renderAll() {
   main.appendChild(noRes);
   updateProgress();
   applyFilters();
+  applyRole();
+}
+
+function applyRole() {
+  if (!isEditor()) {
+    document.querySelectorAll('.qa-answer').forEach(function(el) { el.removeAttribute('contenteditable'); });
+    document.querySelectorAll('.delete-btn').forEach(function(el) { el.style.display = 'none !important'; el.style.setProperty('display','none','important'); });
+    document.querySelectorAll('.status-btn').forEach(function(el) { el.style.pointerEvents = 'none'; el.style.opacity = '0.7'; });
+    document.getElementById('saveBtn').style.display = 'none';
+    document.querySelector('.tbtn-add').style.display = 'none';
+    document.getElementById('viewOnlyBadge').style.display = 'inline-block';
+  }
 }
 
 function esc(s) {
@@ -282,6 +305,7 @@ function toggleStatus(id, btn) {
 }
 
 function deleteQuestion(id) {
+  if (!isEditor()) return;
   var item = data.find(function(d) { return d.id === id; });
   if (!item) return;
   if (!confirm('Delete this question?\n\n' + item.question)) return;
@@ -295,7 +319,7 @@ function scheduleSave() {
 }
 
 async function saveData() {
-  if (!fileSha) return;
+  if (!fileSha || !isEditor()) return;
   setSync('Saving...', 'saving');
   document.getElementById('saveBtn').disabled = true;
   try {
@@ -404,6 +428,7 @@ if (!currentUser) {
   document.getElementById('loginModal').classList.add('open');
 } else {
   document.getElementById('topbarUser').textContent = currentUser;
+  if (!isEditor()) document.getElementById('viewOnlyBadge').style.display = 'inline-block';
   loadData();
 }</script>
 </body>
