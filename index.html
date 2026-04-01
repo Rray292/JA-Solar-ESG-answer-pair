@@ -106,7 +106,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <span class="filter-label" style="margin-left:12px;">Status:</span>
   <button class="fbtn f-pending" onclick="toggleStatusFilter('pending',this)">Pending</button>
   <button class="fbtn f-verified" onclick="toggleStatusFilter('verified',this)">Verified</button>
-  <input class="search-box" type="text" placeholder="Search questions &amp; answers..." oninput="doSearch(this.value)"/>
+  <input class="search-box" type="text" placeholder="Search questions &amp; answers..." oninput="doSearch(this.value)" autocomplete="off"/>
 </div>
 <div class="main"></div>
 <div class="modal-overlay" id="loginModal">
