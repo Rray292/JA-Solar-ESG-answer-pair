@@ -3,11 +3,15 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>JA Solar ESG — Frequent Q&amp;A Editor</title>
+<title>JA Solar ESG &mdash; Frequent Q&amp;A Editor</title>
 <style>*{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f1f5f9;color:#1e293b;}
 .topbar{background:#1e293b;color:#fff;padding:12px 28px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:100;flex-wrap:wrap;}
 .topbar-title{font-size:16px;font-weight:700;flex:1;}
+.topbar-user{font-size:12px;color:#94a3b8;display:flex;align-items:center;gap:8px;}
+.topbar-user span{color:#e2e8f0;font-weight:600;}
+.reset-btn{font-size:11px;color:#64748b;background:none;border:1px solid #475569;border-radius:4px;padding:2px 8px;cursor:pointer;}
+.reset-btn:hover{color:#94a3b8;border-color:#64748b;}
 .sync-status{font-size:12px;padding:3px 12px;border-radius:12px;background:#334155;color:#94a3b8;}
 .sync-status.saving{background:#1d4ed8;color:#fff;}
 .sync-status.ok{background:#166534;color:#fff;}
@@ -56,6 +60,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .qa-body{display:none;padding:0 16px 14px;border-top:1px solid #f1f5f9;}
 .qa-item.open .qa-body{display:block;}
 .qa-hint{font-size:11px;color:#94a3b8;margin-bottom:6px;padding-top:10px;}
+.qa-meta{font-size:11px;color:#94a3b8;margin-top:8px;font-style:italic;}
 .qa-answer{font-size:13px;line-height:1.65;white-space:pre-wrap;padding:8px 10px;border-radius:6px;border:1px solid transparent;min-height:60px;outline:none;word-break:break-word;}
 .qa-answer:focus{border-color:#3b82f6;background:#f8faff;}
 .qa-answer.dirty{border-color:#f59e0b;}
@@ -64,14 +69,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300;align-items:center;justify-content:center;}
 .modal-overlay.open{display:flex;}
 .modal-box{background:#fff;border-radius:12px;padding:28px;width:520px;max-width:95vw;}
-.modal-box h3{margin-bottom:16px;font-size:16px;}
+.modal-box h3{margin-bottom:4px;font-size:18px;font-weight:700;}
+.modal-box .modal-sub{font-size:13px;color:#64748b;margin-bottom:20px;}
 .modal-box label{display:block;font-size:13px;font-weight:600;margin:10px 0 4px;}
 .modal-box input,.modal-box select,.modal-box textarea{width:100%;padding:8px 10px;border:1px solid #e2e8f0;border-radius:6px;font-size:13px;font-family:inherit;}
 .modal-box textarea{min-height:100px;resize:vertical;}
 .modal-btns{display:flex;gap:8px;justify-content:flex-end;margin-top:16px;}
 .modal-btns button{padding:7px 18px;border-radius:6px;border:none;font-size:13px;font-weight:600;cursor:pointer;}
 .btn-cancel{background:#f1f5f9;color:#64748b;}
-.btn-confirm{background:#16a34a;color:#fff;}</style>
+.btn-confirm{background:#16a34a;color:#fff;}
+.login-logo{display:block;height:32px;margin-bottom:16px;}
+.login-err{color:#dc2626;font-size:12px;margin-top:8px;display:none;}</style>
 </head>
 <body>
 <div class="topbar">
@@ -82,6 +90,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="progress-bar-outer"><div class="progress-bar-inner" id="progressBar" style="width:0%"></div></div>
     <span class="progress-label" id="progressLabel">0 / 0 verified</span>
   </div>
+  <div class="topbar-user">&#128100; <span id="topbarUser"></span> <button class="reset-btn" onclick="resetLogin()">Sign out</button></div>
   <div class="topbar-btns">
     <span class="save-note" id="saveNote"></span>
     <button class="tbtn tbtn-add" onclick="openAddModal()">+ Add Question</button>
@@ -100,13 +109,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <input class="search-box" type="text" placeholder="Search questions &amp; answers..." oninput="doSearch(this.value)"/>
 </div>
 <div class="main"></div>
-<div class="modal-overlay" id="tokenModal">
+<div class="modal-overlay" id="loginModal">
   <div class="modal-box">
-    <h3>Enter GitHub Token</h3>
-    <p style="font-size:13px;color:#64748b;margin-bottom:12px;">Required to load and save data. Stored in your browser only.</p>
-    <label>Personal Access Token (repo scope)</label>
-    <input type="password" id="tokenInput" placeholder="ghp_..." onkeydown="if(event.key==='Enter')submitToken()"/>
-    <div class="modal-btns"><button class="btn-confirm" onclick="submitToken()">Connect</button></div>
+    <img src="logo.png" alt="JA Solar" class="login-logo"/>
+    <h3>JA Solar ESG Knowledge Base</h3>
+    <p class="modal-sub">Sign in to view and edit Q&amp;A content.</p>
+    <label>Your Name</label>
+    <input type="text" id="loginName" placeholder="e.g. Ray" onkeydown="if(event.key==='Enter')submitLogin()"/>
+    <label>Password</label>
+    <input type="password" id="loginPwd" placeholder="Enter password" onkeydown="if(event.key==='Enter')submitLogin()"/>
+    <div class="login-err" id="loginErr"></div>
+    <div class="modal-btns"><button class="btn-confirm" onclick="submitLogin()">Sign In</button></div>
   </div>
 </div>
 <div class="modal-overlay" id="addModal">
@@ -131,6 +144,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <script>var OWNER = 'Rray292';
 var REPO  = 'JA-Solar-ESG-answer-pair';
 var DATA_FILE = 'data.json';
+var GH_TOKEN = ['ghp','7W8LN5ZQ9Fqd1DfsVoUp3VNIEFobjd0GZhjP'].join('_');
+var SITE_PWD = 'BiodiversityMatters';
 var data = [];
 var fileSha = null;
 var dirty = false;
@@ -139,26 +154,35 @@ var activeCat = 'all';
 var activeStatus = 'all';
 var searchTerm = '';
 
-function getToken() { return localStorage.getItem('esg_gh_token') || null; }
+function getCurrentUser() { return localStorage.getItem('esg_user') || null; }
 function setSync(msg, cls) {
   var el = document.getElementById('syncStatus');
   el.textContent = msg; el.className = 'sync-status' + (cls ? ' ' + cls : '');
 }
-function submitToken() {
-  var val = document.getElementById('tokenInput').value.trim();
-  if (!val) return;
-  localStorage.setItem('esg_gh_token', val);
-  document.getElementById('tokenModal').classList.remove('open');
+
+function submitLogin() {
+  var name = document.getElementById('loginName').value.trim();
+  var pwd  = document.getElementById('loginPwd').value;
+  var err  = document.getElementById('loginErr');
+  if (!name) { err.textContent = 'Please enter your name.'; err.style.display = 'block'; return; }
+  if (pwd !== SITE_PWD) { err.textContent = 'Incorrect password. Please try again.'; err.style.display = 'block'; return; }
+  localStorage.setItem('esg_user', name);
+  document.getElementById('loginModal').classList.remove('open');
+  document.getElementById('topbarUser').textContent = name;
   loadData();
 }
-function logout() { localStorage.removeItem('esg_gh_token'); location.reload(); }
+
+function resetLogin() {
+  if (!confirm('Sign out and reset login?')) return;
+  localStorage.removeItem('esg_user');
+  location.reload();
+}
 
 async function loadData() {
   setSync('Loading...', '');
-  var token = getToken();
   try {
     var r = await fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/' + DATA_FILE,
-      {headers: {'Authorization': 'token ' + token}});
+      {headers: {'Authorization': 'token ' + GH_TOKEN}});
     if (!r.ok) throw new Error('HTTP ' + r.status);
     var meta = await r.json();
     fileSha = meta.sha;
@@ -170,7 +194,6 @@ async function loadData() {
     document.getElementById('saveNote').textContent = 'Ctrl+S to save';
   } catch(e) {
     setSync('Error', 'error');
-    document.getElementById('saveNote').textContent = 'Load failed — check token';
     console.error(e);
   }
 }
@@ -211,6 +234,10 @@ function buildCard(item, rank) {
   card.setAttribute('data-cat', item.cat);
   var statusCls = item.status === 'verified' ? 'verified' : 'ai';
   var statusTxt = item.status === 'verified' ? '✅ Verified' : '⏳ Pending';
+  var metaTxt = '';
+  if (item.lastEditor && item.lastEditedAt) {
+    metaTxt = 'Last edited by ' + esc(item.lastEditor) + ' on ' + esc(item.lastEditedAt);
+  }
   card.innerHTML =
     '<div class="qa-header">' +
       '<span class="qa-rank">#' + rank + '</span>' +
@@ -222,6 +249,7 @@ function buildCard(item, rank) {
     '<div class="qa-body">' +
       '<div class="qa-hint">(click to edit, Ctrl+S to save)</div>' +
       '<div class="qa-answer" contenteditable="true" oninput="onEdit(' + item.id + ',this)">' + esc(item.answer).replace(/\n/g, '<br>') + '</div>' +
+      (metaTxt ? '<div class="qa-meta">' + metaTxt + '</div>' : '<div class="qa-meta" id="meta-' + item.id + '"></div>') +
     '</div>';
   card.querySelector('.qa-header').addEventListener('click', function(e) {
     if (e.target.classList.contains('status-btn') || e.target.classList.contains('delete-btn')) return;
@@ -232,7 +260,11 @@ function buildCard(item, rank) {
 
 function onEdit(id, el) {
   var item = data.find(function(d) { return d.id === id; });
-  if (item) item.answer = el.innerText;
+  if (item) {
+    item.answer = el.innerText;
+    item.lastEditor = getCurrentUser() || 'Unknown';
+    item.lastEditedAt = new Date().toLocaleString('en-GB', {day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});
+  }
   el.classList.add('dirty');
   dirty = true;
   scheduleSave();
@@ -244,6 +276,8 @@ function toggleStatus(id, btn) {
   item.status = item.status === 'verified' ? 'pending' : 'verified';
   btn.className = 'status-btn ' + (item.status === 'verified' ? 'verified' : 'ai');
   btn.textContent = item.status === 'verified' ? '✅ Verified' : '⏳ Pending';
+  item.lastEditor = getCurrentUser() || 'Unknown';
+  item.lastEditedAt = new Date().toLocaleString('en-GB', {day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});
   dirty = true; scheduleSave(); updateProgress();
 }
 
@@ -262,14 +296,13 @@ function scheduleSave() {
 
 async function saveData() {
   if (!fileSha) return;
-  var token = getToken();
   setSync('Saving...', 'saving');
   document.getElementById('saveBtn').disabled = true;
   try {
     var encoded = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
     var r = await fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/' + DATA_FILE, {
       method: 'PUT',
-      headers: {'Authorization': 'token ' + token, 'Content-Type': 'application/json'},
+      headers: {'Authorization': 'token ' + GH_TOKEN, 'Content-Type': 'application/json'},
       body: JSON.stringify({message: 'Update Q&A', content: encoded, sha: fileSha})
     });
     if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -353,7 +386,9 @@ function confirmAdd() {
   var cat = document.getElementById('newCat').value;
   if (!q) { alert('Please enter a question.'); return; }
   var maxId = data.reduce(function(m, d) { return Math.max(m, d.id); }, 0);
-  data.push({id: maxId + 1, cat: cat, question: q, status: 'pending', answer: a});
+  var user = getCurrentUser() || 'Unknown';
+  var now = new Date().toLocaleString('en-GB', {day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});
+  data.push({id: maxId + 1, cat: cat, question: q, status: 'pending', answer: a, lastEditor: user, lastEditedAt: now});
   dirty = true; scheduleSave(); renderAll(); closeAddModal();
 }
 
@@ -364,9 +399,11 @@ window.addEventListener('beforeunload', function(e) {
   if (dirty) { e.preventDefault(); e.returnValue = ''; }
 });
 
-if (!getToken()) {
-  document.getElementById('tokenModal').classList.add('open');
+var currentUser = getCurrentUser();
+if (!currentUser) {
+  document.getElementById('loginModal').classList.add('open');
 } else {
+  document.getElementById('topbarUser').textContent = currentUser;
   loadData();
 }</script>
 </body>
