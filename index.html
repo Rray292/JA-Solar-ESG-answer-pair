@@ -157,7 +157,7 @@ var activeStatus = 'all';
 var searchTerm = '';
 
 function getCurrentUser() { return localStorage.getItem('esg_user') || null; }
-function getRole() { return localStorage.getItem('esg_role') || 'viewer'; }
+function getRole() { return localStorage.getItem('esg_role') || 'editor'; }
 function isEditor() { return getRole() === 'editor'; }
 function setSync(msg, cls) {
   var el = document.getElementById('syncStatus');
