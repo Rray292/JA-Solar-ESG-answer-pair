@@ -159,6 +159,31 @@ var searchTerm = '';
 function getCurrentUser() { return localStorage.getItem('esg_user') || null; }
 function getRole() { return localStorage.getItem('esg_role') || 'editor'; }
 function isEditor() { return getRole() === 'editor'; }
+function nowStr() {
+  return new Date().toLocaleString('en-GB', {day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});
+}
+async function appendLog(entry) {
+  try {
+    var r = await fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/logs.json',
+      {headers: {'Authorization': 'token ' + GH_TOKEN}});
+    var logs = [];
+    var sha = null;
+    if (r.ok) {
+      var meta = await r.json();
+      sha = meta.sha;
+      logs = JSON.parse(decodeURIComponent(escape(atob(meta.content.replace(/\n/g, '')))));
+    }
+    logs.push(entry);
+    var encoded = btoa(unescape(encodeURIComponent(JSON.stringify(logs, null, 2))));
+    var body = {message: 'Log: ' + entry.type, content: encoded};
+    if (sha) body.sha = sha;
+    await fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/logs.json', {
+      method: 'PUT',
+      headers: {'Authorization': 'token ' + GH_TOKEN, 'Content-Type': 'application/json'},
+      body: JSON.stringify(body)
+    });
+  } catch(e) { console.warn('Log write failed', e); }
+}
 function setSync(msg, cls) {
   var el = document.getElementById('syncStatus');
   el.textContent = msg; el.className = 'sync-status' + (cls ? ' ' + cls : '');
@@ -177,6 +202,7 @@ function submitLogin() {
   localStorage.setItem('esg_role', role);
   document.getElementById('loginModal').classList.remove('open');
   document.getElementById('topbarUser').textContent = name;
+  appendLog({type: 'login', user: name, role: role, time: nowStr()});
   loadData();
 }
 
@@ -336,6 +362,8 @@ async function saveData() {
     document.querySelectorAll('.qa-answer').forEach(function(el) { el.classList.remove('dirty'); });
     setSync('Saved ✓', 'ok');
     document.getElementById('saveNote').textContent = 'Saved at ' + new Date().toLocaleTimeString();
+    var edited = data.filter(function(d) { return d.lastEditor === getCurrentUser(); }).map(function(d) { return d.question.slice(0,60); });
+    appendLog({type: 'edit', user: getCurrentUser(), time: nowStr(), questions: edited});
   } catch(e) {
     setSync('Save failed', 'error');
     console.error(e);
