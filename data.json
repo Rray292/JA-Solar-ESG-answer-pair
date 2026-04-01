@@ -510,5 +510,12 @@
     "status": "verified",
     "answer": "Yes. JA Solar assesses the sustainability performance of all key supply chain partners through:\n- Mandatory signing of Supplier Code of Conduct (100% of key suppliers as of 2025)\n- Supplier Sustainability Assessment questionnaires — covering labor rights, EHS, environmental management, and governance\n- Risk-based on-site audits for high-risk and priority suppliers\n- Corrective action tracking for identified issues\n- Annual supplier ESG training",
     "rank": 74
+  },
+  {
+    "id": 76,
+    "cat": "S",
+    "question": "123123",
+    "status": "pending",
+    "answer": "234234"
   }
 ]
