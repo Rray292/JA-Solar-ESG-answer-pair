@@ -56,7 +56,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .qa-body{display:none;padding:0 16px 14px;border-top:1px solid #f1f5f9;}
 .qa-item.open .qa-body{display:block;}
 .qa-hint{font-size:11px;color:#94a3b8;margin-bottom:6px;padding-top:10px;}
-.qa-answer{font-size:13px;line-height:1.65;white-space:pre-wrap;padding:8px 10px;border-radius:6px;border:1px solid transparent;min-height:60px;outline:none;}
+.qa-answer{font-size:13px;line-height:1.65;white-space:pre-wrap;padding:8px 10px;border-radius:6px;border:1px solid transparent;min-height:60px;outline:none;word-break:break-word;}
 .qa-answer:focus{border-color:#3b82f6;background:#f8faff;}
 .qa-answer.dirty{border-color:#f59e0b;}
 .no-results{text-align:center;padding:60px 0;color:#94a3b8;display:none;}
@@ -221,7 +221,7 @@ function buildCard(item, rank) {
     '</div>' +
     '<div class="qa-body">' +
       '<div class="qa-hint">(click to edit, Ctrl+S to save)</div>' +
-      '<div class="qa-answer" contenteditable="true" oninput="onEdit(' + item.id + ',this)">' + esc(item.answer) + '</div>' +
+      '<div class="qa-answer" contenteditable="true" oninput="onEdit(' + item.id + ',this)">' + esc(item.answer).replace(/\n/g, '<br>') + '</div>' +
     '</div>';
   card.querySelector('.qa-header').addEventListener('click', function(e) {
     if (e.target.classList.contains('status-btn') || e.target.classList.contains('delete-btn')) return;
@@ -232,7 +232,7 @@ function buildCard(item, rank) {
 
 function onEdit(id, el) {
   var item = data.find(function(d) { return d.id === id; });
-  if (item) item.answer = el.textContent;
+  if (item) item.answer = el.innerText;
   el.classList.add('dirty');
   dirty = true;
   scheduleSave();
