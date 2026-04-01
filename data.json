@@ -75,7 +75,7 @@
     "id": 12,
     "cat": "E",
     "question": "How do you manage air emissions / pollution?",
-    "status": "pending",
+    "status": "verified",
     "answer": "JA Solar applies a dual control mechanism of \"self-inspection + external audit\" for air emissions management. Each production site is equipped with waste gas treatment facilities. The concentration of purified gases is continuously monitored to ensure all air pollutants meet applicable emission standards.\n\nKey controlled air pollutants: nitrogen oxides (NOx), sulfur oxides (SOx), volatile organic compounds (VOCs), ammonia, and particulate matter (PM). Low-VOC materials are used in production to minimize emissions.\n\nSupporting document: 2024 JA Solar Sustainability and ESG Report",
     "rank": 11
   },
