@@ -174,14 +174,6 @@
     "lastEditedAt": "01 Apr 2026, 11:12"
   },
   {
-    "id": 25,
-    "cat": "G",
-    "question": "How do you handle corrective actions from audit findings?",
-    "status": "pending",
-    "answer": "JA Solar handles corrective actions from audit findings through the following process:\n\nSupplier audits:\n- Non-compliant suppliers are required to implement a Corrective Action Plan (CAP)\n- Suppliers that refuse to implement corrective measures, or where corrective actions prove ineffective, are subject to termination procedures\n- Annual supplier ESG analysis reports are produced to track progress over time\n\nInternal quality management:\n- A closed-loop defect handling mechanism (EAR/MRB process) is in place for quality-related findings\n- In 2025, power station inspection programs identified and rectified 385 anomalies across 210 projects\n\nSupporting document: 2025 JA Solar Sustainability and ESG Report",
-    "rank": 24
-  },
-  {
     "id": 27,
     "cat": "G",
     "question": "Where do you source polysilicon / raw materials? (Supply chain origin)",
