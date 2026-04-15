@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JA Solar ESG客户问询分析报告 — 2026年Q1</title>
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<style>
+:root {
+    --bg: #f8f9fa;
+    --card: #ffffff;
+    --border: #e9ecef;
+    --text: #212529;
+    --text2: #6c757d;
+    --accent: #3498db;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+.container { max-width:1400px; margin:0 auto; padding:24px; }
+h1 { font-size:28px; font-weight:700; margin-bottom:8px; }
+.subtitle { color:var(--text2); margin-bottom:32px; font-size:14px; }
+
+/* Stats cards */
+.stats-row { display:flex; gap:16px; margin-bottom:32px; flex-wrap:wrap; }
+.stat-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px 24px; flex:1; min-width:140px; }
+.stat-val { font-size:32px; font-weight:700; color:var(--accent); }
+.stat-label { font-size:13px; color:var(--text2); margin-top:4px; }
+
+/* Section */
+.section { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:24px; margin-bottom:24px; }
+.section-title { font-size:18px; font-weight:600; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--border); }
+
+/* Monthly bar chart */
+.bar-chart { display:flex; align-items:flex-end; gap:8px; height:200px; padding:0 4px; }
+.bar-col { display:flex; flex-direction:column; align-items:center; flex:1; min-width:60px; height:100%; justify-content:flex-end; }
+.bar { background: linear-gradient(180deg, #3498db, #2980b9); border-radius:4px 4px 0 0; width:100%; min-height:4px; }
+.bar-val { font-size:13px; font-weight:700; color:var(--text); margin-bottom:6px; }
+.bar-lbl { font-size:13px; color:var(--text2); margin-top:6px; }
+
+/* Full ranking */
+.rank-row { display:flex; align-items:center; padding:8px 0; border-bottom:1px solid #f0f0f0; gap:8px; }
+.rank-num { width:36px; font-size:13px; font-weight:600; color:var(--text2); text-align:right; flex-shrink:0; }
+.rank-topic { width:220px; font-size:13px; font-weight:500; flex-shrink:0; }
+.rank-bar-wrap { flex:1; height:20px; background:#f0f0f0; border-radius:10px; overflow:hidden; }
+.rank-bar { height:100%; background:linear-gradient(90deg, #3498db, #2ecc71); border-radius:10px; }
+.rank-count { width:110px; text-align:right; font-size:13px; color:var(--text2); flex-shrink:0; }
+
+/* Support cards */
+.support-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:12px; }
+.support-card { padding:16px; border-radius:8px; border:1px solid var(--border); }
+.support-name { font-weight:600; font-size:14px; margin-bottom:8px; }
+.support-bar-wrap { height:8px; background:#f0f0f0; border-radius:4px; overflow:hidden; margin-bottom:6px; }
+.support-bar { height:100%; background:linear-gradient(90deg, #3498db, #2ecc71); border-radius:4px; }
+.support-meta { font-size:12px; color:var(--text2); }
+
+/* Standard questions */
+details.sq-item { margin-bottom:6px; border-radius:8px; overflow:hidden; }
+details.sq-item > summary { list-style:none; cursor:pointer; }
+details.sq-item > summary::-webkit-details-marker { display:none; }
+details.sq-item > summary.sq-row { display:flex; align-items:center; gap:8px; padding:10px 12px; background:var(--card); border:1px solid var(--border); border-radius:8px; transition:background 0.15s; }
+details.sq-item[open] > summary.sq-row { border-radius:8px 8px 0 0; border-bottom-color:var(--accent); }
+details.sq-item > summary.sq-row:hover { background:#f0f7ff; }
+details.sq-item > summary.sq-row::after { content:'▶'; margin-left:auto; color:var(--accent); font-size:11px; flex-shrink:0; transition:transform 0.2s; }
+details.sq-item[open] > summary.sq-row::after { transform:rotate(90deg); }
+.sq-rank { width:36px; font-size:12px; font-weight:600; color:var(--text2); text-align:right; flex-shrink:0; }
+.sq-question { width:420px; font-size:12px; flex-shrink:0; line-height:1.4; }
+.sq-bar-wrap { flex:1; height:16px; background:#f0f0f0; border-radius:8px; overflow:hidden; }
+.sq-bar { height:100%; background:linear-gradient(90deg, #e74c3c, #f39c12); border-radius:8px; }
+.sq-count { width:120px; text-align:right; font-size:12px; color:var(--text2); flex-shrink:0; }
+.sq-answer { background:#f0f7ff; border:1px solid var(--accent); border-top:none; border-radius:0 0 8px 8px; padding:14px 18px; font-size:13px; line-height:1.8; color:var(--text); white-space:pre-wrap; word-break:break-word; }
+.sq-answer-note { color:#c0392b; font-style:italic; font-size:12px; margin-top:8px; }
+.sq-source-note { font-size:11.5px; line-height:1.6; padding:8px 16px; border-top:1px dashed #ccc; display:flex; flex-wrap:wrap; gap:6px 14px; align-items:flex-start; }
+.sq-source-badge { font-weight:bold; padding:1px 8px; border-radius:10px; white-space:nowrap; font-size:11px; }
+.sq-source-row { display:flex; gap:10px; flex-wrap:wrap; width:100%; align-items:center; }
+.sq-source-ref { color:#555; }
+.sq-source-time { font-weight:bold; white-space:nowrap; }
+.sq-source-flag { color:#c0392b; font-style:italic; margin-top:2px; width:100%; }
+
+/* ESG Category badges */
+.esg-badge { display:inline-block; width:20px; height:20px; border-radius:4px; font-size:11px; font-weight:700; color:#fff; text-align:center; line-height:20px; flex-shrink:0; margin-right:2px; }
+.esg-E { background:#27ae60; }
+.esg-S { background:#e74c3c; }
+.esg-G { background:#8e44ad; }
+
+/* Toggle buttons */
+.esg-toggle { display:flex; gap:8px; margin-bottom:16px; align-items:center; flex-wrap:wrap; }
+.esg-toggle-label { font-size:13px; color:var(--text2); margin-right:4px; }
+.esg-btn { padding:6px 16px; border-radius:6px; border:1px solid var(--border); background:#fff; font-size:13px; cursor:pointer; transition:all 0.15s; font-weight:500; }
+.esg-btn:hover { border-color:var(--accent); color:var(--accent); }
+.esg-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.esg-btn.btn-E.active { background:#27ae60; border-color:#27ae60; }
+.esg-btn.btn-S.active { background:#e74c3c; border-color:#e74c3c; }
+.esg-btn.btn-G.active { background:#8e44ad; border-color:#8e44ad; }
+
+/* Conclusion */
+.conclusion { background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); color:white; border-radius:12px; padding:32px; margin-bottom:24px; }
+.conclusion h2 { font-size:20px; margin-bottom:16px; }
+.conclusion ul { padding-left:20px; }
+.conclusion li { margin-bottom:8px; font-size:14px; line-height:1.8; }
+.conclusion .highlight { background:rgba(255,255,255,0.2); padding:2px 8px; border-radius:4px; font-weight:600; }
+
+/* Warning badge */
+.warn-badge { display:inline-block; background:#fff3cd; color:#856404; border:1px solid #ffc107; border-radius:4px; padding:2px 8px; font-size:11px; font-weight:600; margin-left:6px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>JA Solar ESG 客户问询分析报告 — 2026年Q1</h1>
+<p class="subtitle">数据范围: 2026.01 - 2026.03 | 台账案例: 53 | 含问卷/合同/证书等具体材料的案例: 34 | 涵盖议题: 29 | 数据来源: 客户问卷原文 + 台账记录</p>
+
+<!-- Stats -->
+<div class="stats-row">
+    <div class="stat-card"><div class="stat-val">53</div><div class="stat-label">Q1问询总量（台账）</div></div>
+    <div class="stat-card"><div class="stat-val">34</div><div class="stat-label">含问卷/合同/证书等具体材料的案例</div></div>
+    <div class="stat-card"><div class="stat-val">29</div><div class="stat-label">涵盖ESG议题数</div></div>
+</div>
+
+<!-- Monthly chart -->
+<!-- Conclusion -->
+<div class="conclusion">
+    <h2>2026年Q1 数据结论与趋势</h2>
+    <ul>
+        <li><span class="highlight">强迫劳动与人权</span> 并列第一 — 各出现14次（41%），是2026年Q1绝对高频议题。澳洲、日本、英国法规驱动明显，多客户要求提供现代奴隶制声明+供应商审计证明。</li>
+        <li><span class="highlight">循环经济（PV Cycle）</span> — Q1共8个案例涉及（24%），其中至少5个客户（Larsen、Fentons、GRS、三星、某韩国客户）专门索取PV Cycle回收会员证书。</li>
+        <li><span class="highlight">产品碳足迹（LCA/EPD）</span> — Q1共6个案例涉及（18%），包括三峡集团联合7家央企将其纳入集采评分体系。建议准备标准化LCA数据答复模板。</li>
+        <li><span class="highlight">ESG条款嵌入合同</span> — 条款审核类问询占19%（台账数据），且引用具体法规（UFLPA、NGER、Modern Slavery Act 2018、ILO）趋势明显，不再只是"有无政策"的确认。</li>
+        <li><span class="highlight">供应链合规</span> — 供应链溯源/BOM透明度（7次）、新疆/UFLPA合规（2次）等议题出现在供应链合规范畴内。</li>
+    </ul>
+</div>
+
+<!-- Regional Map -->
+<div class="section">
+    <div class="section-title">客户来源国家分布（Q1）</div>
+    <div id="region-map" style="width:100%;height:420px;"></div>
+</div>
+
+<!-- Full Ranking -->
+<div class="section">
+    <div class="section-title">议题频次排名（共29个议题，基于34个含问卷/合同/证书等具体材料的案例）</div>
+    <div class="esg-toggle">
+        <span class="esg-toggle-label">按类别筛选：</span>
+        <button class="esg-btn active" onclick="filterRank('ALL')">全部</button>
+        <button class="esg-btn btn-E" onclick="filterRank('E')">🌱 环境 (E)</button>
+        <button class="esg-btn btn-S" onclick="filterRank('S')">👥 社会 (S)</button>
+        <button class="esg-btn btn-G" onclick="filterRank('G')">🏛 治理 (G)</button>
+    </div>
+    <div id="rank-container">
+
+<div class="rank-row" data-esg="S"><span class="rank-num">#1</span><span class="esg-badge esg-S">S</span><span class="rank-topic">强迫劳动/现代奴隶制</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:100%"></div></div><span class="rank-count">14次 (41%)</span></div>
+<div class="rank-row" data-esg="S"><span class="rank-num">#1</span><span class="esg-badge esg-S">S</span><span class="rank-topic">人权政策</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:100%"></div></div><span class="rank-count">14次 (41%)</span></div>
+<div class="rank-row" data-esg="G"><span class="rank-num">#3</span><span class="esg-badge esg-G">G</span><span class="rank-topic">供应商管理与审计</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:92.9%"></div></div><span class="rank-count">13次 (38%)</span></div>
+<div class="rank-row" data-esg="G"><span class="rank-num">#4</span><span class="esg-badge esg-G">G</span><span class="rank-topic">认证体系（ISO/SA8000等）</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:85.7%"></div></div><span class="rank-count">12次 (35%)</span></div>
+<div class="rank-row" data-esg="S"><span class="rank-num">#5</span><span class="esg-badge esg-S">S</span><span class="rank-topic">职业健康与安全（EHS）</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:71.4%"></div></div><span class="rank-count">10次 (29%)</span></div>
+<div class="rank-row" data-esg="G"><span class="rank-num">#6</span><span class="esg-badge esg-G">G</span><span class="rank-topic">供应商行为准则</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:64.3%"></div></div><span class="rank-count">9次 (26%)</span></div>
+<div class="rank-row" data-esg="E"><span class="rank-num">#7</span><span class="esg-badge esg-E">E</span><span class="rank-topic">EMS（环境管理体系）</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:57.1%"></div></div><span class="rank-count">8次 (24%)</span></div>
+<div class="rank-row" data-esg="E"><span class="rank-num">#7</span><span class="esg-badge esg-E">E</span><span class="rank-topic">循环经济与产品回收</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:57.1%"></div></div><span class="rank-count">8次 (24%)</span></div>
+<div class="rank-row" data-esg="G"><span class="rank-num">#7</span><span class="esg-badge esg-G">G</span><span class="rank-topic">ESG报告与披露</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:57.1%"></div></div><span class="rank-count">8次 (24%)</span></div>
+<div class="rank-row" data-esg="E"><span class="rank-num">#7</span><span class="esg-badge esg-E">E</span><span class="rank-topic">温室气体排放（GHG）</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:57.1%"></div></div><span class="rank-count">8次 (24%)</span></div>
+<div class="rank-row" data-esg="S"><span class="rank-num">#11</span><span class="esg-badge esg-S">S</span><span class="rank-topic">劳动条件（工时/薪资/福利）</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:50%"></div></div><span class="rank-count">7次 (21%)</span></div>
+<div class="rank-row" data-esg="G"><span class="rank-num">#11</span><span class="esg-badge esg-G">G</span><span class="rank-topic">行为准则（企业）</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:50%"></div></div><span class="rank-count">7次 (21%)</span></div>
+<div class="rank-row" data-esg="S"><span class="rank-num">#11</span><span class="esg-badge esg-S">S</span><span class="rank-topic">供应链溯源/BOM透明度</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:50%"></div></div><span class="rank-count">7次 (21%)</span></div>
+<div class="rank-row" data-esg="S"><span class="rank-num">#14</span><span class="esg-badge esg-S">S</span><span class="rank-topic">申诉机制/举报渠道</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:42.9%"></div></div><span class="rank-count">6次 (18%)</span></div>
+<div class="rank-row" data-esg="E"><span class="rank-num">#14</span><span class="esg-badge esg-E">E</span><span class="rank-topic">产品碳足迹（LCA/EPD）</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:42.9%"></div></div><span class="rank-count">6次 (18%)</span></div>
+<div class="rank-row" data-esg="G"><span class="rank-num">#16</span><span class="esg-badge esg-G">G</span><span class="rank-topic">反腐败与商业伦理</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:35.7%"></div></div><span class="rank-count">5次 (15%)</span></div>
+<div class="rank-row" data-esg="G"><span class="rank-num">#16</span><span class="esg-badge esg-G">G</span><span class="rank-topic">ESG战略与高层责任</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:35.7%"></div></div><span class="rank-count">5次 (15%)</span></div>
+<div class="rank-row" data-esg="E"><span class="rank-num">#16</span><span class="esg-badge esg-E">E</span><span class="rank-topic">废物管理</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:35.7%"></div></div><span class="rank-count">5次 (15%)</span></div>
+<div class="rank-row" data-esg="S"><span class="rank-num">#19</span><span class="esg-badge esg-S">S</span><span class="rank-topic">供应链劳工风险评估</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:28.6%"></div></div><span class="rank-count">4次 (12%)</span></div>
+<div class="rank-row" data-esg="S"><span class="rank-num">#19</span><span class="esg-badge esg-S">S</span><span class="rank-topic">童工禁止</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:28.6%"></div></div><span class="rank-count">4次 (12%)</span></div>
+<div class="rank-row" data-esg="E"><span class="rank-num">#19</span><span class="esg-badge esg-E">E</span><span class="rank-topic">能源消耗管理</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:28.6%"></div></div><span class="rank-count">4次 (12%)</span></div>
+<div class="rank-row" data-esg="S"><span class="rank-num">#22</span><span class="esg-badge esg-S">S</span><span class="rank-topic">反歧视与DEI</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:21.4%"></div></div><span class="rank-count">3次 (9%)</span></div>
+<div class="rank-row" data-esg="E"><span class="rank-num">#22</span><span class="esg-badge esg-E">E</span><span class="rank-topic">水资源管理</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:21.4%"></div></div><span class="rank-count">3次 (9%)</span></div>
+<div class="rank-row" data-esg="E"><span class="rank-num">#22</span><span class="esg-badge esg-E">E</span><span class="rank-topic">产品性能与可持续设计</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:21.4%"></div></div><span class="rank-count">3次 (9%)</span></div>
+<div class="rank-row" data-esg="S"><span class="rank-num">#25</span><span class="esg-badge esg-S">S</span><span class="rank-topic">新疆/UFLPA合规 ⚠</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:14.3%;background:linear-gradient(90deg,#e74c3c,#c0392b)"></div></div><span class="rank-count">2次 (6%)</span></div>
+<div class="rank-row" data-esg="S"><span class="rank-num">#25</span><span class="esg-badge esg-S">S</span><span class="rank-topic">现代奴隶制培训</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:14.3%"></div></div><span class="rank-count">2次 (6%)</span></div>
+<div class="rank-row" data-esg="S"><span class="rank-num">#25</span><span class="esg-badge esg-S">S</span><span class="rank-topic">结社自由与集体谈判</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:14.3%"></div></div><span class="rank-count">2次 (6%)</span></div>
+<div class="rank-row" data-esg="E"><span class="rank-num">#25</span><span class="esg-badge esg-E">E</span><span class="rank-topic">生物多样性</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:14.3%"></div></div><span class="rank-count">2次 (6%)</span></div>
+<div class="rank-row" data-esg="S"><span class="rank-num">#25</span><span class="esg-badge esg-S">S</span><span class="rank-topic">负责任矿产/冲突矿产</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:14.3%"></div></div><span class="rank-count">2次 (6%)</span></div>
+
+    </div>
+</div>
+
+<!-- Supporting Materials -->
+<div class="section">
+    <div class="section-title">最高频客户要求支持材料（Q1 2026，基于34案例）</div>
+    <div class="support-grid">
+
+        <div class="support-card">
+            <div class="support-name">Human Rights Policy（人权政策）</div>
+            <div class="support-bar-wrap"><div class="support-bar" style="width:100%"></div></div>
+            <div class="support-meta">关联问询: 14次 | 存放: 官网可下载</div>
+        </div>
+
+        <div class="support-card">
+            <div class="support-name">Modern Slavery Statement（现代奴隶制声明）<br>/ USA S-211 Report</div>
+            <div class="support-bar-wrap"><div class="support-bar" style="width:100%"></div></div>
+            <div class="support-meta">关联问询: 14次 | 存放: 官网可下载</div>
+        </div>
+
+        <div class="support-card">
+            <div class="support-name">ISO证书系列（14001 / 45001 / 9001）</div>
+            <div class="support-bar-wrap"><div class="support-bar" style="width:85.7%"></div></div>
+            <div class="support-meta">关联问询: 12次 | 存放: 非挂网证书/ISO系列/</div>
+        </div>
+
+        <div class="support-card">
+            <div class="support-name">Supplier Code of Conduct（供应商行为准则）</div>
+            <div class="support-bar-wrap"><div class="support-bar" style="width:64.3%"></div></div>
+            <div class="support-meta">关联问询: 9次 | 存放: 官网可下载</div>
+        </div>
+
+        <div class="support-card">
+            <div class="support-name">2024 ESG / Sustainability Report</div>
+            <div class="support-bar-wrap"><div class="support-bar" style="width:57.1%"></div></div>
+            <div class="support-meta">关联问询: 8次 | 存放: 官网可下载</div>
+        </div>
+
+        <div class="support-card">
+            <div class="support-name">GHG Third-Party Verification Statement（GHG核查报告）</div>
+            <div class="support-bar-wrap"><div class="support-bar" style="width:57.1%"></div></div>
+            <div class="support-meta">关联问询: 8次 | 存放: 非挂网证书/GHG verification/</div>
+        </div>
+
+        <div class="support-card">
+            <div class="support-name">Code of Conduct（企业行为准则）</div>
+            <div class="support-bar-wrap"><div class="support-bar" style="width:50%"></div></div>
+            <div class="support-meta">关联问询: 7次 | 存放: 官网可下载</div>
+        </div>
+
+        <div class="support-card">
+            <div class="support-name">EPD / ISO 14067 产品碳足迹证书</div>
+            <div class="support-bar-wrap"><div class="support-bar" style="width:42.9%"></div></div>
+            <div class="support-meta">关联问询: 6次 | 存放: 非挂网证书/EPD/</div>
+        </div>
+
+        <div class="support-card">
+            <div class="support-name">SA8000证书（北京/奉贤/扬州）</div>
+            <div class="support-bar-wrap"><div class="support-bar" style="width:42.9%"></div></div>
+            <div class="support-meta">关联问询: 6次 | 存放: 非挂网证书/SA8000/</div>
+        </div>
+
+        <div class="support-card">
+            <div class="support-name">PV Cycle 会员证书 <span class="warn-badge">⚠ 原证书已到期 2025.12.31</span></div>
+            <div class="support-bar-wrap"><div class="support-bar" style="width:35.7%;background:linear-gradient(90deg,#e74c3c,#f39c12)"></div></div>
+            <div class="support-meta">关联问询: 5次 | 存放: 待更新 — Larsen、Fentons、GRS、三星、曾闻一均已索取</div>
+        </div>
+
+        <div class="support-card">
+            <div class="support-name">SBTi 承诺函（Science-Based Targets）</div>
+            <div class="support-bar-wrap"><div class="support-bar" style="width:35.7%"></div></div>
+            <div class="support-meta">关联问询: 5次 | 存放: 非挂网证书/SBTi/</div>
+        </div>
+
+        <div class="support-card">
+            <div class="support-name">EcoVadis 评分卡</div>
+            <div class="support-bar-wrap"><div class="support-bar" style="width:21.4%"></div></div>
+            <div class="support-meta">关联问询: 3次（Scatec明确索取）| 存放: 非挂网证书/Ecovadis/</div>
+        </div>
+
+    </div>
+</div>
+
+<!-- High-Frequency Questions -->
+<div class="section" id="sq-section">
+    <div class="section-title">高频具体问题清单（Q1 2026，TOP 12）</div>
+    <div class="esg-toggle">
+        <span class="esg-toggle-label">按类别筛选：</span>
+        <button class="sq-esg-btn esg-btn active" onclick="filterSQ('ALL',this)">全部</button>
+        <button class="sq-esg-btn esg-btn btn-E" onclick="filterSQ('E',this)">🌱 E</button>
+        <button class="sq-esg-btn esg-btn btn-S" onclick="filterSQ('S',this)">👥 S</button>
+        <button class="sq-esg-btn esg-btn btn-G" onclick="filterSQ('G',this)">🏛 G</button>
+    </div>
+
+<details class="sq-item" data-esg="S">
+<summary class="sq-row"><span class="sq-rank">#1</span><span class="esg-badge esg-S">S</span><span class="sq-question">Do you have a forced labor / modern slavery policy? Please provide your Modern Slavery Statement.</span><div class="sq-bar-wrap"><div class="sq-bar" style="width:100%"></div></div><span class="sq-count">14案例 (41%)</span></summary>
+<div class="sq-answer">Yes. JA Solar does not tolerate any form of modern slavery, including forced labour, prison labour, indentured labour and human trafficking. The JA Solar Human Rights Policy explicitly prohibits all forms of forced labor throughout operations and the supply chain. The policy is approved by the Board-level Compliance Management Committee and reviewed at least annually. JA Solar has also published regional Modern Slavery Statements and signed the Solar Industry Forced Labor Prevention Pledge.
+
+Supporting documents:
+• JA Solar Human Rights Policy (available on jasolar.com)
+• JA Solar GmbH UK Modern Slavery Statement 2023
+• JA Solar USA Inc. Annual S-211 Report (2025)
+• Solar Industry Forced Labor Prevention Pledge</div>
+<div class="sq-source-note"><div class="sq-source-row"><span class="sq-source-badge" style="color:#1a7a3c;background:#e8f5e9;border:1px solid #c8e6c9">🟢 官方政策</span><span class="sq-source-ref">📁 2026 Q1 — 出现于: Lightyears, VU PHONG, AMEA, Ark Energy, JPEA, Fortescue, Flow Power, Madagascar, DT Infrastructure, Camusat, Ansell, Clearway, LUCA, 中电建-Acciona</span><span class="sq-source-time" style="color:#1a7a3c">✅ 2026年Q1最高频</span></div></div>
+</details>
+
+<details class="sq-item" data-esg="S">
+<summary class="sq-row"><span class="sq-rank">#2</span><span class="esg-badge esg-S">S</span><span class="sq-question">Do you have a Human Rights Policy? Please provide it.</span><div class="sq-bar-wrap"><div class="sq-bar" style="width:100%"></div></div><span class="sq-count">14案例 (41%)</span></summary>
+<div class="sq-answer">Yes. JA Solar has established a comprehensive Human Rights Policy that covers all employees and business operations globally, as well as our supply chain. The policy is aligned with the UN Guiding Principles on Business and Human Rights (UNGPs) and the ILO Core Labor Standards. It covers: prohibition of forced and child labor, freedom of association and collective bargaining, non-discrimination and equal opportunity, fair wages and working hours, and the right to a safe and healthy work environment.
+
+The policy is publicly available on JA Solar's website and reviewed at least annually by the Board-level Compliance Management Committee.
+
+Supporting document: JA Solar Human Rights Policy (jasolar.com/uploadfile/publish/en/JA_Solar_Human_Rights_Policy.pdf)</div>
+<div class="sq-source-note"><div class="sq-source-row"><span class="sq-source-badge" style="color:#1a7a3c;background:#e8f5e9;border:1px solid #c8e6c9">🟢 官方政策</span><span class="sq-source-ref">📁 2026 Q1 — 出现于: B-Grimm, GULF, VU PHONG, Solarvest, LUCA, Ark Energy, JPEA, Morklate, Flow Power, Madagascar, Quinbrook, Camusat, Ansell, Scatec</span></div></div>
+</details>
+
+<details class="sq-item" data-esg="G">
+<summary class="sq-row"><span class="sq-rank">#3</span><span class="esg-badge esg-G">G</span><span class="sq-question">How do you manage supplier ESG compliance? Do you conduct supplier audits? What is your supplier audit coverage?</span><div class="sq-bar-wrap"><div class="sq-bar" style="width:92.9%"></div></div><span class="sq-count">13案例 (38%)</span></summary>
+<div class="sq-answer">JA Solar has a formal Supplier Code of Conduct (SCoC) that all suppliers are required to sign. Our supplier management framework includes:
+
+1. Supplier Qualification: All new suppliers are screened against ESG criteria before onboarding, including human rights, environmental compliance, and anti-corruption requirements.
+2. Annual Self-Assessment Questionnaire (SAQ): Key suppliers complete annual ESG self-assessments covering labor standards, environment, health & safety, and business ethics.
+3. Third-Party Audits: We conduct SMETA (Sedex Members Ethical Trade Audit) and SA8000 audits at key manufacturing sites. The SA8000 audits cover Beijing, Fengxian, and Yangzhou facilities.
+4. Corrective Action Plans: Where non-conformities are identified, JA Solar requires and monitors corrective actions within defined timeframes.
+5. High-Risk Suppliers: Additional due diligence is applied to suppliers in high-risk categories (polysilicon, electronics, copper).
+
+Supporting documents: JA Solar Supplier Code of Conduct | JA Solar Responsible Sourcing Policy | SA8000 Certificates | 2024 Sustainability and ESG Report (supplier management chapter)</div>
+<div class="sq-source-note"><div class="sq-source-row"><span class="sq-source-badge" style="color:#7a5c00;background:#fffde7;border:1px solid #fff9c4">🟡 AI生成 · 案例已验证</span><span class="sq-source-ref">📁 2026 Q1 — Lightyears, VU PHONG, AMEA, Ark Energy, JPEA, Fortescue, Flow Power, DT Infrastructure, 东芝, Camusat, Ansell, Scatec, 中电建-Acciona</span></div></div>
+</details>
+
+<details class="sq-item" data-esg="G">
+<summary class="sq-row"><span class="sq-rank">#4</span><span class="esg-badge esg-G">G</span><span class="sq-question">Do you have ISO certifications? Please provide ISO 14001 / ISO 45001 / ISO 9001 certificates.</span><div class="sq-bar-wrap"><div class="sq-bar" style="width:85.7%"></div></div><span class="sq-count">12案例 (35%)</span></summary>
+<div class="sq-answer">Yes. JA Solar holds a combined ISO 9001:2015, ISO 14001:2015, and ISO 45001:2018 certification issued by TÜV SÜD Management Service GmbH.
+
+Certificate details:
+• ISO 9001:2015 — Certificate No. 12 100 55898 TMS
+• ISO 14001:2015 — Certificate No. 12 104 55898 TMS
+• ISO 45001:2018 — Certificate No. 12 117 55898 TMS
+• Certification body: TÜV SÜD Management Service GmbH
+• Valid: 2025-07-24 to 2027-05-27
+• Order No.: 7482171940
+
+Additionally, JA Solar holds ISO 50001 (Energy Management), ISO 27001 (Information Security), ISO 27701 (Privacy Management), and ISO 37301 (Compliance Management) at select facilities.
+
+Certificate file: ISO 45001 9001 14001-2027.5.pdf (AI助手支撑材料/非挂网证书/ISO系列/)</div>
+<div class="sq-source-note"><div class="sq-source-row"><span class="sq-source-badge" style="color:#1a7a3c;background:#e8f5e9;border:1px solid #c8e6c9">🟢 证书已确认</span><span class="sq-source-ref">📁 2026 Q1 — Gamuda, B-Grimm, VU PHONG, LUCA, Morklate, Madagascar, 东芝, Camusat, Scatec, 三峡集团, 曾闻一, 双日集团</span><span class="sq-source-time" style="color:#1a7a3c">✅ 有效期至 2027-05-27</span></div></div>
+</details>
+
+<details class="sq-item" data-esg="S">
+<summary class="sq-row"><span class="sq-rank">#5</span><span class="esg-badge esg-S">S</span><span class="sq-question">Do you have an Occupational Health and Safety (OHS) management system? Is it certified to ISO 45001?</span><div class="sq-bar-wrap"><div class="sq-bar" style="width:71.4%"></div></div><span class="sq-count">10案例 (29%)</span></summary>
+<div class="sq-answer">Yes. JA Solar has implemented a comprehensive Occupational Health, Safety and Environment (OHSSE) management system certified to ISO 45001:2018. Key elements include:
+
+• ISO 45001:2018 Certificate No. 12 117 55898 TMS (TÜV SÜD), valid to 2027-05-27
+• Annual EHS training for all employees and contractors
+• Regular safety inspections, hazard identification, and risk assessments
+• Emergency response plans at all manufacturing sites
+• Work injury rate monitoring and reporting in the Annual ESG Report
+• HSSE Plan published on JA Solar website
+
+Supporting documents: ISO 45001 Certificate | JA Solar HSSE Plan | JA Solar EHS Policy | 2024 ESG Report (EHS chapter)</div>
+<div class="sq-source-note"><div class="sq-source-row"><span class="sq-source-badge" style="color:#7a5c00;background:#fffde7;border:1px solid #fff9c4">🟡 AI生成 · 案例已验证</span><span class="sq-source-ref">📁 2026 Q1 — Gamuda, B-Grimm, GULF, VU PHONG, LUCA, Morklate, Fortescue, Camusat, Scatec, 曾闻一</span></div><span class="sq-source-flag">⚠ 部分EHS细节题（如具体风险评估程序、特定法规合规证明）需EHS部门配合作答</span></div>
+</details>
+
+<details class="sq-item" data-esg="E">
+<summary class="sq-row"><span class="sq-rank">#6</span><span class="esg-badge esg-E">E</span><span class="sq-question">Do you have an Environmental Management System (EMS)? Is it certified to ISO 14001?</span><div class="sq-bar-wrap"><div class="sq-bar" style="width:57.1%"></div></div><span class="sq-count">8案例 (24%)</span></summary>
+<div class="sq-answer">Yes. JA Solar has implemented an Environmental Management System (EMS) certified to ISO 14001:2015 across all major production sites.
+
+• ISO 14001:2015 Certificate No. 12 104 55898 TMS (TÜV SÜD), valid to 2027-05-27
+• The EMS covers energy management, water use, waste management, emissions control, and biodiversity considerations
+• Environmental objectives and targets are set annually and reported in the ESG Report
+• All sites conduct annual third-party environmental compliance audits
+
+Supporting documents: ISO 14001 Certificate | 2024 Environmental Sustainability Report | 2024 ESG Report</div>
+<div class="sq-source-note"><div class="sq-source-row"><span class="sq-source-badge" style="color:#1a7a3c;background:#e8f5e9;border:1px solid #c8e6c9">🟢 官方认证</span><span class="sq-source-ref">📁 2026 Q1 — Gamuda, B-Grimm, GULF, VU PHONG, LUCA, Morklate, 东芝, Camusat</span></div></div>
+</details>
+
+<details class="sq-item" data-esg="E">
+<summary class="sq-row"><span class="sq-rank">#7</span><span class="esg-badge esg-E">E</span><span class="sq-question">Please report your GHG emissions (Scope 1, 2, 3). Do you have a third-party verified GHG inventory?</span><div class="sq-bar-wrap"><div class="sq-bar" style="width:57.1%"></div></div><span class="sq-count">8案例 (24%)</span></summary>
+<div class="sq-answer">Yes. JA Solar conducts GHG inventory at all production sites in accordance with ISO 14064-1:2018 and the GHG Protocol Corporate Accounting and Reporting Standard, covering Scope 1, 2, and 3 emissions. The 2024 GHG emissions have been independently verified by SGS in accordance with ISO 14064-3:2019 (reasonable assurance, April 2025).
+
+2024 GHG Emissions (SGS third-party verified):
+• Scope 1: 107,171 tCO2e
+• Scope 2 (market-based): 3,220,788 tCO2e
+• Scope 3: 32,233,663 tCO2e (all 15 categories)
+
+Scope 3 key categories (tCO2e):
+1. Purchased goods and services: 27,778,243
+2. Capital goods: 2,775,785
+4. Upstream transportation: 959,120
+12. End-of-life treatment: 61,035
+
+Carbon reduction targets (SBTi-validated, Dec 2024):
+• Scope 1+2: -58.8% by 2034 vs 2022 baseline
+• Scope 3 (purchased goods): -63.8% per MW by 2034
+
+Supporting documents: GHG Verification Statement (SGS, Apr 2025) | 2024 ESG Report | 2024 Environmental Report</div>
+<div class="sq-source-note"><div class="sq-source-row"><span class="sq-source-badge" style="color:#1a7a3c;background:#e8f5e9;border:1px solid #c8e6c9">🟢 自行录入 · 官方数据</span><span class="sq-source-ref">📁 2026 Q1 — B-Grimm, Morklate, DT Infrastructure, 中广核, 东芝, Camusat, 三峡集团, Invenergy</span><span class="sq-source-time" style="color:#1a7a3c">✅ 2024年全年数据，SGS验证</span></div></div>
+</details>
+
+<details class="sq-item" data-esg="E">
+<summary class="sq-row"><span class="sq-rank">#8</span><span class="esg-badge esg-E">E</span><span class="sq-question">Do you publish a Sustainability / ESG Report? Please provide your latest report.</span><div class="sq-bar-wrap"><div class="sq-bar" style="width:57.1%"></div></div><span class="sq-count">8案例 (24%)</span></summary>
+<div class="sq-answer">Yes. JA Solar publishes annual sustainability and ESG reports. The following reports are publicly available on jasolar.com:
+
+• 2024 JA Solar Sustainability and ESG Report (comprehensive, English)
+• 2024 JA Solar Environmental Sustainability Report (environmental focus, English)
+• 2024 JA Solar TNFD Report (nature-related financial disclosures)
+• 2023 JA Solar TCFD Report (climate-related financial disclosures)
+
+The 2024 Sustainability and ESG Report covers: GHG emissions (Scope 1/2/3, SGS verified), water management, waste management, biodiversity, human rights due diligence, labor standards, supply chain governance, ESG governance structure, and alignment with GRI Standards and ISSB frameworks.
+
+Download links available at: jasolar.com (Sustainability section)</div>
+<div class="sq-source-note"><div class="sq-source-row"><span class="sq-source-badge" style="color:#1a7a3c;background:#e8f5e9;border:1px solid #c8e6c9">🟢 官方报告</span><span class="sq-source-ref">📁 2026 Q1 — Gamuda, B-Grimm, LUCA, JPEA, Morklate, Fortescue, Scatec, 三峡集团</span></div></div>
+</details>
+
+<details class="sq-item" data-esg="E">
+<summary class="sq-row"><span class="sq-rank">#9</span><span class="esg-badge esg-E">E</span><span class="sq-question">Do you have a product LCA / EPD? Please provide your product carbon footprint (kgCO2eq/kWp, cradle-to-gate).</span><div class="sq-bar-wrap"><div class="sq-bar" style="width:42.9%"></div></div><span class="sq-count">6案例 (18%)</span></summary>
+<div class="sq-answer">Yes. JA Solar has conducted Life Cycle Assessment (LCA) and holds product carbon footprint certificates in accordance with ISO 14067 for our main module products.
+
+Key data points:
+• Product carbon footprint methodology: ISO 14040/14044 (LCA) and ISO 14067 (carbon footprint)
+• Boundary: Cradle-to-gate (from raw material extraction to factory gate)
+• Carbon intensity data and the specific EPD/ISO 14067 certificate are available upon request for the relevant module model
+
+EPD / ISO 14067 certificates are available for our main module series. Please specify the module model (e.g., JAM72D40) for the corresponding certificate.
+
+Supporting documents: ISO 14067 Product Carbon Footprint Certificate | EPD Certificate (available in 非挂网证书/EPD/)</div>
+<div class="sq-source-note"><div class="sq-source-row"><span class="sq-source-badge" style="color:#7a5c00;background:#fffde7;border:1px solid #fff9c4">🟡 AI生成 · 待补充具体数值</span><span class="sq-source-ref">📁 2026 Q1 — SKYE Renewables, Voltalia, 中广核, Scatec, 三峡集团, Invenergy</span><span class="sq-source-time" style="color:#1565c0">📌 建议补充具体模型的碳强度数值（kgCO2eq/kWp）</span></div></div>
+</details>
+
+<details class="sq-item" data-esg="E">
+<summary class="sq-row"><span class="sq-rank">#10</span><span class="esg-badge esg-E">E</span><span class="sq-question">Do you have a PV module recycling program / PV Cycle membership? Please provide your recycling certificate.</span><div class="sq-bar-wrap"><div class="sq-bar" style="width:35.7%;background:linear-gradient(90deg,#e74c3c,#f39c12)"></div></div><span class="sq-count">5案例 (21%) <span class="warn-badge">⚠ 证书已到期</span></span></summary>
+<div class="sq-answer">JA Solar is a member of PV CYCLE, the solar panel take-back and recycling scheme, which handles end-of-life collection and recycling of photovoltaic modules in accordance with the WEEE Directive.
+
+⚠ IMPORTANT NOTE: The PV Cycle membership certificate previously on file expired on 31 December 2025. Please confirm with the responsible team whether the renewed certificate for 2026 has been obtained before sending to customers.
+
+Once confirmed, the updated PV Cycle certificate should be provided to:
+• Larsen and Toubro (0113) — requested updated certificate
+• Fentons (0119) — requested updated certificate
+• GRS (0121) — requested updated certificate per WEEE Directive requirements
+• 三星/Samsung (0210) — requested recycling documentation
+• 曾闻一 Korean client (0108) — requested recycling procedure info</div>
+<div class="sq-source-note"><div class="sq-source-row"><span class="sq-source-badge" style="color:#c62828;background:#ffebee;border:1px solid #ef9a9a">🔴 需更新 · 证书2025.12.31到期</span><span class="sq-source-ref">📁 2026 Q1 — 5个案例已明确索取新证书</span><span class="sq-source-time" style="color:#c62828">⚠ 请先确认新证书状态再回复客户</span></div></div>
+</details>
+
+<details class="sq-item" data-esg="S">
+<summary class="sq-row"><span class="sq-rank">#11</span><span class="esg-badge esg-S">S</span><span class="sq-question">Do you have a grievance / whistleblower mechanism? How can workers and stakeholders report concerns?</span><div class="sq-bar-wrap"><div class="sq-bar" style="width:42.9%"></div></div><span class="sq-count">6案例 (18%)</span></summary>
+<div class="sq-answer">Yes. JA Solar has established multiple grievance and reporting channels for employees, workers, suppliers, and external stakeholders:
+
+1. SpeakUp Platform (online): https://jasolar.speakup.report/wb — Anonymous reporting available 24/7, multi-language
+2. Anti-fraud email: antifraud@jasolar.com (for fraud and integrity concerns specifically)
+3. Internal HR channels: Direct reporting to HR/department managers
+4. Supplier grievance process: Managed through the supplier management system
+
+The Whistleblower Protection and Integrity Reporting Policy ensures non-retaliation for good-faith reporters. The platform is managed by an independent third party to ensure confidentiality.
+
+Supporting documents: JA Solar Whistleblower Protection and Integrity Reporting Policy | 2024 ESG Report (governance chapter)</div>
+<div class="sq-source-note"><div class="sq-source-row"><span class="sq-source-badge" style="color:#1a7a3c;background:#e8f5e9;border:1px solid #c8e6c9">🟢 官方渠道已确认</span><span class="sq-source-ref">📁 2026 Q1 — Lightyears, VU PHONG, Solarvest, Morklate, Camusat, Ansell</span><span class="sq-source-time" style="color:#1a7a3c">✅ SpeakUp链接: jasolar.speakup.report/wb</span></div></div>
+</details>
+
+<details class="sq-item" data-esg="G">
+<summary class="sq-row"><span class="sq-rank">#12</span><span class="esg-badge esg-G">G</span><span class="sq-question">Do you have a Supplier Code of Conduct? Do suppliers sign it?</span><div class="sq-bar-wrap"><div class="sq-bar" style="width:64.3%"></div></div><span class="sq-count">9案例 (26%)</span></summary>
+<div class="sq-answer">Yes. JA Solar has a Supplier Code of Conduct (SCoC) that outlines our expectations for suppliers across environmental, social, and governance dimensions. The SCoC covers:
+
+• Prohibition of forced labor, child labor, and human trafficking
+• Fair wages, working hours, and freedom of association
+• Health, safety, and environmental standards
+• Anti-corruption and business ethics
+• Compliance with applicable laws and regulations
+
+All new suppliers are required to sign the Supplier Code of Conduct as part of the onboarding process. Existing key suppliers are periodically asked to reaffirm compliance.
+
+Supporting document: JA Solar Supplier Code of Conduct (available at jasolar.com/uploadfile/publish/en/JA_Solar_Supplier_Code_of_Conduct-EN.pdf)</div>
+<div class="sq-source-note"><div class="sq-source-row"><span class="sq-source-badge" style="color:#1a7a3c;background:#e8f5e9;border:1px solid #c8e6c9">🟢 官方政策</span><span class="sq-source-ref">📁 2026 Q1 — B-Grimm, Lightyears, VU PHONG, LUCA, Ark Energy, GULF标书, Gamuda(0214), Quinbrook, Clearway</span></div></div>
+</details>
+
+</div>
+
+
+</div><!-- end container -->
+
+<div style="background:#1f2937;color:white;text-align:center;padding:30px;margin-top:0;">
+    <p style="font-size:1.1em;">© 2026 ESG与可持续发展部 | 2026年Q1客户需求分析报告</p>
+    <p style="margin-top:8px;opacity:0.8;font-size:0.9em;">数据范围: 2026.01 – 2026.03 · 53案例 · 34案例深度分析 · 29个议题维度</p>
+</div>
+
+<script>
+function filterRank(type) {
+    document.querySelectorAll('.esg-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('#rank-container .rank-row').forEach(row => {
+        row.style.display = (type === 'ALL' || row.dataset.esg === type) ? 'flex' : 'none';
+    });
+}
+function filterSQ(type, btn) {
+    document.querySelectorAll('.sq-esg-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#sq-section details.sq-item').forEach(item => {
+        item.style.display = (type === 'ALL' || item.dataset.esg === type) ? 'block' : 'none';
+    });
+}
+</script>
+<script>
+(function(){
+  // 基于34个含问卷/合同/证书等具体材料的案例推断的客户国籍分布
+  var clientNames = {
+    'AUS': ['Fentons','Ark Energy','Fortescue','Flow Power','DT Infrastructure','Quinbrook','Ansell','Lightyears Solar','LUCA Project','Gamuda/DT Infra'],
+    'THA': ['B-Grimm','GULF','GULF 标书审核'],
+    'MYS': ['Gamuda','Solarvest','Morklate'],
+    'CHN': ['中电建-Acciona','中广核','三峡集团'],
+    'FRA': ['Voltalia','Camusat'],
+    'USA': ['Clearway','Invenergy'],
+    'JPN': ['JPEA','东芝(日本客户)'],
+    'KOR': ['三星','某韩国客户'],
+    'IND': ['Larsen & Toubro'],
+    'VNM': ['VU PHONG'],
+    'ARE': ['AMEA Power'],
+    'DEU': ['GRS'],
+    'NOR': ['Scatec'],
+    'MDG': ['Madagascar项目'],
+    'GBR': ['SKYE Renewables'],
+    'GRC': ['PPCR希腊项目']
+  };
+
+  var locations = [], z = [], hovertext = [];
+  Object.keys(clientNames).forEach(function(code){
+    var count = clientNames[code].length;
+    locations.push(code);
+    z.push(count);
+    hovertext.push('<b>' + code + '</b>: ' + count + ' 个案例<br>' + clientNames[code].join('、'));
+  });
+
+  function initRegionMap(){
+    if(typeof Plotly === 'undefined'){ setTimeout(initRegionMap, 100); return; }
+    Plotly.newPlot('region-map', [{
+      type: 'choropleth',
+      locationmode: 'ISO-3',
+      locations: locations,
+      z: z,
+      text: hovertext,
+      hovertemplate: '%{text}<extra></extra>',
+      colorscale: [[0,'rgb(222,235,247)'],[0.2,'rgb(158,202,225)'],[0.45,'rgb(66,146,198)'],[0.7,'rgb(33,113,181)'],[1,'rgb(8,48,107)']],
+      zmin:0, zmax:10,
+      colorbar:{title:'案例数', thickness:12, len:0.5, x:1.01, tickfont:{size:11}},
+      marker:{line:{color:'rgb(255,255,255)', width:0.5}}
+    }], {
+      geo:{
+        showframe:false,
+        showcoastlines:true, coastlinecolor:'rgb(200,200,200)',
+        showland:true,       landcolor:'rgb(240,240,240)',
+        showocean:true,      oceancolor:'rgb(225,238,250)',
+        showcountries:true,  countrycolor:'rgb(200,200,200)',
+        projection:{type:'natural earth'}
+      },
+      margin:{t:10,b:10,l:0,r:60},
+      paper_bgcolor:'transparent'
+    },{displayModeBar:false, responsive:true});
+  }
+  initRegionMap();
+})();
+</script>
+</body>
+</html>
