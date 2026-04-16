@@ -101,6 +101,24 @@ details.sq-item[open] > summary.sq-row::after { transform:rotate(90deg); }
 
 /* Warning badge */
 .warn-badge { display:inline-block; background:#fff3cd; color:#856404; border:1px solid #ffc107; border-radius:4px; padding:2px 8px; font-size:11px; font-weight:600; margin-left:6px; }
+
+/* MW vs Topic Analysis */
+.mw-row { display:flex; align-items:center; padding:7px 0; border-bottom:1px solid #f0f0f0; gap:10px; }
+.mw-label { width:210px; font-size:13px; font-weight:500; flex-shrink:0; display:flex; align-items:center; gap:4px; }
+.mw-val { width:290px; text-align:right; font-size:12px; color:var(--text2); flex-shrink:0; }
+.mw-note-row { display:flex; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
+.mw-note-card { flex:1; min-width:150px; padding:12px 16px; border-radius:8px; border:1px solid var(--border); }
+.mw-note-total { background:#e3f2fd; border-color:#90caf9; }
+.mw-note-excl  { background:#fff3e0; border-color:#ffcc02; }
+.mw-note-rest  { background:#e8f5e9; border-color:#a5d6a7; }
+.mw-note-val   { font-size:22px; font-weight:700; color:var(--text); }
+.mw-note-lbl   { font-size:12px; color:var(--text2); margin-top:2px; }
+.mw-section-note { font-size:12px; color:var(--text2); margin-bottom:12px; padding:8px 12px; background:#f8f9fa; border-radius:6px; border-left:3px solid var(--accent); }
+.mw-sub-label  { margin:10px 0 8px; font-size:12px; color:var(--text2); font-weight:600; }
+.mw-special-row { background:#fff8e1; border-radius:6px; padding:7px 10px; margin-bottom:6px; border:1px solid #ffe082; }
+.mw-guoneng-box { margin-top:20px; padding:16px 20px; background:linear-gradient(135deg,#fff8e1,#fff3cd); border:1px solid #ffc107; border-radius:10px; }
+.mw-guoneng-title { font-size:15px; font-weight:700; color:#795548; margin-bottom:6px; }
+.mw-guoneng-body { font-size:13px; line-height:1.7; color:#5d4037; }
 </style>
 </head>
 <body>
@@ -172,6 +190,116 @@ details.sq-item[open] > summary.sq-row::after { transform:rotate(90deg); }
 <div class="rank-row" data-esg="S"><span class="rank-num">#20</span><span class="esg-badge esg-S">S</span><span class="rank-topic">社区参与与贡献</span><div class="rank-bar-wrap"><div class="rank-bar" style="width:2%"></div></div><span class="rank-count">1次 (2%)</span></div>
 
     </div>
+</div>
+
+<!-- MW vs ESG Topic Analysis -->
+<div class="section">
+  <div class="section-title">项目容量 × ESG议题分析（Q1）</div>
+
+  <!-- Summary stats -->
+  <div class="mw-note-row">
+    <div class="mw-note-card mw-note-total">
+      <div class="mw-note-val">20,297 MW</div>
+      <div class="mw-note-lbl">25个案例合计总容量</div>
+    </div>
+    <div class="mw-note-card mw-note-excl">
+      <div class="mw-note-val">12,000 MW</div>
+      <div class="mw-note-lbl">国能集团（含特殊背景，单独统计）</div>
+    </div>
+    <div class="mw-note-card mw-note-rest">
+      <div class="mw-note-val">8,297 MW</div>
+      <div class="mw-note-lbl">其余24个案例</div>
+    </div>
+  </div>
+
+  <div class="mw-section-note">
+    数据说明：仅25个台账中有容量记录的案例（52个Q1案例的48%），其余案例为工业客户/非项目问询，无MW数据。部分案例同时涵盖多个ESG议题，以下各议题累计容量存在叠加。5个"全面ESG"案例（2,210 MW）未拆分至具体议题，单独列示。
+  </div>
+
+  <!-- Special row: 全面ESG -->
+  <div class="mw-row mw-special-row">
+    <div class="mw-label" style="font-weight:600;color:#795548">全面ESG（5个案例）</div>
+    <div class="rank-bar-wrap"><div style="height:100%;width:62.9%;background:linear-gradient(90deg,#f39c12,#e67e22);border-radius:10px"></div></div>
+    <div class="mw-val">2,210 MW · B-Grimm / GULF / VU PHONG / 中机设 / Vena</div>
+  </div>
+
+  <div class="mw-sub-label">议题明确的19个案例（6,087 MW）按议题汇总：</div>
+
+  <!-- Topic rows (sorted by MW desc) -->
+  <div class="mw-row">
+    <div class="mw-label"><span class="esg-badge esg-S">S</span>人力资本发展</div>
+    <div class="rank-bar-wrap"><div class="rank-bar" style="width:100%;background:linear-gradient(90deg,#e74c3c,#c0392b)"></div></div>
+    <div class="mw-val">3,515 MW · 11案例（ACWA 1,200 / Solarvest 500 / Clearway 486 / Kamoa 233…）</div>
+  </div>
+
+  <div class="mw-row">
+    <div class="mw-label"><span class="esg-badge esg-E">E</span>应对气候变化</div>
+    <div class="rank-bar-wrap"><div class="rank-bar" style="width:85.4%;background:linear-gradient(90deg,#27ae60,#1e8449)"></div></div>
+    <div class="mw-val">3,002 MW · 9案例（L&T 1,200 / GRS 595 / Morklate 430 / Voltalia 300…）</div>
+  </div>
+
+  <div class="mw-row">
+    <div class="mw-label"><span class="esg-badge esg-E">E</span>产品全生命周期管理</div>
+    <div class="rank-bar-wrap"><div class="rank-bar" style="width:85.4%;background:linear-gradient(90deg,#27ae60,#1e8449)"></div></div>
+    <div class="mw-val">3,002 MW · 9案例（与应对气候变化高度重叠，通常同时提出）</div>
+  </div>
+
+  <div class="mw-row">
+    <div class="mw-label"><span class="esg-badge esg-G">G</span>负责任供应链</div>
+    <div class="rank-bar-wrap"><div class="rank-bar" style="width:31.1%"></div></div>
+    <div class="mw-val">1,094 MW · 6案例（Clearway 486 / Quinbrook 185 / Acciona 150 / AMEA 100…）</div>
+  </div>
+
+  <div class="mw-row">
+    <div class="mw-label"><span class="esg-badge esg-G">G</span>反腐败与商业道德</div>
+    <div class="rank-bar-wrap"><div class="rank-bar" style="width:19.5%"></div></div>
+    <div class="mw-val">685 MW · 2案例（Solarvest 500 / Quinbrook 185）</div>
+  </div>
+
+  <div class="mw-row">
+    <div class="mw-label"><span class="esg-badge esg-G">G</span>合规风险管理</div>
+    <div class="rank-bar-wrap"><div class="rank-bar" style="width:18.2%"></div></div>
+    <div class="mw-val">639 MW · 2案例（Clearway 486 / Longroad 153）</div>
+  </div>
+
+  <div class="mw-row">
+    <div class="mw-label"><span class="esg-badge esg-E">E</span>能源利用</div>
+    <div class="rank-bar-wrap"><div class="rank-bar" style="width:15.1%;background:linear-gradient(90deg,#27ae60,#1e8449)"></div></div>
+    <div class="mw-val">532 MW · 2案例（Morklate 430 / Ingka Group 102）</div>
+  </div>
+
+  <div class="mw-row">
+    <div class="mw-label"><span class="esg-badge esg-G">G</span>可持续发展管理</div>
+    <div class="rank-bar-wrap"><div class="rank-bar" style="width:14.8%"></div></div>
+    <div class="mw-val">521 MW · 3案例（Morklate 430 / Lightyears 20 / Sustainable-Dundee 71）</div>
+  </div>
+
+  <div class="mw-row">
+    <div class="mw-label"><span class="esg-badge esg-E">E</span>水资源管理</div>
+    <div class="rank-bar-wrap"><div class="rank-bar" style="width:12.2%;background:linear-gradient(90deg,#27ae60,#1e8449)"></div></div>
+    <div class="mw-val">430 MW · 1案例（Morklate 430）</div>
+  </div>
+
+  <div class="mw-row">
+    <div class="mw-label"><span class="esg-badge esg-E">E</span>环境管理体系</div>
+    <div class="rank-bar-wrap"><div class="rank-bar" style="width:12.2%;background:linear-gradient(90deg,#27ae60,#1e8449)"></div></div>
+    <div class="mw-val">430 MW · 1案例（Morklate 430）</div>
+  </div>
+
+  <div class="mw-row" style="border-bottom:none">
+    <div class="mw-label"><span class="esg-badge esg-S">S</span>社区影响与发展</div>
+    <div class="rank-bar-wrap"><div class="rank-bar" style="width:12.2%;background:linear-gradient(90deg,#e74c3c,#c0392b)"></div></div>
+    <div class="mw-val">430 MW · 1案例（Morklate 430）</div>
+  </div>
+
+  <!-- 国能集团 callout -->
+  <div class="mw-guoneng-box">
+    <div class="mw-guoneng-title">国能集团 — 12,000 MW（单独统计）</div>
+    <div class="mw-guoneng-body">
+      国家能源集团于Q1开展企业调研，规模远超其他单一案例，计入将严重扭曲整体分布，故单独列示。<br>
+      涵盖议题：<strong>应对气候变化</strong>（GHG数据披露、SBTi目标认证）、<strong>产品全生命周期管理</strong>（EPD/组件碳足迹认证、PV Cycle组件回收）
+    </div>
+  </div>
 </div>
 
 <!-- Supporting Materials -->
