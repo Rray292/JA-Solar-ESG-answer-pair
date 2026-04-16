@@ -107,12 +107,12 @@ details.sq-item[open] > summary.sq-row::after { transform:rotate(90deg); }
 <div class="container">
 
 <h1>JA Solar ESG 客户问询分析报告 — 2026年Q1</h1>
-<p class="subtitle">数据范围: 2026.01 - 2026.03 | 台账案例: 53 | 子议题录入案例: 36 | 涵盖议题: 23 | 数据来源: 台账子议题字段（全量）</p>
+<p class="subtitle">数据范围: 2026.01 - 2026.03 | 台账案例: 52 | 子议题录入案例: 48 | 涵盖议题: 23 | 数据来源: 台账子议题字段（全量）</p>
 
 <!-- Stats -->
 <div class="stats-row">
-    <div class="stat-card"><div class="stat-val">53</div><div class="stat-label">Q1问询总量（台账）</div></div>
-    <div class="stat-card"><div class="stat-val">36</div><div class="stat-label">子议题录入案例</div></div>
+    <div class="stat-card"><div class="stat-val">52</div><div class="stat-label">Q1问询总量</div></div>
+    <div class="stat-card"><div class="stat-val">48</div><div class="stat-label">子议题录入案例</div></div>
     <div class="stat-card"><div class="stat-val">23</div><div class="stat-label">涵盖ESG议题数</div></div>
 </div>
 
@@ -349,24 +349,30 @@ function filterSQ(type, btn) {
 </script>
 <script>
 (function(){
-  // 基于34个含问卷/合同/证书等具体材料的案例推断的客户国籍分布
+  // 基于52个Q1全量案例（台账47条+台账外5条）推断的客户国籍分布
   var clientNames = {
-
-    'THA': ['B-Grimm','GULF','GULF 标书审核'],
+    'AUS': ['Lightyears Solar','Fentons (0119)','GRS (Cobra项目)','Ark Energy','Fortescue','Flow Power','Gamuda/DT Infra','Quinbrook','Ansell','Fentons (0303)'],
+    'THA': ['B-Grimm (0109)','GULF','GULF 标书审核','B-Grimm (0227)'],
     'MYS': ['Gamuda','Solarvest','Morklate'],
-    'CHN': ['中电建-Acciona','中广核','三峡集团','LUCA Project'],
+    'CHN': ['中电建-Acciona','LUCA Project (中机设)','中广核','三峡集团','国能集团','国能调研'],
     'FRA': ['Voltalia','Camusat'],
-    'USA': ['Clearway','Invenergy'],
-    'JPN': ['JPEA','东芝(日本客户)'],
+    'USA': ['Clearway','Invenergy','Longroad Energy'],
+    'JPN': ['JPEA (0206)','东芝','JPEA (0225)','SHARP'],
     'KOR': ['三星','某韩国客户'],
     'IND': ['Larsen & Toubro'],
     'VNM': ['VU PHONG'],
-    'ARE': ['AMEA Power'],
-    'AUS': ['Fentons','Ark Energy','Fortescue','Flow Power','DT Infrastructure','Quinbrook','Ansell','Lightyears Solar','LUCA Project','Gamuda/DT Infra','GRS (Cobra项目)'],
-    'NOR': ['Scatec'],
+    'ARE': ['AMEA Power (0124)','AMEA (0327)'],
+    'NOR': ['Scatec (0323)','Scatec埃及 (0331)'],
     'MDG': ['Madagascar项目'],
-    'SGP': ['SKYE Renewables'],
-    'GRC': ['PPCR希腊项目']
+    'SGP': ['SKYE Renewables','Vena Energy'],
+    'GRC': ['PPCR希腊项目'],
+    'SAU': ['ACWA'],
+    'COD': ['Kamoa'],
+    'NGA': ['DAYBREAK POWER SOLUTIONS'],
+    'NLD': ['Ingka Group (IKEA)'],
+    'BRA': ['WEG','Atlas'],
+    'LTU': ['Eternia Solar'],
+    'GBR': ['Sustainable-Dundee']
   };
 
   var locations = [], z = [], hovertext = [];
